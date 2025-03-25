@@ -1,0 +1,171 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+python manage.py runserver
+<body class="editor_false  lang_ru  not_ie">
+
+	<div class="books_item">
+
+		<div class="books_drop">
+			<div class="books_dropdown">
+
+				<p class="dropD">{% trans 'Гуманитарные науки' %}</p>
+
+				<ul class="books_dropdown-menu open">
+
+					{% for category in categories %}
+					<li><a href="{{category.get_absolute_url}}">{{category.name | capfirst}}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+		<div class="books_drop">
+			<div class="books_dropdown">
+				<p class="dropD">{% trans 'Естественные науки' %}</p>
+				<ul class="books_dropdown-menu open">
+					{% for category in categories1 %}
+					<li><a href="{{category.get_absolute_url}}">{{category.name | capfirst}}</a></li>
+					{% endfor %}
+
+				</ul>
+			</div>
+		</div>
+		<div class="books_drop">
+			<div class="books_dropdown">
+				<p class="dropD">{% trans 'Технические науки' %}</p>
+				<ul class="books_dropdown-menu open">
+					{% for category in categories2 %}
+					<li><a href="{{category.get_absolute_url}}">{{category.name | capfirst}}</a></li>
+					{% endfor %}
+
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(function () {
+    const toggleMenu = function(menu) {
+        menu.toggle();
+    };
+
+    const handleDropdownClick = function(event) {
+        event.stopPropagation();
+        const menu = $(this).find('.books_dropdown-menu');
+        toggleMenu(menu);
+    };
+
+    const closeMenus = function() {
+        const openMenus = $('.books_dropdown-menu:visible');
+        openMenus.hide().removeData('clicked');
+    };
+
+    // Используем click для открытия и закрытия меню как на ПК, так и на мобильных устройствах
+    $('.books_dropdown').on('click', function (event) {
+        const menu = $(this).find('.books_dropdown-menu');
+        if (menu.is(':visible')) {
+            menu.hide();
+        } else {
+            closeMenus(); // Закрываем другие открытые меню
+            toggleMenu(menu);
+        }
+    });
+
+    $('.books_dropdown-menu').on('click', function (event) {
+        event.stopPropagation();
+        $(this).data('clicked', true);
+    });
+
+    $(document).on('click', function (e) {
+        const target = $(e.target);
+        if (!target.closest('.books_dropdown').length && !target.closest('.books_dropdown-menu').length) {
+            closeMenus();
+        }
+    });
+
+    if (window.innerWidth >= 768) {
+        closeMenus();
+    }
+});
+
+
+	</script>
+
+	<div id="wrapper" style="padding-top: 60px;">
+
+
+
+
+		<div data-hcolor="#f5550e"
+			class="books_sam section section130 clip_none s_mode_s200 mobile_col2 inner_width img_square flex_fix transparent_ico"
+			style="background-color:#fff;padding-top:80px;padding-bottom:80px;--tiles_radius:0px;--tiles_shadow:none;--bg_color:#fff;">
+			<a name="a_4732122"></a>
+			<div class="section_inner all_border btn_move"
+				style="--icon_size:64px;--btn_fweight:300;--btn_fsize:18px;--item_title_fweight:400;">
+				<div class="title"><b><span style="font-size:30px; color: #2c2c2c;">{% trans 'Книги' %}</span></b>
+				</div>
+				<div class="sub_title" style="font-size: 24px;">
+					<div>{% trans 'Книга - великая вещь, пока человек умеет ею пользоваться!' %}<br></div>
+				</div>
+				<div class="books_box-only">
+					<div class="books_search">
+						<form action="{% url 'search' %}" method="GET" role="search">
+							<div class="books_search-box">
+								<input type="text" class="books_search-inp" placeholder="Искать книгу" name="q">
+								<button class="books_search-btn" type="submit">поиск</button>
+							</div>
+						</form>
+					</div>
+
+
+				</div>
+
+				<div class="catalog_items short_text count5 s200 ">
+
+					{% for book in books %}
+					<div class="arr1">
+						<div class="col_4">
+							<div data-link="" class="image1 s200 shadow">
+								<img style="height: 230px;" data-lazy="1" loading="lazy" src="{{ book.photo.url }}">
+							</div>
+							<div class="title1">{{book.title}}</div>
+							<div class="title1" style="font-size: 15px; margin: 0;">{{ book.author }}</div>
+							<a class="btn1 surround  dark"
+								style="background-color:#f5550e; border-radius: 10em; text-decoration: none; color: #fff;"
+								href="{{book.pdf.url}}">{% trans 'Читать' %}
+							</a>
+
+						</div>
+					</div>
+
+
+
+					{% endfor %}
+
+				</div>
+
+			</div>
+		</div>
+
+
+
+
+
+	</div>
+
+
+
+</body>
+
+{% include 'footer.html' %}
+
+
+{% endblock content %}
+
+
+env
+.\Scripts\activate 

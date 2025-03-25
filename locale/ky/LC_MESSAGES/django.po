@@ -1,0 +1,326 @@
+# SOME DESCRIP
+# TIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-04 10:55+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\library\settings.py:122
+msgid "Kyrgyz"
+msgstr ""
+
+#: .\library\settings.py:123
+msgid "Russian"
+msgstr ""
+
+#: .\templates\adt.html:19
+msgid "Объявление"
+msgstr "Жарыялар"
+
+#: .\templates\books.html:17 .\templates\list-category.html:17
+msgid "Гуманитарные науки"
+msgstr "Гуманитардык илимдер"
+
+#: .\templates\books.html:29 .\templates\list-category.html:30
+msgid "Естественные науки"
+msgstr "Табигый илимдер"
+
+#: .\templates\books.html:40 .\templates\list-category.html:41
+msgid "Технические науки"
+msgstr "Техникалык илимдер"
+
+#: .\templates\books.html:109 .\templates\home.html:29
+#: .\templates\list-category.html:63 .\templates\navbar.html:68
+msgid "Книги"
+msgstr "Китептер"
+
+#: .\templates\books.html:112
+msgid "Книга - великая вещь, пока человек умеет ею пользоваться!"
+msgstr "Билимдин кенин издесеңиз, китептен табасыз"
+
+#: .\templates\books.html:139 .\templates\home.html:62
+msgid "Читать"
+msgstr "Окуу"
+
+#: .\templates\catalog.html:93
+msgid "Систематические каталоги"
+msgstr "Систематикалык каталогдор"
+
+#: .\templates\home.html:23
+msgid "Добро пожаловать"
+msgstr "Илимий китепкананын сайтына"
+
+#: .\templates\home.html:24
+msgid "на сайт библиотеки"
+msgstr "кош келиңиздер!"
+
+#: .\templates\home.html:46
+msgid "Откройте для себя новую книгу"
+msgstr "Жаңы китептер менен таанышыңыз"
+
+#: .\templates\home.html:79 .\templates\news.html:16
+msgid "Новости в нашем блоге"
+msgstr "Биздин жаңылыктар"
+
+#: .\templates\home.html:82 .\templates\news.html:19
+msgid "Самые интересные и востребованные новости в нашей страничке"
+msgstr "Китепканадагы жаңылыктар менен бөлүшөбүз"
+
+#: .\templates\home.html:106 .\templates\home.html:145
+#: .\templates\home.html:398
+msgid "Все"
+msgstr "Баары"
+
+#: .\templates\home.html:124 .\templates\home.html:351
+msgid "Объявления"
+msgstr "Жарыялар"
+
+#: .\templates\home.html:155 .\templates\navbar.html:70
+msgid "Ресурсы библиотеки"
+msgstr "Китепкананын ички ресурстары"
+
+#: .\templates\home.html:165
+msgid ""
+"Это наша электронная библиотека, доступ в которую можно получить с помощью "
+"предоставленных логина и пароля каждой факультетской библиотеки."
+msgstr ""
+"-Бул биздин электрондук китепкана, ар бир факультеттин китепканаларынын  "
+"берилген логин пароль аркылуу кире аласыздар."
+
+#: .\templates\home.html:169
+#, fuzzy
+msgid "Сайт Ошского Государственного Университета."
+msgstr "Ош Мамлекеттик Университетинин сайты."
+
+#: .\templates\home.html:173
+msgid "Открытая электронная библиотека Кыргызстана."
+msgstr "Кыргызстандын ачык электрондук китепканасы"
+
+#: .\templates\home.html:177
+msgid ""
+" Сайт представляет международную некоммерческую организацию, изучающую "
+"эффективность лечения с помощью доказательной медицины "
+msgstr ""
+" Бул сайт далилдүү медицинанын жардамы менен дарылоонун натыйжалуулугун "
+"изилдеген эл аралык коммерциялык эмес уюм."
+
+#: .\templates\home.html:181
+msgid ""
+" Этот сайт — платформа, охватывающая такие области, как искусство, бизнес, "
+"образование, философия и многие другие. "
+msgstr ""
+"Бул сайт искусство, бизнес, билим берүү, философия  жана башка көптөгөн "
+"тармактарды камтыган платформа. "
+
+#: .\templates\home.html:185
+msgid ""
+"Крупнейший Российский информационно-аналитический портал в области науки, "
+"техники, медицины и образования."
+msgstr ""
+"Илим, техника, медицина жана билим берүү тармагындагы эң ири Россиялык "
+"маалыматтык-аналитикалык портал."
+
+#: .\templates\home.html:189
+msgid ""
+" На этом сайте ОшГУ размещены все книги по специальности. Открывается по "
+"паролю и логину AVN"
+msgstr ""
+" Бул сайтта ОшМУнун бардык адистиктерине тиешелу электрондук окуу китептери "
+"жайгаштырылган. AVN логин, пароль аркылуу ачылат."
+
+#: .\templates\home.html:193
+msgid "Размещены научные труды учёных учебных заведений Кыргызстана."
+msgstr ""
+"Кыргызстандагы окуу жайлардын окумуштууларынын илимий эмгектери "
+"жайгаштырылган."
+
+#: .\templates\home.html:197
+msgid "Библиотека Кыргызско-Турецкого университета «Манас».  "
+msgstr "Кыргыз-Түрк Манас университетинин сайты."
+
+#: .\templates\home.html:201
+msgid "Сайт Министерства образования и науки Кыргызской Республики."
+msgstr "Кыргыз Республикасынын Билим берүү жана илим министрлигинин сайты."
+
+#: .\templates\home.html:205
+msgid ""
+"Национальная аттестационная комиссия при Президенте Кыргызской Республики "
+msgstr ""
+"Кыргыз Республикасынын Президентинин алдындагы Улуттук аттестациялык комиссия"
+
+#: .\templates\home.html:209
+#, fuzzy
+#| msgid "Национальная электронная библиотека Кыргызстана."
+msgid "Национальная электронная библиотека Кыргызстана. "
+msgstr "Кыргызстандын Улуттук электрондук китепканасы."
+
+#: .\templates\home.html:213
+msgid ""
+"На этом сайте вы можете читать книги без логина и пароля; книги "
+"преимущественно на кыргызском языке. "
+msgstr ""
+"Бул сайтта китептердин логин паролсуз эле кирип окуй аласыздар, китепттер "
+"көбүнчө кыргыз тилинде."
+
+#: .\templates\home.html:217
+msgid ""
+"Это контент-платформа нового поколения для филологов, исследователей, "
+"ученых, медицинских работников, профессионалов в коммерческой деятельности и "
+"специалистов в информационной сфере.  "
+msgstr ""
+"Бул филологдорго, изилдөөчүлөргө, окумуштууларга, медициналык "
+"кызматкерлерге, коммерциялык ишмердүүлүккө жана маалымат чөйрөсүндөгү "
+"адистерге арналган жаңы муундагы контент-платформа."
+
+#: .\templates\home.html:221
+msgid "Единые электронные библиотеки ведущих Российских вузов."
+msgstr ""
+"Россиянын алдынкы жогорку окуу жайларынын бирдиктуу электрондук "
+"китепканалары."
+
+#: .\templates\home.html:225
+msgid "Некомерческое издательство для математиков."
+msgstr "Математиктер үчүн  коммерциялык эмес басма."
+
+#: .\templates\home.html:229
+msgid ""
+" Scopus — единая библиографическая и реферативная база данных рецензируемой "
+"научной литературы, созданная в 2004 году академическим издательским домом "
+"Elsevier. Доступ к Scopus предоставляется по институциональной подписке.  "
+msgstr ""
+"2004-жылы Elsevier академиялык басма үйү тарабынан түзүлгөн, рецензияланган "
+"илимий адабияттардын бирдиктүү библиографиялык жана абстракттуу маалымат "
+"базасы. Scopusка кирүү институттук жазылуу аркылуу берилет."
+
+#: .\templates\home.html:257
+msgid "Республиканские журналы"
+msgstr ""
+
+#: .\templates\home.html:263 .\templates\home.html:308
+msgid "Вестник Ошского государственного университета"
+msgstr "ОшМУнун жарчысы"
+
+#: .\templates\home.html:270 .\templates\home.html:315
+msgid "Научный журнал теологического факультета ОшГУ"
+msgstr "ОшМУнун теология факультетинин илимий журналы "
+
+#: .\templates\home.html:277 .\templates\home.html:322
+msgid ""
+"Вестник Ошского государственного университета. Сельское хозяйство: "
+"агрономия, ветеринария и зоотехния"
+msgstr "ОшМУнун жарчысы. Айыл чарба: агрономия, ветеринария жана зоотехния"
+
+#: .\templates\home.html:284 .\templates\home.html:329
+msgid "Вопросы востоковедения"
+msgstr "Чыгыш таануунун маселелери"
+
+#: .\templates\home.html:302
+msgid "Республиканские газеты"
+msgstr ""
+
+#: .\templates\home.html:423
+msgid "Электрондук газеталар"
+msgstr ""
+
+#: .\templates\home.html:429
+msgid "Кыргыз Туусу"
+msgstr ""
+
+#: .\templates\home.html:436
+msgid "Электрондук газета"
+msgstr ""
+
+#: .\templates\home.html:444
+msgid "Вечерний Бишкек"
+msgstr ""
+
+#: .\templates\home.html:468
+msgid "Приходите к нам в библиотеку"
+msgstr "Биздин китепканага келиңиздер "
+
+#: .\templates\home.html:557 .\templates\navbar.html:64
+msgid "История"
+msgstr "Тарых"
+
+#: .\templates\magazine.html:14
+msgid "Республиканские газеты и журналы"
+msgstr ""
+
+#: .\templates\magazine.html:15
+msgid "Журналы других государств Каталог на 1-ое полугодие 2024 год"
+msgstr ""
+"Башка өлкөлөрдүн журналдарынын 2024-жылдын биринчи жарым жылдыгынын каталогу"
+
+#: .\templates\navbar.html:61
+msgid "Главная"
+msgstr "Башкы"
+
+#: .\templates\navbar.html:63
+msgid "О библиотеке"
+msgstr "Китепкана жөнүндө"
+
+#: .\templates\navbar.html:65
+msgid "Структура"
+msgstr "Түзүм"
+
+#: .\templates\navbar.html:69
+msgid "Новости"
+msgstr "Жаңылыктар"
+
+#: .\templates\navbar.html:71
+msgid "Контакты"
+msgstr "Байланыштар"
+
+#: .\templates\navbar.html:72
+msgid "Каталог"
+msgstr "Каталог"
+
+#: .\templates\navbar.html:73
+msgid "Читатель"
+msgstr "Окурман"
+
+#: .\templates\navbar.html:74
+msgid "Библиотекарям"
+msgstr "Китепканачыларга"
+
+#: .\templates\photo.html:29
+msgid "Все находяшие фото"
+msgstr "Бардык сүрөттөр"
+
+#: .\templates\readers.html:14
+msgid "Читателям"
+msgstr "Окурмандарга"
+
+#: .\templates\readers.html:49
+#, fuzzy
+#| msgid "Правила пользования библиотекой"
+msgid "Правила пользования"
+msgstr "Китепканадан пайдалануунун эрежелери"
+
+#: .\templates\readers.html:66
+msgid "Заказать книгу онлайн"
+msgstr "Китепке онлайн буюрутма берүү"
+
+#: .\templates\single_photo.html:26
+msgid "Фото"
+msgstr "Сүрөт"
+
+#~ msgid "Вестник ОшГУ"
+#~ msgstr "ОшМУнун жарчысы"
+
+#~ msgid "Все фото"
+#~ msgstr "Бардык сүрөттөр"

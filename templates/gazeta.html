@@ -1,0 +1,162 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+
+{% include 'navbar.html' %}
+
+
+<!-- такталып анан чыгарылат -->
+<!-- <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    .header {
+        text-align: center;
+    }
+    .header h1 {
+        margin: 0;
+    }
+    .content {
+        text-align: center;
+        margin: 20px 0;
+    }
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+    }
+    .text-below {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #555;
+    }
+</style>
+</head>
+<body>
+<div class="header" style="margin-top: 150px;">
+    <h1>Илимий журналдар</h1>
+</div>
+<div class="content">
+    <div class="image-container">
+        <a href="https://www.academia.edu/" target="_blank">
+            <img src="https://via.placeholder.com/600x200" alt="Placeholder Image">
+        </a>
+    </div>
+    <div class="text-below">
+        ОшМУнун жарчысы /журнал/
+    </div>
+</div> -->
+
+
+
+
+<section class="ssylki" style="margin-top:120px" >
+
+   
+    <div class="sec-container">
+        <div class="good_know" id="good_to_know" >
+
+
+            <table class="good_box">
+
+                <h2 class="good_title"><a style="color: #2c2c2c;"
+                        href=" ">Электрондук газеталар </a></h2>
+
+                <div class="gazeta_inner">
+                    <div class="good_item2">
+                        <a href="https://kyrgyztuusu.kg/" target="_blank">
+                            <img src="{% static 'img/kyrgyztuusu.png' %}" alt = "">
+                            <p>    'Кыргыз Туусу' </p>
+                        </a>
+                    </div>
+
+                    <div class="good_item2">
+                        <a href="https://elgezit.kg/" target="_blank">
+                            <img src="{% static 'img/elgezit.png' %}" alt="">
+                            <p> 'Электрондук газета'</p>
+                        </a>
+                    </div>
+
+
+                    <div class="good_item2">
+                        <a href="https://www.vb.kg/" target="_blank">
+                            <img src="{% static 'img/vb.png' %}" alt="">
+                            <p>'Вечерний Бишкек'</p>
+                        </a>
+                    </div>
+
+                    <div class="good_item2">
+                        <a href="https://paruskg.info/" target="_blank">
+                            <img src="{% static 'img/paruskg.info.png' %}" alt="">
+                            <p> Белый Парус</p>
+                        </a>
+                    </div>
+
+
+                    <div class="good_item2">
+                        <a href="https://knews.kg/tag/gazeta-aziya-nyus/" target="_blank">
+                            <img src="{% static 'img/knews.png' %}" alt="">
+                            <p style="margin-top: 20px;">'Азия Ньюс'</p>
+                        </a>
+                    </div>
+
+
+                    <div class="good_item2">
+                        <a href="https://www.kp.kg/" target="_blank">
+                            <img src="{% static 'img/kp.png' %}" alt="">
+                            <p>'комсомольская Правда'</p>
+                        </a>
+                    </div>
+
+                    <div class="good_item2">
+                        <a href="https://pochitaem.su/vestnik-zozh-9-maj-2021/" target="_blank">
+                            <img src="{% static 'img/vestnik.png' %}" alt="">
+                            <p>'Вестник ЗОЖ'</p>
+                        </a>
+                    </div>
+
+                    <div class="good_item2">
+                        <a href="https://erkin-too.kg/" target="_blank">
+                            <img src="{% static 'img/erkintoo.png' %}" alt="">
+                            <p style="margin-top: 20px;">'Эркин Тоо'</p>
+                        </a>
+                    </div>
+
+
+                    <div class="good_item2">
+                        <a href="https://kutbilim.kg/" target="_blank">
+                            <img src="{% static 'img/kutbilim.png' %}" alt="">
+                            <p>'Кут Билим'</p>
+                        </a>
+                    </div>
+
+
+                    <div class="good_item2">
+                        <a href="https://catalog-n.com/literaturnaya-gazeta-35-2021" target="_blank">
+                            <img src="{% static 'img/catalog.png' %}" alt="">
+                            <p>'Литературная газета'</p>
+                        </a>
+                    </div>
+
+                   
+                    
+                </div>
+            </table>
+
+
+
+        </div>
+    
+       
+    </div>
+
+</section>
+
+
+
+{% include 'footer.html' %}
+
+{% endblock content %}

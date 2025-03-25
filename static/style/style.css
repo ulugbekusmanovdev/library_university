@@ -1,0 +1,798 @@
+
+/* Скрыть выпадающие подменю по умолчанию */
+.nav_submenu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  /* Цвет фона подменю */
+  border: 1px solid #ccc;
+  /* Граница подменю */
+  z-index: 1;
+  /* Убедитесь, что подменю находится поверх остального содержимого */
+}
+
+.menu1 li:hover .nav_submenu {
+  display: block;
+}
+
+/* Стилизация для пунктов подменю */
+.nav_submenu li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav_submenu li a {
+  color: #212121;
+  /* Цвет текста в подменю */
+  text-decoration: none;
+  display: block;
+  padding: 5px 10px;
+}
+
+.nav_submenu li a:hover {
+  background-color: #ccc;
+  /* Цвет фона при наведении на пункт подменю */
+}
+
+
+
+
+.navbar_lang{
+  top: 5%;
+  position: absolute !important;
+  right: 2px;
+  z-index: 110;
+}
+
+
+/* menu */
+.menu1.active {
+  left: 0;
+  opacity: 1 !important;
+}
+
+
+
+.section130 .count5 .image1.s200 {
+  height: 230px !important;
+}
+
+
+
+/* VID */
+
+
+.vid{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.vid_inner{
+  width: 40%;
+}
+
+.vid_item iframe{
+  height: 480px;
+  width: 100%;
+}
+
+
+/* BOOKS */
+
+
+.books_inner {
+  width: 100%;
+  display: flex;
+}
+
+.books_content {
+  width: 19%;
+  margin: 10px;
+}
+
+.books_item {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #fcf5ed;
+  margin-top: 80px;
+
+}
+
+.books_box-only h1 {
+  text-align: center;
+  padding: 10px;
+}
+
+.books_img img {
+  width: 100%;
+  height: 350px;
+}
+
+.books_search {
+  margin: 20px;
+}
+
+.books_search .books_search-inp {
+  padding: 10px;
+}
+
+.books_search .books_search-btn {
+  padding: 10px;
+}
+
+
+
+.books_drop {
+  width: 33%;
+}
+
+.books_dropdown {
+  text-align: center;
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  background-color: #f5550e;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.dropD {
+  font-size: 24px;
+}
+
+.books_dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+
+.books_dropdown:hover .books_dropdown-menu {
+  display: block;
+}
+
+
+.books_dropdown-menu li {
+  list-style: none;
+  margin: 5px 0;
+}
+
+.books_dropdown-menu a {
+  text-align: left;
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+.books_dropdown-menu a:hover {
+  color: #007bff;
+}
+
+
+
+/* STRUCTURE */
+
+
+.structure {
+  width: 100%;
+  margin: 60px auto;
+}
+
+.structure_container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.structure_title {
+  font-size: 28px;
+  text-align: left;
+  border-bottom: 1px solid #666;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #66666677 ;
+}
+
+.structure_content {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.structure_box {
+  width: 30%;
+  padding: 10px;
+}
+
+.structure img {
+  width: 100%;
+  height: auto;
+}
+
+.structure_text {
+  padding: 10px;
+}
+
+.structure_text h1 {
+  font-size: 24px;
+  text-align: center;
+}
+
+
+/* READERS */
+
+
+.readers {
+  width: 100%;
+  margin: 60px auto;
+}
+
+.readers_content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.readers_box {
+  width: 40%;
+  margin-right: 50px;
+}
+
+.readers_text {
+  width: 60%;
+}
+
+
+
+/* ADT */
+
+
+
+.adt {
+  width: 100%;
+  margin: 60px auto;
+}
+
+.adt_content {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px; /* Расстояние между колонками и строками */
+  /* justify-content: space-between; */
+ 
+}
+
+.adt_box {
+ 
+  margin: 20px;
+  padding: 10px 20px;
+  border-bottom: 1px solid #aaa;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(170, 170, 170);
+}
+
+.adt_more {
+  color: #000;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.gazeta_more {
+  color: #000;
+  width: 100%;
+  margin-top: -70px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.adt_text h1 {
+  font-size: 35px;
+  color: #666;
+}
+.adt_text p {
+  font-size: 20px;
+  color: #666;
+  
+}
+
+
+@media (max-width:1150px) {
+  .adt_content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 60px auto;
+  }
+  
+  .adt_box {
+    width: 85%; /* Каждый контейнер занимает половину ширины родительского контейнера */
+    margin-bottom: 20px; /* Добавляем отступ снизу */
+    padding: 10px 20px;
+    border-bottom: 1px solid #aaa;
+  }
+  
+}
+
+
+
+/* PERSONAL */
+
+.personal {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+
+.personal .personal_icon {
+  padding: 20px 10px 0;
+}
+
+.personal .personal_icon i {
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+.personal .personal_box {
+  display: flex;
+  width: 70%;
+}
+
+.personal .personal_box .personal_photo {
+  margin-top: 20px;
+  width: 150px;
+  height: 120px;
+}
+
+.personal .personal_box img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.personal .personal_box .personal_info {
+  padding: 20px;
+  width: 100%;
+}
+
+.personal .personal_box .personal_info h4 {
+  width: 90px;
+}
+
+.personal .personal_box .personal_info input {
+  padding: 5px;
+}
+
+.personal .personal_box .personal_info .personal_btn {
+  margin: 10px 0 0 10px;
+  background-color: #581b00;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s linear;
+}
+
+.personal .personal_box .personal_info .personal_btn:hover {
+  background-color: #f5550e;
+  box-shadow: 4px 3px 2px #dee2e6, -4px 3px 2px #dee2e6;
+}
+
+.personal .personal_box .personal_item {
+  display: flex;
+  padding: 10px 0;
+}
+
+.personal .personal_box .personal_item h4 {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.personal .personal_box .personal_item p {
+  font-size: 14px;
+}
+
+.personal .personal_inner {
+  width: 30%;
+  border-bottom: none;
+  text-align: center;
+}
+
+.personal .personal_inner .personal_block {
+  border: 1px solid;
+  border-bottom: none;
+}
+
+.personal .personal_inner h3 {
+  padding: 10px;
+  color: #f5550e;
+  border-bottom: 1px solid #666;
+}
+
+.personal .personal_inner ul {
+  padding: 0;
+}
+
+.personal .personal_inner ul li {
+  list-style: none;
+  width: 100%;
+  border-bottom: 1px solid #666;
+  width: 100%;
+}
+
+.personal .personal_title {
+  text-decoration: none;
+  color: #000;
+  padding: 2px 0;
+}
+
+
+.personal_irbis-title{
+  font-size: 24px;
+  font-family: Georgia, serif; 
+}
+
+
+.personal_video-title{
+  font-family: Georgia, serif;
+  text-align: center;
+  padding: 10px;
+}
+
+.personal_video-inner{
+  display: flex; 
+  justify-content: space-around;
+}
+
+.personal_video{
+  padding: 25px;
+  width: 40%;
+  height: 315px;
+}
+
+.personal_video iframe{
+  width: 100%;
+  height: 100%;
+}
+
+.personal_video-text{
+  text-align: center;
+}
+
+
+
+
+/* GOOD to KNOW */
+
+.good_know {
+  text-align: center;
+  margin: 50px auto 100px;
+  width: 70%;
+}
+
+.good_know .good_title {
+  font-family: Georgia, serif;
+  padding: 20px;
+  color: #2c2c2c;
+}
+
+.gazeta_inner {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+
+.gazeta_inner > * {
+  flex: 1 1 calc(33.23% - 20px); 
+  box-sizing: border-box;
+ 
+}
+
+.gazeta_inner > *:nth-of-type(3n+1) {
+  margin-left: 0; 
+}
+
+.gazeta_inner > *:nth-of-type(3n) {
+  margin-right: 0; 
+}
+
+.gazeta_inner img {
+  max-width: 75%; 
+  max-height: 65%; 
+  height: auto; 
+}
+
+.good_item2 {
+  width: 20%;
+  margin: 10px;
+  margin-bottom: 30px;
+}
+
+
+.good_inner {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.good_item {
+  width: 20%;
+  margin: 10px;
+}
+
+.good_know .good_inner .good_item a {
+  text-decoration: none;
+}
+.good_know .good_inner .good_item img {
+  width: 100%;
+}
+.good_know .good_inner .good_item p {
+  margin: 5px 0;
+}
+
+
+
+
+/* Magazine */
+
+.magazine_main td{
+  font-size: 14px;
+}
+
+.magazine_main .magazine_subtitle{
+  padding: 10px !important;
+}
+
+.magazine {
+  text-align: center;
+  margin: 50px auto 100px;
+  width: 90%;
+}
+.magazine_title {
+  font-family: Georgia, serif;
+
+  font-size: 24px;
+  padding: 20px 0;
+  color: #2c2c2c;
+}
+
+.magazine_subtitle {
+  font-family: Georgia, serif;
+  font-size: 24px;
+  color: #2c2c2c;
+}
+
+.magazine td {
+  border: 1px solid #000;
+  padding: 5px;
+}
+
+
+
+/* SLIDER */
+
+.w-100{
+  height: 480px !important;
+  object-fit: cover;
+}
+
+
+
+
+.wh_about{
+  margin: 0 auto;
+  width: 450px !important;
+  height: 300px !important;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 1180px) {
+  .navbar_lang{
+    top: 28%;
+    font-size: 14px;
+  }
+  .readers_content{
+    flex-wrap: wrap;
+  }
+  .readers_box{
+    width: 100%;
+    margin-right: 0;
+  }
+  .readers_text{
+    width: 100%;
+    text-align: center;
+  }
+  .dropD {
+    font-size: 18px;
+  }
+
+  .books_dropdown {
+    width: 90%;
+  }
+}
+
+@media (max-width: 960px) {
+  .navbar_lang{
+    top: 8%;
+    right: 0;
+    font-size: 14px;
+    width: 10%;
+  }
+  .lang_li{
+    width: 15%;
+  }
+  
+}
+
+
+@media (max-width: 800px) {
+  .personal_video-inner{
+    flex-wrap: wrap;
+  }
+  .personal_video{
+    width: 100%;
+  }
+  .section226 .image1.shadow, .section226 .video1.shadow {
+    box-shadow: none;
+  }
+  .w-100{
+    height: 300px !important;
+  }
+  .vid_item iframe{
+    height: 300px;
+  }
+  .section130 .catalog_items.count3 .arr1 {
+    width: 100%; 
+}
+  .historyCon{
+    padding: 0 65px;
+  }
+  .historySize{
+    height: 300px !important;
+  }
+  .dropD {
+    font-size: 18px;
+  }
+
+  .books_drop {
+    width: 100%;
+    margin: 5px;
+  }
+
+  .books_sam {
+    padding-top: 230px !important;
+  }
+
+  .books_dropdown-menu {
+    width: 100%;
+  }
+  .good_know{
+    width: 80%;
+  }
+  .good_item{
+    width: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .personal{
+    flex-wrap: wrap-reverse;
+  }
+  .personal_box{
+    width: 100% !important;
+  }
+  .personal_inner{
+    width: 100% !important;
+  }
+  .magazine{
+    width: 95%;
+  }
+  .magazine_main .magazine_subtitle{
+    padding: 0 25px 10px  !important;
+  }
+  .magazine td, .magazine th {
+      font-size: 10px; /* Уменьшаем размер шрифта для мобильных устройств */
+      padding: 1px;
+  }
+}
+
+@media (max-width: 700px) {
+.navbar_lang{
+  width: 11%;
+}
+}
+
+
+@media (max-width: 640px) {
+  .navbar_lang{
+    top: 18%;
+    width: 18%;
+  }
+  
+.lang_li{
+  width: 100% !important;
+}
+
+  .historyCon{
+    padding: 0 20px;
+  }
+  .historyMain{
+    width: 70% !important;
+  }
+  .w-100{
+    height: 300px !important;
+  }
+  .historySize{
+    height: 220px !important;
+  }
+  .books_item {
+    margin-top: 120px;
+  }
+
+  .books_drop {
+    width: 100%;
+    margin: 5px;
+  }
+
+  .books_sam {
+    padding-top: 260px !important;
+  }
+  .good_item p {
+    font-size: 15px;
+  }
+  .good_title{
+    font-size: 24px;
+  }
+
+  .vid{
+    flex-wrap: wrap;
+  }
+  .vid_inner{
+    margin-bottom: 25px;
+    width: 87%;
+  }
+
+  .non{
+    display: none;
+  }
+}
+
+@media (max-width: 425px) {
+  
+ 
+  .section130.section.mobile_col2 .catalog_items .arr1{
+    width: 100% !important;
+  }
+}
