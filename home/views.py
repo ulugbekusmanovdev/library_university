@@ -1,5 +1,5 @@
 from django.db.models import Q
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from .models import *
 from django.shortcuts import get_object_or_404
 
@@ -137,3 +137,6 @@ def magazine(request):
 
 def gazeta(request):
     return render(request, 'gazeta.html')
+
+def test(request):
+    return HttpResponse("hello world")
