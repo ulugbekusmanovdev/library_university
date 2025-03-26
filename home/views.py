@@ -139,5 +139,5 @@ def gazeta(request):
     return render(request, 'gazeta.html')
 
 
-def about1(request):
+def about2(request):
     return HttpResponse('/')
