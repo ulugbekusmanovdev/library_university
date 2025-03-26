@@ -7,7 +7,7 @@ from django.shortcuts import get_object_or_404
 #multilanguage
 from urllib.parse import urlparse
 from django.conf import settings
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.urls.base import resolve, reverse
 from django.urls.exceptions import Resolver404
 from django.utils import translation
@@ -137,3 +137,7 @@ def magazine(request):
 
 def gazeta(request):
     return render(request, 'gazeta.html')
+
+
+def about1(request):
+    return HttpResponse('/')
