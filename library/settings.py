@@ -155,8 +155,8 @@ MODELTRANSLATION_LANGUAGES = ('ky','ru')
 import os
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [BASE_DIR / 'staticfiles']
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static') # for production
+STATICFILES_DIRS = [BASE_DIR / 'static'] # for development (localhost)
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
