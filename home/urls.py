@@ -15,6 +15,8 @@ urlpatterns = [
     path('video/', views.video, name='video'),
     path('magazine/', views.magazine, name='magazine'),
     path('gazeta/', views.gazeta, name='gazeta'),
+    path('profs/', views.profs, name='profs'),
+
     path('photo_detail/<int:photo_id>/', views.photo_detail, name='photo_detail'),
     path('search/<slug:category_slug>/', views.list_category, name='list-category'),
 

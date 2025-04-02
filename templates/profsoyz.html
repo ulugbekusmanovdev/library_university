@@ -1,0 +1,197 @@
+
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профсоюз</title>
+
+    {% extends 'index.html' %}
+    {% load static %}
+    {% load i18n %}
+    
+    {% block content %}
+    
+    {% include 'navbar.html' %}
+    
+     
+    <!DOCTYPE html>
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url('/media/фон-профсоюз.png');
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed; 
+            background-repeat: no-repeat; 
+            margin: 0;
+            padding: 0;
+            height: 100vh; 
+        }
+        .container {
+            margin-top: 105px;
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            height: 1200px;
+            
+        }
+        .container p {
+            border-top: 1px dashed #ff5722;
+        }
+        
+        .container a {
+            padding: 20px 0;
+            display: block;
+            text-decoration: none;
+            border-bottom: 1px solid #e6e6e6;
+            
+        }
+
+        a {
+            color: #555;
+            text-decoration: none;
+        }
+
+        .container a h3 {
+            text-align: left;
+            font-size: 1.1em;
+            border-left: 3px solid #2d4059;
+            padding-left: 15px;
+            margin: 0;
+            border-left: 3px solid #2d4059;
+        }
+
+        .h3, h3 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container a:hover h3{
+            border-left-color: #ff5722;
+            color: #ff5722;
+        }
+
+        .documents {
+            display: none; /* Скрываем документы по умолчанию */
+            padding-left: 20px;
+        }
+
+        .documents a {
+            text-align: left;
+            padding: 10px 0;
+            text-decoration: none;
+            color: #555;
+            border-bottom: 1px solid #e6e6e6;
+        }
+       
+        .profile-info h5{
+            font-size: 17px;
+            color: #555;
+        }
+
+        .disabled-link {
+            pointer-events: none; 
+            color: black; /* Можно поменять цвет, чтобы выглядело как обычный текст */
+            text-decoration: none; /* Убираем подчеркивание */
+        }
+
+    </style>
+</head>
+<body>
+                                                                                                                                                                       
+    <div class="container">
+        <p> </p>
+        <h1>ПРОФСОЮЗ</h1>
+
+        <a href="javascript:void(0);" onclick="toggleDocuments('doc1')"> 
+            <h3> Устав, жоболор, нормативдик актылар </h3>
+        </a>
+        <div id="doc1" class="documents">
+            <a href="https://cbd.minjust.gov.kg/3-45/edition/25298/kg" target="_blank"> Кыргыз Республикасынын Эмгек Кодекси </a>
+            <a href="https://base.oshsu.kg/resurs/document/PDF-20250324041654-Fjc.pdf" target="_blank"> Кесиптик бирликтер жөнүндө Кыргыз Республикасынын Мыйзамы   </a>
+            <a href="https://base.oshsu.kg/resurs/document/PDF-20240226081806-umk.pdf" target="_blank"> Жамааттык келишим</a>
+            <a href="https://base.oshsu.kg/resurs/document/PDF-20250324042004-Fjc.pdf" target="_blank"> Жеңилдик берүү боюнча жобо </a>
+            <a href="/media/pdf/ОшМУнун проф 2024-ж отчет.pdf" target="_blank"> Отчеттор</a>
+        </div>
+
+        <a href="javascript:void(0);" onclick="toggleDocuments('doc2')"> 
+            <h3>  Жылдык иш план, түзүлгөн комиссиялардын курамы, токтомдор </h3> 
+        </a>
+       
+
+        <div id="doc2" class="documents">
+            <a href="/media/pdf/Жылдык иш план.pdf" target="_blank">Жылдык иш план</a>
+            <a href="javascript:void(0)" onclick="toggleDocuments('additionalContent')">Структуралардын түзүлгөн коммисиялардын курамы:</a>
+            
+            <!-- Контент, который будет скрыт -->
+            <div id="additionalContent" style="display: flex; margin-top: 20px;border: #2d4059;">
+                <div class="content-wrapper" style="display: flex;">
+                    <img src="/media/img/Сезим эже.jpg" alt="Фото" class="profile-photo">
+                    <div class="profile-info" style="margin-left: 20px; text-align: left;">
+                      <br>  <h5> <strong style="color: #233f63; font-weight: bold;">Абдырахманова Сезимгул Торокановна</strong></h5> <br>
+                        <h5>Илимий китепкананын кесиптик бирлигинин торайымы</h5> 
+                        <h5 style="border-bottom: none;"><a href="mailto:sezimgulabdyrahmanova@gmail.com">sezimgulabdyrahmanova@gmail.com</a> </h5> <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+
+        <a href="javascript:void(0);" onclick="toggleDocuments('doc3')"> 
+            <h3> Профсоюз мүчөлөрүнүн тизмелери жана маалыматтары, сыйлыкка сунушталгандардын документтери </h3>
+        </a>
+        <div id="doc3" class="documents">
+            <a href="/media/pdf/ОшМУнун проф 2024-ж отчет.pdf" target="_blank"> Профсоюз мүчөлөрүнүн тизмелери жана маалыматтары, сыйлыкка сунушталгандардын документтери </a>
+        </div>
+
+        <a href="javascript:void(0);" onclick="toggleDocuments('doc4')"> 
+            <h3>  Социалдык жактан колдоо көрсөтүү боюнча документтер </h3>
+        </a>
+        <div id="doc4" class="documents">
+            <a href="#" class="disabled-link"> Арыз даттануулар </a>
+            <a href="#" class="disabled-link"> Жолдомо алуу үчүн арыздар жана берилген жолдомолор боюнча маалымат </a>
+            <a href="#" class="disabled-link"> Материалдык колдоо көрсөтүү </a>
+            <a href="/media/pdf/ардегер (1).pdf" target="_blank"> Карыялардын тизмеси </a>
+            
+            
+        </div>
+    </div>
+
+    <script>
+        function toggleDocuments(docId) {
+            var doc = document.getElementById(docId);
+            if (doc.style.display === "none" || doc.style.display === "") {
+                doc.style.display = "block";
+            } else {
+                doc.style.display = "none";
+            }
+        }
+
+
+        function toggleContent() {
+    var content = document.getElementById('additionalContent');
+    // Переключение видимости контента
+    if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'block';  // Показываем контент
+    } else {
+        content.style.display = 'none';   // Скрываем контент
+    }
+}
+
+
+
+    </script>
+
+</body>
+
+{% include 'footer.html' %}
+
+{% endblock content %}
+
+</html>
+
+
+

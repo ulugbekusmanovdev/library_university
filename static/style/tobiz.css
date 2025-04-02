@@ -77,6 +77,7 @@
 		}
 
 		body {
+			
 			font-family: var(--styles_text_font, var(--base_font_familty));
 			font-weight: var(--styles_text_font_weight, 300);
 			color: var(--styles_text_color, #000);
@@ -55831,5 +55832,87 @@
 
 .close_button:hover {
 	background-color: #ff1a1a;
+}
+
+
+
+/* Стиль для главного меню */
+.main-menu {
+    list-style: none;
+    padding: 0;
+    margin: 20px;
+}
+
+.menu-item {
+    position: relative;
+    margin: 10px 0;
+}
+
+.menu-item a {
+    text-decoration: none;
+    font-size: 20px;
+    padding: 12px 20px;
+    display: block;
+    background-color: #f1c40f;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.menu-item a:hover {
+    background-color: #f39c12;
+    color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+}
+
+/* Стиль для подменю */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.menu-item:hover .submenu {
+    display: block;
+}
+
+.submenu a {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #333;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.submenu a:hover {
+    background-color: #f39c12;
+    color: white;
+}
+
+/* Эффект на пункт "Профсоюз" */
+.profile-union a {
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #f39c12;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.profile-union a:hover {
+    color: #e67e22;
+    transform: scale(1.05);
 }
 
