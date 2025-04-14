@@ -6,9 +6,274 @@
 
 {% include 'navbar.html' %}
 
-<body class="editor_false  lang_ru     not_ie">
 
-    <div id="wrapper" style="padding-top: 88px;">
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Меню с контентом</title>
+  <style>
+    
+    body {
+  text-align: center;
+  background-image: url('/media/фон-профсоюз.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 30px;
+}
+
+.body1 {
+  margin-top: 65px;
+  position: relative;
+  padding: 15px;
+  background-color: #fff;
+  min-height: 120vh;
+}
+
+.text {
+  padding: 10px 40px;
+  margin-top: 30px;
+}
+
+h3 {
+  font-family: 'Georgia', serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #4e4e4e;
+  padding: 20px;
+  margin: 10px 0;
+  border-bottom: 1px solid rgb(247, 137, 96);
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+h3::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background-image: url('/media/img/fott.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 5;
+  transition: all 0.3s ease-in-out;
+}
+
+h3:hover {
+  color: rgb(247, 137, 96);
+}
+
+h3:hover::before {
+  transform: translateX(-50%) scale(1.1);
+}
+
+.fancy-title-h5 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #56595c;
+  text-align: center;
+  margin: 10px 40px 15px 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #454444 0%, #545353 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.menu {
+  width: 250px;
+  padding: 10px;
+  
+}
+
+.menu button {
+  margin-top: 9px;
+  width: 100%;
+  height: 60px;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.menu button:hover {
+  background-color: #f0f0f0;
+  border-color: #bbb;
+}
+
+.menu .but-num {
+background-color: #ffffff;
+padding-left: 60px;
+  font-size: 18px;
+  border: none;
+  width: 710px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #141414;
+  text-shadow: 1px 1px 2px rgba(209, 8, 8, 0.231);
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.content-wrapper {
+
+  display: flex;
+  margin-top: 80px;
+  background-color: #f1f1f1b6;
+  border-radius: 10px;
+  padding: -20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  height: 270px;
+  width: 450px;
+}
+
+.content {
+  display: flex;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.content.active {
+  display: flex;
+  opacity: 1;
+  transform: translateX(0);
+  position: relative;
+  z-index: 1;
+}
+
+.card-table {
+  margin-top: 20px;
+  margin-left: 40px;
+  color: #000000;
+  font-size: 25px;
+
+}
+
+.card-table td {
+  padding: 8px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.363);
+  font-size: 18px;
+  font-weight: 400;
+
+}
+
+.card-table td:last-child {
+
+  font-weight: bold;
+}
+
+.number-p {
+  margin-left: 240px;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #141414;
+  text-shadow: 1px 1px 2px rgba(209, 8, 8, 0.231);
+}
+
+.h2-number {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #292828;
+  margin-left: 200px;
+  margin-top: 50px;
+  text-shadow: 1px 1px 2px rgba(209, 8, 8, 0.231);
+}
+
+  </style>
+</head>
+<body>
+  <div class="body1">
+    <div class="text">
+      <h3>ОшМУнун илимий китепканасынын жалпы китеп фонду <strong style="color: rgb(247, 137, 96);">572260</strong> даана китепти түзөт:</h3>
+      <div class="abonements" id="abonements"></div>
+    </div>
+
+    <div id="container0" class="content-container">
+      <h5 class="fancy-title-h5"><strong style="color: #000000; font-weight: 600;">Абонемент № 1. </strong> Математика, физика, техника ж-а маалыматтык технологиялар институтунун китепканасы</h5>
+      <div class="container">
+        <div class="menu">
+          <button class="but-num" style="display: flex;">Жалпы фонд<div class="data-slide-to"><p class="number-p" >59422</p> </div></button> 
+          <button onclick="showContent('one')">Анын ичинен:</button>
+          <button onclick="showContent('two')">Блок боюнча:</button>
+          <button onclick="showContent('three')">ОшМУнун окутуучуларынын эмгектери:</button> 
+          
+        </div>
+        <div class="content-wrapper">
+          <!-- <div id="content-zero"> 
+            <p class="number-p" style="text-align:center;">59422</p>
+          </div> -->
+          <div id="content-one" class="content active">
+            <div class="card-table">
+              <table>
+                <tr><td>Кыргыз тилиндеги китептер </td> <td>11 953</td></tr>
+                <tr><td>Орус тилиндеги китептер </td>  <td>47 358</td></tr>
+                <tr><td>Англис тилиндеги китептер</td>  <td >111 </td> </tr> 
+              </table>
+            </div>
+          </div>
+          <div id="content-two" class="content">
+            <div class="card-table">
+              <table>
+                <tr><td>Кыргыз тилиндеги китептер</td><td>11 953</td></tr>
+                <tr><td>Орус тилиндеги китептер</td><td>47 358</td></tr>
+                <tr><td>Англис тилиндеги китептер</td><td>111 </td></tr>
+              </table>
+            </div>
+          </div>
+          <div id="content-three" class="content">
+            <h2 class="h2-number">4428</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+   
+
+    let currentContentId = "one";
+    function showContent(id) {
+      if (currentContentId === id) return;
+      document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+      const next = document.getElementById('content-' + id);
+      if (next) next.classList.add('active');
+      currentContentId = id;
+    }
+  </script>
+
+
+
+    <!-- <div id="wrapper" style="padding-top: 88px;">
 
         <div class="readers">
             <div class="structure_container">
@@ -121,8 +386,12 @@
             </div>
         </div>
 
-    </div>
+    </div> -->
 
+    
 </body>
+   
 {% include 'footer.html' %}
 {% endblock content %}
+
+</html>
