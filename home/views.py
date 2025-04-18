@@ -70,10 +70,9 @@ def readers(request):
 
 
 def catalog(request):
-    b_catalog = Catalog.objects.filter(id=1)
-    catalog = Catalog.objects.filter(id=2)
-    el_catalog = Catalog.objects.filter(id=3)
-    context = {'b_catalog': b_catalog,'catalog': catalog, 'el_catalog': el_catalog}
+    bookfond = BookFond.objects.all()
+    
+    context = {'bookfond': bookfond}
     return render(request, 'catalog.html', context)
 
 
@@ -141,3 +140,4 @@ def gazeta(request):
 
 def profs(request):
     return render(request, 'profsoyz.html')
+

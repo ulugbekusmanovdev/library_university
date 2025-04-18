@@ -173,3 +173,33 @@ class Catalog(models.Model):
 
     def __str__(self):
         return str(self.title)    
+    
+
+# книжный фонд
+class BookFond(models.Model):
+    abon_number = models.IntegerField(null=True, blank=True, verbose_name='Абономент №')
+    abon_name = models.CharField(max_length=200, null=True, blank=True,verbose_name='Факультет')
+    all_number = models.IntegerField(null=True, blank=True, verbose_name='Жалпы фонд саны')
+    kyrgyz_num = models.IntegerField(null=True, blank=True, verbose_name='Кыргыз тилиндеги китептердин саны')
+    russ_num = models.IntegerField(null=True, blank=True, verbose_name='Орус тилиндеги китептердин саны')
+    inter_num = models.IntegerField(null=True, blank=True, verbose_name='Дуйнолук китептердин саны')
+    eng_name = models.CharField(max_length=200, null=True, blank=True,verbose_name='Англис тилиндеги китептер')
+    eng_num = models.IntegerField(null=True, blank=True, verbose_name='Англис тилиндеги китептердин саны')
+    ger_name = models.CharField(max_length=200, null=True, blank=True,verbose_name='Немец тилиндеги китептер')
+    ger_num = models.IntegerField(null=True, blank=True, verbose_name='Немец тилиндеги китептердин саны')
+    fra_name = models.CharField(max_length=200, null=True, blank=True,verbose_name='Француз тилиндеги китептер')
+    fra_num = models.IntegerField(null=True, blank=True, verbose_name='Француз тилиндеги китептердин саны')
+    tur_name = models.CharField(max_length=200, null=True, blank=True,verbose_name='Түрк тилиндеги китептер')
+    tur_num = models.IntegerField(null=True, blank=True, verbose_name='Түрк тилиндеги китептердин саны')
+    first_block = models.IntegerField(null=True, blank=True, verbose_name='1-блок')
+    second_block = models.IntegerField(null=True, blank=True, verbose_name='2-блок')
+    third_block = models.IntegerField(null=True, blank=True, verbose_name='3-блок')
+    teachers_work = models.IntegerField(null=True, blank=True, verbose_name='окутуучулардын эмгектери')
+
+    def __str__(self):
+        return self.abon_name
+
+    class Meta:
+        verbose_name = 'Книжный фонд'
+        verbose_name_plural = 'Книжный фонд'
+        ordering = ('id',)
