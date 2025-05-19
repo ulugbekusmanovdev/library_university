@@ -6,87 +6,202 @@
 
 
 
-    <link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
-    
-    
-    <div class="section section2116 fixed_top" style="background-color: rgb(255, 255, 255); padding-top: 0px;
-    padding-bottom: 0px; position: fixed; top: 0px; z-index: 101; left: 0px;" data-id="4722802" id="b_4722802">
-        <div style="width: 100%;position: relative;">
-        <div class="section_inner logo_left">
-            <div class="wrapp">
-                <!-- <div class="menu-toogler square new_burger" style="color:#000;background-color:#fff">
+<link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
+<link rel="stylesheet" href="/static/style/style.css">
 
-                <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 6H20M4 12H20M4 18H20" stroke="#000000" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </div> -->
-                <div class="menu-toogler square new_burger" style="color:#000;background-color:#fff">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                        viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-                        <g>
-                            <g>
-                                <path
-                                    d="M501.333,96H10.667C4.779,96,0,100.779,0,106.667s4.779,10.667,10.667,10.667h490.667c5.888,0,10.667-4.779,10.667-10.667S507.221,96,501.333,96z" />
-                            </g>
-                        </g>
-                        <g>
-                            <g>
-                                <path
-                                    d="M501.333,245.333H10.667C4.779,245.333,0,250.112,0,256s4.779,10.667,10.667,10.667h490.667c5.888,0,10.667-4.779,10.667-10.667S507.221,245.333,501.333,245.333z" />
-                            </g>
-                        </g>
-                        <g>
-                            <g>
-                                <path
-                                    d="M501.333,394.667H10.667C4.779,394.667,0,399.445,0,405.333C0,411.221,4.779,416,10.667,416h490.667c5.888,0,10.667-4.779,10.667-10.667C512,399.445,507.221,394.667,501.333,394.667z" />
-                            </g>
-                        </g>
-                    </svg>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+ 
+ <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+    }
+ 
+  </style> 
 
-                </div>
-                <div class="logo" >
-                    <a href="{% url 'home' %}">
-                        <div class="logo_img" > 
-                            <img data-lazy="1" src="{% static 'img/logo.jpg' %}">
-                        </div>
-                </div>
-                </a
-                > 	
+  
 
+</head>
+<body>
+ <div class="navbar0"> 
+<div class="topbar-navbar">
+  
 
-                <div class="menu1 menu_block animate_menu3" style="color:#212121;background-color:#ffffff;font-size:17px;">
-                    <ul >
-                        <li class="level0">
-                            <a href="{% url 'home'  %}" title="Главная">{% trans 'Главная' %}</a>
-                            <!-- <ul class="nav_submenu">
-                            <li><a href="{% url 'home'  %}#anchor5" title="О библиотеке">{% trans 'О библиотеке' %}</a></li>
-                            <li><a href="{% url 'home'  %}#anchor9" title="История">{% trans 'История' %}</a></li>
-                            <li><a href="{% url 'home'  %}#anchor3" title="Структура">{% trans 'Структура' %}</a></li>
-                        </ul> -->
-                        </li>
-                        <li class="level0"><a href="{% url 'home'  %}#anchor6" title="Книги ">{% trans 'Книги' %} </a></li>
-                        <li class="level0"><a href="{% url 'home'  %}#anchor7" title="Новости">{% trans 'Новости' %}</a></li>
-                        <li class="level0"><a href="{% url 'home'  %}#anchor4" title="Ресурсы библиотек">{% trans 'Ресурсы библиотеки' %}</a></li>
-                        <li class="level0"><a href="{% url 'catalog' %}" title="Каталог">{% trans 'Книжный фонд' %}</a></li>
-                        <li class="level0"><a href="{% url 'readers' %}" title="Читатель">{% trans 'Читатель' %}</a></li>
-                        <li class="level0"><a href="#" title="Библиотекарям">{% trans 'Библиотекарям' %}</a></li>
-                        <li class="level0" style="display: none;"><a href="#" title="Регистрация">Рег</a></li>
-                        <li class="level0"><a href="{% url 'profs' %}" title="Читатель">{% trans 'Профсоюз' %}</a></li>
-                        <li class="level0"><a href="{% url 'home'  %}#anchor8" title="Контакты">{% trans 'Контакты' %}</a></li>
-                    </ul>
+  <div class="language-navbar">
+    <a href="{% url 'set-language' 'ky' %}">Кыргызча</a>
+    <a href="/">Русский</a>
+  </div>
+  <div class="profile-navbar">
+    <a href="{% url 'login' %}"> <i class="fas fa-user-circle"></i>  </a> 
+  </div>
 
+  <a href="{% url 'home'  %}#anchor8" style="font-weight: 300; margin-left: 5px; color: #151414;">Контакты</a>
 
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </div>
-    <ul class="navbar_lang"  >
-        <li class="lang_li"><a href="{% url 'set-language' 'ky' %}" title="Кыр">КЫР</a></li>
-        <li class="lang_li"><a href="/" title="Рус">РУС</a></li>
-    </ul>
 </div>
+<div class="menu-icon" id="menu-icon" style="margin-top: -23px;">&#9776;</div>
+<nav>
+  
+  <div class="nav-left-navbar">
+  
+
+    <div class="nav-item-navbar active">
+      <div class="logo" style="margin-left: 30px;">
+        <a href="{% url 'home' %}">
+            <div class="logo_img"  > 
+                <img data-lazy="1" src="{% static 'img/logo.jpg' %}" width="85px" height="60px">
+            </div>
+        </a> 	
+    </div>
+
+
+     
+
+    
+      
+    </div>
+    <div class="nav-item-navbar">
+      <a href="{% url 'home'  %}"  class="nav-link-navbar"><i class="fas fa-house"></i> {% trans 'Главная' %}</a>
+      
+      <div class="submenu-navbar">
+        <a href="{% url 'news1'  %}">{% trans 'Новости' %}</a>
+        <a href="{% url 'home'  %}#anchor6">{% trans 'Книги' %}</a>
+     
+      </div>
+    </div>
+
+    <div class="nav-item-navbar">
+      <a href="{% url 'strukture' %}" class="nav-link-navbar"><i class="fas fa-sitemap"></i> Структура</a>
+      <div class="submenu-navbar">
+        <a href="{% url 'profs' %}"> {% trans 'Профсоюз' %} </a>
+      
+      </div>
+    </div>
+
+    <div class="nav-item-navbar">
+      <a href="{% url 'home'  %}#anchor4" class="nav-link-navbar"><i class="fas fa-box-archive"></i>  {% trans "Ресурсы библиотеки" %}  </a>
+      <div class="submenu-navbar">
+        <a href="https://lib.oshsu.kg">Irbis</a>
+        <a href="http://ibooks.oshsu.kg/">iBooks</a>
+        <a href="https://kyrlibnet.kg/ru/">KirLibNet</a>
+        <a href="https://scopus.com/">Scopus</a>
+        <a href="https://www.oshsu.kg/ru">OshSU</a>
+        <a href="https://homeread.net/">LibKG</a>
+        <a href="https://web.p.ebscohost.com/ehost/search/basic?vid=0&sid=b0360df0-7ff3-465d-b690-5aa7d0ffddf4%40redis">EBSCO</a>
+        <a href="https://www.cochranelibrary.com/"> Cochrane Library</a>
+        <a href="https://elibrary.ru/">eLibrary</a>
+        <a href="http://library.manas.edu.kg/index.php/ru/">Manas Library</a>
+        <a href="https://edu.gov.kg/">Министерство образования</a>
+        <a href="https://vak.kg/">НАК ПКР</a>
+        <a href="http://neb.kg/index.php/ru/">NEB</a>
+        <a href="https://www.okuma.kg/">OKUMA</a>
+        <a href="https://www.wiley.com/en-us/customer-success/wiley-online-library-translated-resources/wiley-online-library-translated-resources-in-russian">Wiley Online Library</a>
+        <a href="http://window.edu.ru/">Единое окно </a>
+        <a href="https://msp.org/publications/">Mathematical Sciences Publishers</a>
+        <a href="https://www.cambridge.org/core/publications/journals">Cambridge</a>
+        <a href="https://link.springer.com/">Springer Nature</a>
+      </div>
+    </div>
+
+    <div class="nav-item-navbar">
+      <a href="#" class="nav-link-navbar"><i class="fas fa-book"></i> Книжный фонд</a>
+      <div class="submenu-navbar">
+        
+        <a href="{% url 'catalog' %}">{% trans 'Книжный фонд' %} </a>
+        <a href="{% url 'kfond' %}">{% trans 'Каталог' %}  </a>
+     
+      </div>
+    </div>
+
+    <div class="nav-item-navbar">
+      <a href="#" class="nav-link-navbar"><i class="fas fa-bookmark"></i> Библиограф</a>
+      <div class="submenu-navbar">
+        <a  href="{% url 'bibizdanie' %}">Библиографические издания</a>
+        <a href="{% url 'calendar' %}">Календарь знаменательных дат</a>
+        <a href="{% url 'question' %}">Задать вопрос библиографу</a>
+      </div>
+    </div>
+    <div class="nav-item-navbar">
+      <a href="{% url 'readers'  %}#anchor8" class="nav-link-navbar">	<i class="fas fa-users"></i>  Читатель</a>
+     
+    </div>
+    <!-- <div class="nav-item-navbar">
+      <a href="{% url 'home'  %}#anchor8" class="nav-link-navbar"> <i class="fas fa-address-book"></i>  Контакты</a>
+     
+    </div> -->
+
+  </div>
+
+</nav>
+</div> 
+
+<script>
+
+const menuIcon = document.getElementById('menu-icon');
+const nav = document.querySelector('nav');
+const menuLinks = document.querySelectorAll('.nav-left-navbar a');
+
+// Открыть/закрыть меню при клике на иконку
+menuIcon.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
+
+// Закрыть меню при клике на любую ссылку внутри
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('active');
+  });
+});
+
+
+
+
+  const profileNavbar = document.querySelector('.profile-navbar');
+  const profileSubmenu = document.querySelector('.profile-submenu-navbar');
+
+  // Показать подменю при наведении на иконку
+  profileNavbar.addEventListener('mouseenter', () => {
+    profileSubmenu.style.display = 'block';
+  });
+
+  // Скрыть подменю при выходе мыши из иконки или подменю
+  profileNavbar.addEventListener('mouseleave', () => {
+    profileSubmenu.style.display = 'none';
+  });
+
+  profileSubmenu.addEventListener('mouseenter', () => {
+    profileSubmenu.style.display = 'block'; // Не скрывать подменю при наведении на подменю
+  });
+
+  profileSubmenu.addEventListener('mouseleave', () => {
+    profileSubmenu.style.display = 'none'; // Скрывать подменю при выходе из подменю
+  });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

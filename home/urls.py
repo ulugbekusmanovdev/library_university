@@ -16,6 +16,13 @@ urlpatterns = [
     path('magazine/', views.magazine, name='magazine'),
     path('gazeta/', views.gazeta, name='gazeta'),
     path('profs/', views.profs, name='profs'),
+    path('kfond/', views.kfond, name='kfond'),
+    path('bibliograf/', views.bibliograf, name='bibliograf'),
+    path('calendar/', views.calendar, name='calendar'),
+    path('bibizdanie/', views.bibizdanie, name='bibizdanie'),
+    path('question/', views.question, name='question'),
+    path('news1/', views.news1, name='news1'),
+    path('strukture', views.strukture, name='strukture'),
 
     path('photo_detail/<int:photo_id>/', views.photo_detail, name='photo_detail'),
     path('search/<slug:category_slug>/', views.list_category, name='list-category'),

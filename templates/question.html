@@ -1,0 +1,75 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задать вопрос библиографу</title>
+
+</head>
+
+<body>
+
+    <div class="form-container" style=" justify-content: center;">
+        <h2 class="form-header">Задать вопрос библиографу</h2>
+        <form id="question-form" class="question-form">
+            <label for="name" class="form-label">Ваше имя:</label>
+            <input type="text" id="name" name="name" class="input-text" placeholder="Введите ваше имя" required />
+
+            <label for="email" class="form-label">Ваш email:</label>
+            <input type="email" id="email" name="email" class="input-email" placeholder="Введите ваш email" required />
+
+            <label for="question" class="form-label">Ваш вопрос:</label>
+            <textarea id="question" name="question" class="textarea" placeholder="Введите ваш вопрос" required></textarea>
+
+            <button type="submit" class="submit-button">Отправить вопрос</button>
+        </form>
+
+        <div class="response-message" id="response-message">
+            Ваш вопрос успешно отправлен! ответим вам в течени 8 часовых дней 
+        </div>
+
+     
+    </div>
+
+    <script>
+        document.getElementById('question-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+
+            fetch('/send-question/', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('response-message').style.display = 'block';
+                    document.getElementById('question-form').reset();
+                } else {
+                    alert('Ошибка при отправке вопроса. Попробуйте позже.');
+                }
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+                alert('Ошибка при отправке вопроса. Попробуйте позже.');
+            });
+        });
+    </script>
+
+</body>
+
+{% include 'footer.html' %}
+
+{% endblock content %}
+
+</html>

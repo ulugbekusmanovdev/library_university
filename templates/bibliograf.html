@@ -1,0 +1,153 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<!-- пока утуруп турсун Динара эже алып кой дедиле -->
+
+<link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
+<style>
+
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      justify-content: center;
+      align-items: center;
+      background-color: var(--main-bg);
+      font-family: var(--paragraph-font);
+      min-height: 100vh;
+    }
+
+   
+</style>
+</head>
+
+<body>
+  <div class="body1">
+    <div class="outer-container">
+    
+      <div class="inner-container">
+        <div class="bib-polka"><img src="/media/img/книжный полка.png" alt=""></div>
+        <h1 >Бюллетень новых <br> поступлений </h1>
+        <h5> Дорогие читатели!</h5>
+        <p>
+          Вашему вниманию представлены новинки книг, поступившие в нашу Центральную районную библиотеку.<br><br>
+          Информационный Бюллетень новых поступлений содержит перечень литературы, поступившей в библиотеки Центральной районной библиотеки Учалинского района РБ, отраженной в справочно-поисковом аппарате.<br><br>
+          Материал в Бюллетене расположен по отраслям знаний (УДК), внутри каждого раздела по алфавиту авторов и названий. В каждом библиографическом описании книги указаны полочный шифр хранения, количество поступивших экземпляров в структурные подразделения библиотеки.
+        </p>
+
+        <!-- <h2>Бюллетень новых поступлений за 20259 год</h2>
+          
+        <embed src="/media/pdf-js/8-марта.pdf" type="application/pdf" width="100%" height="600px" /> -->
+<!-- 
+        <iframe 
+          src="/media-pdf-js/web/viewer.html?file=/media/pdf/ардегер(1).pdf" 
+          width="450px" 
+          height="400px" 
+          style=" border-radius: 10px; margin-top: 10px;">
+        </iframe> -->
+
+      </div>
+      
+
+      <div class="container-wrapper">
+        <div class="box">
+          <h2>Бюллетень новых <br>поступлений за 2021 год</h2>
+          <h6 onclick="openModal('modal1')">Бюллетень 1</h6>
+          <h6 onclick="openModal('modal2')">Бюллетень 2</h6>
+          <h6 onclick="openModal('modal3')">Бюллетень 3</h6>
+          <h6 onclick="openModal('modal4')">Бюллетень 4</h6>
+        </div>
+      
+        <div class="box">
+          <h2>Бюллетень новых <br>поступлений за 2021 год</h2>
+          <h6 onclick="openModal('modal5')">Бюллетень 1</h6>
+          <h6 onclick="openModal('modal6')">Бюллетень 2</h6>
+          <h6 onclick="openModal('modal7')">Бюллетень 3</h6>
+          <h6 onclick="openModal('modal8')">Бюллетень 4</h6>
+        </div>
+      </div>
+      <img src="/media/pdf/ардегер (1).pdf" alt="">
+      
+      
+      <!-- Модальные окна -->
+   
+      <div class="modal" id="modal1">
+        <div class="modal-content">
+          <h2>Бюллетень новых поступлений за 2025 год</h2>
+          
+          <iframe 
+            src="/media-pdf-js/web/viewer.html?file=/media/pdf/ардегер%20(1).pdf" 
+            width="150px" 
+            height="400px" 
+            style="border: none; border-radius: 10px; margin-top: 10px;">
+          </iframe>
+      
+          <div class="close-btn" onclick="closeModal('modal1')">Закрыть</div>
+        </div>
+      </div>
+      
+      
+      
+      <div class="modal" id="modal2">
+        <div class="modal-content">
+          <h2>Бюллетень 2</h2>
+          <a href="https://example.com/link2" target="_blank">Скачать</a>
+          <div class="close-btn" onclick="closeModal('modal2')">Закрыть</div>
+        </div>
+      </div>
+      
+      <div class="modal" id="modal3">
+        <div class="modal-content">
+          <h2>Бюллетень 3</h2>
+          <a href="https://example.com/link3" target="_blank">Скачать</a>
+          <div class="close-btn" onclick="closeModal('modal3')">Закрыть</div>
+        </div>
+      </div>
+      
+      <div class="modal" id="modal4">
+        <div class="modal-content">
+          <h2>Бюллетень 4</h2>
+          <a href="https://example.com/link4" target="_blank">Скачать</a>
+          <div class="close-btn" onclick="closeModal('modal4')">Закрыть</div>
+        </div>
+      </div>
+      
+      <div class="modal" id="modal5">
+        <div class="modal-content">
+          <h2>Бюллетень 55555555555</h2>
+          <a href="https://example.com/link4" target="_blank">Скачать</a>
+          <div class="close-btn" onclick="closeModal('modal5')">Закрыть</div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+      <script>
+        function openModal(id) {
+          document.getElementById(id).style.display = 'flex';
+        }
+      
+        function closeModal(id) {
+          document.getElementById(id).style.display = 'none';
+        }
+      </script>
+      
+
+
+</body>
+
+{% include 'footer.html' %}
+
+{% endblock content %}
+
+</html>

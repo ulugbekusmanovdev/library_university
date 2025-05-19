@@ -4,22 +4,34 @@
 {% block content %}
 
 {% include 'navbar.html' %}
-<link rel="stylesheet" href="../static/style/login.css">
-<link rel="stylesheet" href="../static/js/login.js">
-<form style="margin-top: 170px;" method="POST">
-  
-	<div class="segment">
-	  <h1>Войти</h1>
-	</div>
-	
-	<label>
-	  <input type="text" name="username" placeholder="Логин"/>
-	</label>
-	<label>
-	  <input type="password" name="password" placeholder="Пароль"/>
-	</label>
+<link rel="stylesheet" href="{% static 'style/login.css' %}">
+<link rel="stylesheet" href="{% static 'static/js/login.js' %}">
 
-	<button type="submit" class="red">Войти</button>
+<style>
+
+
+</style>
+
+<form style="margin-top: 170px; width: 450px; border: none;" method="POST">
+  <div class="login-container">
+    <h1>Войти</h1>
+
+    <div class="login-form">
+      <label for="username">
+        <input type="text" id="username" name="username" placeholder="Логин" required />
+      </label>
+      <label for="password">
+        <input type="password" id="password" name="password" placeholder="Пароль" required />
+      </label>
+
+      <button type="submit">Войти</button>
+    </div>
+
+    <div class="register-link">
+      <p>У вас нет аккаунта? <a href="/register">Зарегистрироваться</a></p>
+    </div>
+  </div>
+
 <!--	<button class="red" type="submit"><i class="icon ion-md-lock"></i> Войти</button>-->
 	
 	<!-- <div class="segment">
@@ -31,6 +43,7 @@
 
 
   <form  style="display: none; margin-top: 50px;" method="POST">
+    {% csrf_token %}
 <div class="segment">
   <h1>Регистрация</h1>
 </div>

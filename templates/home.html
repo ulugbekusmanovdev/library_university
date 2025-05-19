@@ -1,3 +1,4 @@
+
 {% extends 'index.html' %}
 {% load static %}
 {% load embed_video_tags %}
@@ -7,37 +8,155 @@
 
 {% include 'navbar.html' %}
 
-<body class="editor_false  lang_ru     not_ie">
+
+
+
+
+<head>
+    {% load static %}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<style>
+	@media (max-width: 1008px) {
+		.container-home {
+			margin-top: 15px;
+		}
+		}
+</style>
+
+<body style="
+  background-image: url('/media/fffon.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;">
+
+
+
+	<div class="obshiy-fon" style="padding: 0 50px; background-color: #ffffffb0;">
+
+	
 	<div id="wrapper" style="padding-top: 88px;">
 
 
 
-		<div data-hcolor="#ff6600" class="section no_fontsize section153 clip_none"
-			style="background-color:#ffffff;background-image:url(/static/img/bg_head.jpg);padding-top:100px;padding-bottom:50px;--light_opacity:0.75;--light_color:#ffffff;--light_bg:#212121;--light_radius:0;--light_padding:20px;"
-			data-id="4722803" id="b_4722803"><a name="a_2410757"></a>
-			<div class="dark"></div>
-			<div class="section_inner all_border w450h60 btn_center">
-				<div class="layer">
-					<div class="layer_cover"></div>
-					<div class="title" style="margin-bottom:10px;font-weight:600;">
-						<p><strong><span style="font-size:72px">{% trans 'Добро пожаловать' %}</span></strong></p>
-						<p><strong><span style="font-size:72px">{% trans 'на сайт библиотеки' %}</span></strong></p>
-					</div>
-					<div class="sub_title" style="margin-bottom:24px;font-weight:400;"><br></div>
-					<a style="text-decoration: none;" href="{% url 'books' %}">
-						<div class="btn1 surround animation dark" data-hcolor="#f78960"
-							style="background-color:#f78960; border-radius: 2em; box-shadow: 0; font-size: 18px">{% trans 'Книги' %}
-						</div>
-					</a>
-					<div class="btn_descr"><br></div>
-				</div>
-			</div>
-		</div>
 
+		
+
+<!-- test -->
+
+<div class="container-home">
+	<!-- Новости -->
+	<div class="news-column">
+	  <div class="section-header">
+		<div class="section-title-new"> <a href="#"> Новости в нашем блоге</a> </div>
+		<a href="{% url 'news' %}" >все новости</a> 
+		
+	  </div>
+  
+	  <div class="main-news">
+		<a href="{% url 'news1' %}" > 
+		<h2>Открытие нового здания</h2> 	</a>
+		<p class="date">11 мая 2025</p>
+		<img src="/media/20240205_100227.jpg" alt="Главная новость">
+	
+	  </div>
+  
+	  <div class="news-item-df" style=" display: flex; margin-left:15px; ">
+		  <div class="news-item">
+			  <h5>Выставка проектов</h5>
+			  <p class="date">10 мая 2025</p>
+			  <img src="/media/photo_2023-11-23_10-04-29.jpg" alt="Новость 1">
+			</div>
+		
+			<div class="news-item">
+			  <h5>Обновление сайта</h5>
+			  <p class="date">9 мая 2025</p>
+			  <img src="/media/photo_2023-11-23_10-04-29.jpg" alt="Новость 1">
+			</div>
+	  </div>
+  
+	 
+	</div>
+  
+
+
+	<!-- Объявления -->
+	
+<div class="announcement-column">
+	
+	  <div class="section-title-new" style="margin-top: -16px;"> <a href="{% url 'adt' %}"> Объявления </a></div>
+	  <!-- <button class="btn-news1">Все объявления</button> -->
+
+  
+	<div class="announcement-group">
+	  <div class="announcement">
+		<h4 class="h-announcement-column">Сдача книг</h4>
+		<p class="date">10 мая 2025</p>
+		<p>Педагогикалык инновациялар: сабактарда интерактивдүү окутуу ыкмалары... Просим всех студентов сдать книги до 25 мая, чтобы избежать штрафов.</p>
+	  </div>
+  
+	  <div class="announcement">
+		<h4 class="h-announcement-column">Сдача книг</h4>
+		<p class="date">10 мая 2025</p>
+		<p>Педагогикалык инновациялар: сабактарда интерактивдүү окутуу ыкмалары... Просим всех студентов сдать книги до 25 мая, чтобы избежать штрафов.</p>
+	  </div>
+
+	  <div class="announcement-footer">
+			<a href="{% url 'adt' %}" id="a-announcement-footer">Смотрите все объявления </a> 
+	  </div>
+	</div>
+	
+	</div>
+  
+
+  </div>
+  
+
+
+
+
+  
+  </div>
+  
+  <!-- Модальное окно для увеличения фото -->
+  <div class="modal" id="modal">
+	<img id="modal-img" src="" alt="Фото">
+  </div>
+  
+  <script>
+	// Функция для открытия изображения в модальном окне
+	const images = document.querySelectorAll('.news-column img, .announcement-column img');
+	const modal = document.getElementById('modal');
+	const modalImg = document.getElementById('modal-img');
+  
+	images.forEach(img => {
+	  img.addEventListener('click', function () {
+		modal.classList.add('active');
+		modalImg.src = this.src;
+	  });
+	});
+  
+	// Закрытие модального окна при клике на него
+	modal.addEventListener('click', function () {
+	  modal.classList.remove('active');
+	});
+  </script>
+
+
+
+<!-- test -->
+
+
+
+
+
+		
 
 		<div data-hcolor="#f5550e"
 			class="section section130 clip_none s_mode_s200 mobile_col2 inner_width img_square flex_fix transparent_ico"
-			style="background-color:#fcf5ed;padding-top:80px;padding-bottom:80px;--tiles_radius:0px;--tiles_shadow:none;--bg_color:#fff;"
+			style="background-color:#ffffff;padding-top:80px;padding-bottom:80px;--tiles_radius:0px;--tiles_shadow:none;--bg_color:#fff;"
 			data-id="anchor6" id="anchor6"><a name="a_4732122"></a>
 
 			<div class="section_inner all_border btn_move"
@@ -61,21 +180,20 @@
 							href="{{book.pdf.url}}">
 							{% trans 'Читать' %}
 						</a>
-
-
+						<div  class="s-club modal" style="background-color: #f5550e;" > <h1>Stud Club</h1> <img src="/media/12.png" alt=""> </div>
 					</div>
 				</div>
 				{% endfor %}
 
 			</div>
 		</div>
-	</div>
+	
 
 
 	<div data-hcolor="#ff6600" class="section clip_none bg_text show_btn no_image section301 animate"
-		style="background-color:#ffffff;background-image:url(/img/1920x0/image_10047.jpg);padding-top:90px;padding-bottom:70px;"
+		style="background-color:#fcf5ed;background-image:url(/img/1920x0/image_10047.jpg);padding-top:90px;padding-bottom:70px;"
 		data-id="4722812" id="b_4722812"><a name="anchor7"></a>
-		<div class="section_inner width1170">
+		<!-- <div class="section_inner width1170">
 			<div class="title"><span style="color:#2c2c2c; font-size:50px">{% trans "Новости в нашем блоге" %}</span></div>
 			<div class="sub_title">
 				<p><span style="color:#000000"><span style="font-size:22px"></span></span><span
@@ -112,9 +230,11 @@
 			{% endfor %}
 
 
-		</div>
+		</div> -->
 
-		<div class="clip_none section bg_text section250 mode_3"
+		<!-- Объявления -->
+
+		<!-- <div class="clip_none section bg_text section250 mode_3"
 			style="background-color:#f1f1f1;margin-top:80px;padding-bottom:80px;" data-id="4754183" id="b_4754183"><a
 				name="a_4754183"></a>
 
@@ -144,12 +264,12 @@
 			<div class="adt_more">
 				<a style="text-decoration: none; color: #2c2c2c; " href="{% url 'adt' %}">{% trans 'Все' %}</a>
 			</div>
-		</div>
+		</div> -->
 
 
 
 		<div class="section section1152 clip_none animate"
-			style="background-color:#fcf5ed;margin-top:90px;padding-bottom:80px;" data-id="4722808" id="b_4722808"><a
+			style="background-color:#fcf5ed;margin-top:-40px;padding-bottom:80px;" data-id="4722808" id="b_4722808"><a
 				name="anchor4"></a>
 			<div class="section_inner">
 				<div class="title" style="color: #2c2c2c;">{% trans 'Ресурсы библиотеки' %}</div>
@@ -269,7 +389,7 @@
 				<table class="good_box">
 
 					<h2 class="good_title"><a style="color: #2c2c2c;"
-							href="https://journal.oshsu.kg/index.php/index/index">{% trans 'Республиканские журналы' %}</a></h2>
+							href="https://journal.oshsu.kg/index.php/index/index">{% trans 'Журналы' %}</a></h2>
 
 					<div class="good_inner">
 						<div class="good_item">
@@ -314,7 +434,7 @@
 				<table class="good_box">
 
 					<h2 class="good_title"><a style="color: #2c2c2c;"
-							href="https://journal.oshsu.kg/index.php/index/index">{% trans 'Республиканские газеты' %}</a></h2>
+							href="https://journal.oshsu.kg/index.php/index/index">{% trans 'Газеты' %}</a></h2>
 
 					<div class="good_inner">
 						<div class="good_item">
@@ -553,11 +673,11 @@
 
 						{% video item.url '650x240' %}
 
-						<!-- <iframe width="100%" height="100%"
+						<iframe width="100%" height="100%"
 							src="https://www.youtube.com/embed/t5QTaJWomlU?si=BG4aFw-avIi7hVss"
 							title="YouTube video player" frameborder="0"
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-							allowfullscreen></iframe> -->
+							allowfullscreen></iframe>
 					</div>
 						{% endfor %}
 				</div>
@@ -686,6 +806,58 @@
 		</div>
 
 	</div>
+
+
+
+
+  
+  <div class="g" style="position:fixed;" > 
+	<h2 class="greeting">Вы успешно зарегистрировались <br> Здравствуйте пользователь 	<img src="/media/img/check.png" alt="" width="50px" height="50px"></h2>
+
+ </div>
+
+
+
+	 <div style="border-radius: 100px;position: fixed;  right:20px; bottom:30px;" > 
+		<a href="https://www.instagram.com/studclub.oshsu?igsh=MXI0dDFlbWY1Z3NtZQ==" target="_blank">
+			<img src="/media/img/studclub.jpeg" alt="" width="90px" height="90px" style="border-radius: 110px;">
+		  </a>
+	 </div>
+	 
+
+
+
+
+	</div>
+	</div>
+ </div>
+ 
+ <div class="pravila">
+	<div class="scroll-text">
+		<h1><strong> правило №1 </strong> Войдя в библиотеку, поздоровайся, а получив книгу, обязательно скажи СПАСИБО!</h1>
+		<h1><strong> правило №2 </strong>  НЕ приходи в библиотеку с сумками и пакетами, напитками и едой</h1>
+		<!-- <h1>тут будет правило библиотеки №3</h1>
+		<h1>тут будет правило библиотеки №4</h1>
+		<h1>тут будет правило библиотеки №5</h1>
+		<h1>тут будет правило библиотеки №6</h1>
+		<h1>тут будет правило библиотеки №7</h1>
+		<h1>тут будет правило библиотеки №8</h1>
+		<h1>тут будет правило библиотеки №9</h1> -->
+	</div>
+</div>
+
+
+<style>
+@keyframes scrollText {
+0% {
+  transform: translateX(10%);
+}
+100% {
+  transform: translateX(-100%);
+}
+}
+</style>
+
 
 
 </body>

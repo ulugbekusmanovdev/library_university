@@ -1,0 +1,90 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
+
+<script src="/static/pdf-js/build/pdf.mjs" type="module"></script>
+<script src="/static/pdf-js/web/viewer.mjs" type="module"></script>
+<link rel="stylesheet" href="/static/pdf-js/web/viewer.css">
+</head>
+<style>
+
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      background-image: url('/media/fffon.jpeg');
+      justify-content: center;
+      align-items: center;
+      background-color: var(--main-bg);
+      font-family: var(--paragraph-font);
+      min-height: 100vh;
+    }
+
+
+
+
+</style>
+</head>
+<body>
+
+    <div class="outer-container">
+    
+      <div class="inner-container">
+        <div class="bib-polka"><img src="/media/img/книжный полка.png" alt=""></div>
+        <h1 >Календарь знаменательных дат </h1>
+        <h5> Дорогие читатели!</h5>
+        <p>
+          Вашему вниманию представлены новинки книг, поступившие в нашу Центральную районную библиотеку.<br><br>
+          Информационный Бюллетень новых поступлений содержит перечень литературы, поступившей в библиотеки Центральной районной библиотеки Учалинского района РБ, отраженной в справочно-поисковом аппарате.<br><br>
+          Материал в Бюллетене расположен по отраслям знаний (УДК), внутри каждого раздела по алфавиту авторов и названий. В каждом библиографическом описании книги указаны полочный шифр хранения, количество поступивших экземпляров в структурные подразделения библиотеки.
+        </p>
+
+
+
+
+
+
+      </div>
+      
+
+      <div class="container-wrapper">
+        
+        <div class="box" onclick="openPDF('/media/pdf/ардегер (1).pdf')">
+            <h2>Календарь знаменательных  дат за 2025 год</h2>
+          </div>
+      
+      
+        <div class="box" onclick="openPDF('/media/pdf/ардегер (1).pdf')">
+            <h2>Календарь знаменательных дат за 2024 год</h2>
+          </div>
+      
+      
+
+
+    </div>
+  </div>
+
+
+  <script>
+    function openPDF(url) {
+      window.open(url, '_blank');
+    }
+  </script>
+      
+
+
+</body>
+
+{% include 'footer.html' %}
+
+{% endblock content %}
+
+</html>

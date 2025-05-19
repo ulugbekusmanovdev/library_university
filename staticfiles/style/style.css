@@ -505,3 +505,16 @@
     width: 100% !important;
   }
 }
+
+
+
+
+.scroll-text h1 {
+  display: inline;
+  margin-right: 150px;
+  color: #be1b1b;
+  font-family: 'Poppins', 'Arial', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}

@@ -137,7 +137,29 @@ def magazine(request):
 def gazeta(request):
     return render(request, 'gazeta.html')
 
-
 def profs(request):
     return render(request, 'profsoyz.html')
+
+def kfond(request):
+    return render(request, 'kfond.html')
+
+def bibliograf(request):
+    return render(request, 'bibliograf.html')
+
+def calendar(request):
+    return render(request, 'calendar.html')
+
+def bibizdanie(request):
+    return render(request, 'bibizdanie.html')
+
+def question(request):
+    return render(request, 'question.html')
+
+def news1(request):
+    return render(request, 'news1.html')
+
+def strukture(request):
+    return render(request, 'strukture.html')
+
+
 
