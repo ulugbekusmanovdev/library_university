@@ -2020,7 +2020,7 @@ button:hover {
       display: flex;
 	  margin-top: 90px;
 	  width: 100%;
-	  height: 720px;
+	  height: 820px;
 	  background-color: #ffffff;
     }
 
@@ -2081,7 +2081,7 @@ button:hover {
       margin-bottom: 15px;
     }
     .news-item {
-   
+ 
       padding: 20px;
       border-radius: 10px;
       margin-bottom: 15px;
@@ -2108,13 +2108,73 @@ button:hover {
 
    
 .main-news img {
-	width: 550px;
-  height: 330px;
+  
+	width: 900px;
+  height: 460px;
   object-fit: contain;
   object-fit: cover;
   border-radius: 1px;
   cursor: pointer;
   transition: 0.3s;
+}
+
+@media (max-width: 1621px) {
+  .main-news img  {
+    width: 750px;
+    height: 460px;
+
+  } 
+}
+@media (max-width: 1515px) {
+  .main-news img  {
+    width: 710px;
+
+  } 
+}
+@media (max-width: 1480px) {
+  .main-news img  {
+    width: 670px;
+
+  } 
+}
+@media (max-width: 1410px) {
+  .main-news img  {
+    width: 630px;
+  } 
+}
+@media (max-width: 1345px) {
+  .main-news img  {
+    width: 600px;
+  } 
+}
+@media (max-width: 1288px) {
+  .main-news img  {
+    width: 570px;
+  } 
+}
+@media (max-width: 1200px) {
+  .main-news img  {
+    width: 530px;
+      height: 430px;
+  } 
+}
+@media (max-width: 1130px) {
+  .main-news img  {
+    width: 500px;
+      height: 360px;
+  } 
+}
+@media (max-width: 1065px) {
+  .main-news img  {
+    width: 450px;
+      height: 300px;
+  } 
+}
+@media (max-width: 1000px) {
+  .main-news img  {
+    width: 400px;
+      height: 240px;
+  } 
 }
 
 .news-item img {
@@ -2124,6 +2184,7 @@ button:hover {
   border-radius: 1px;
   cursor: pointer;
   transition: 0.3s;
+  display: none; background-color: #852600;
 
 }
 
@@ -2168,6 +2229,7 @@ button:hover {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+
 }
 
 
@@ -2711,6 +2773,7 @@ nav {
 }
 
     .nav-left-navbar {
+      left: 20px;
       display: flex;
       align-items: center;
       gap: 25px;
@@ -2739,21 +2802,66 @@ nav {
       font-size: 16px; /* базовый размер */
     }
 
-    @media (max-width: 1152px) {
+
+        @media (max-width: 1622px) {
       .nav-link-navbar {
+        margin-left: 24px;
+        font-size: 20px;
+      }
+    }
+        @media (max-width: 1555px) {
+      .nav-link-navbar {
+        margin-left: 22px;
+        font-size: 18px;
+      }
+    }
+    
+    @media (max-width: 1460px) {
+  .nav-link-navbar {
+    margin-left: 8px;
+    font-size: 18px;
+  }
+}
+    @media (max-width: 1360px) {
+      .nav-link-navbar {
+        margin-left: 6px;
+        font-size: 16px;
+        
+      }
+    }
+    @media (max-width: 1285px) {
+      .nav-link-navbar {
+        margin-left: -1px;
+        font-size: 15px;
+        
+      }
+    }
+ 
+    @media (max-width: 1241px) {
+      .nav-link-navbar {
+         
+        margin-left: 4px;
         padding: 6px 10px;
-        font-size: 14px;
+        font-size: 15px;
         gap: 6px;
       }
     }
     
-    @media (max-width: 1127px) {
+    @media (max-width: 1135px) {
       .nav-link-navbar {
-        padding: 6px 8px;
-        font-size: 12px;
-        gap: 6px;
+        margin-left: -5px;
+        font-size: 14px;
       }
     }
+    
+    @media (max-width: 1060px) {
+      .nav-link-navbar {
+        margin-left: -5px;
+        font-size: 12px;
+      }
+    }
+    
+
 
     .nav-link-navbar:hover {
       background-color: #a7372f;
@@ -2832,7 +2940,7 @@ nav {
     padding: 10px;
     position: fixed; /* чтобы меню фиксировалось слева */
     top: 0;
-    left: 0;
+    left: 90px;
     height: 100vh;
     background: #ffffff;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);

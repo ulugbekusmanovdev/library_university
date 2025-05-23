@@ -105,9 +105,20 @@
                           <img src="{{ new.image.url }}" alt="{{ new.title }}">
                         </div>
                         <div class="news-content">
-                        <p class="news-date">{{ new.create_date|date:"d-m-Y" }}</p>  
+                        <!-- <p class="news-date">{{ new.create_date|date:"d-m-Y" }}</p>   -->
+                        <div style="display: flex; align-items: center; gap: 8px; font-family: Arial, sans-serif; color: #555; font-size: 14px;">
+  <span>20 мая 2025</span>
+  <svg xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px; fill: #888;" viewBox="0 0 24 24">
+    <path d="M12 5c-7.633 0-12 7-12 7s4.367 7 12 7 12-7 12-7-4.367-7-12-7zm0 12c-2.757 0-5-2.243-5-5s2.243-5 
+    5-5 5 2.243 5 5-2.243 5-5 5zm0-8c-1.657 0-3 1.343-3 
+    3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z"/>
+  </svg>
+  <span>1 234</span>
+</div>
+
                           <h3>{{ new.title }}</h3>
                           <!-- <p class="news-views">{{ new.views }} просмотров</p> -->
+
                         </div>
                       </div>
                     {% endfor %}
@@ -119,7 +130,17 @@
                           <img src="{{ new.image.url }}" alt="{{ new.title }}">
                         </div>
                         <div class="news-content">
-                        <p class="news-date">{{ new.create_date|date:"d-m-Y" }}</p>  
+                        <!-- <p class="news-date">{{ new.create_date|date:"d-m-Y" }}</p>   -->
+                         <div style="display: flex; align-items: center; gap: 8px; font-family: Arial, sans-serif; color: #555; font-size: 14px;">
+  <span>20 мая 2025</span>
+  <svg xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px; fill: #888;" viewBox="0 0 24 24">
+    <path d="M12 5c-7.633 0-12 7-12 7s4.367 7 12 7 12-7 12-7-4.367-7-12-7zm0 12c-2.757 0-5-2.243-5-5s2.243-5 
+    5-5 5 2.243 5 5-2.243 5-5 5zm0-8c-1.657 0-3 1.343-3 
+    3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z"/>
+  </svg>
+  <span>1 234</span>
+</div>
+
                           <h3>{{ new.title }}</h3>
                           <!-- <p class="news-views">{{ new.views }} просмотров</p> -->
                         </div>

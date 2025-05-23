@@ -51,30 +51,55 @@
 	<div class="news-column">
 	  <div class="section-header">
 		<div class="section-title-new"> <a href="#"> Новости в нашем блоге</a> </div>
-		<a href="{% url 'news' %}" >все новости</a> 
+		<a href="{% url 'news' %}" style="margin-right: 40px;  font-weight: 400;  color: #a22929;"  >все новости</a> 
 		
 	  </div>
   
 	  <div class="main-news">
 		<a href="{% url 'news1' %}" > 
 		<h2>Открытие нового здания</h2> 	</a>
-		<p class="date">11 мая 2025</p>
+		<div style="display: flex; align-items: center; gap: 8px; font-family: Arial, sans-serif; color: #555; font-size: 14px;">
+		<span>20 мая 2025</span>
+		<svg xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px; fill: #888;" viewBox="0 0 24 24">
+			<path d="M12 5c-7.633 0-12 7-12 7s4.367 7 12 7 12-7 12-7-4.367-7-12-7zm0 12c-2.757 0-5-2.243-5-5s2.243-5 
+			5-5 5 2.243 5 5-2.243 5-5 5zm0-8c-1.657 0-3 1.343-3 
+			3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z"/>
+		</svg>
+		<span>1 234</span>
+		</div>
 		<img src="/media/20240205_100227.jpg" alt="Главная новость">
-	
 	  </div>
   
 	  <div class="news-item-df" style=" display: flex; margin-left:15px; ">
-		  <div class="news-item">
-			  <h5>Выставка проектов</h5>
-			  <p class="date">10 мая 2025</p>
-			  <img src="/media/photo_2023-11-23_10-04-29.jpg" alt="Новость 1">
-			</div>
-		
-			<div class="news-item">
-			  <h5>Обновление сайта</h5>
-			  <p class="date">9 мая 2025</p>
-			  <img src="/media/photo_2023-11-23_10-04-29.jpg" alt="Новость 1">
-			</div>
+		<div class="news-item">
+			<h5>Выставка проектов</h5>
+				<div style="display: flex; align-items: center; gap: 8px; font-family: Arial, sans-serif; color: #555; font-size: 14px;">
+				<span>20 мая 2025</span>
+				<svg xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px; fill: #888;" viewBox="0 0 24 24">
+					<path d="M12 5c-7.633 0-12 7-12 7s4.367 7 12 7 12-7 12-7-4.367-7-12-7zm0 12c-2.757 0-5-2.243-5-5s2.243-5 
+					5-5 5 2.243 5 5-2.243 5-5 5zm0-8c-1.657 0-3 1.343-3 
+					3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z"/>
+				</svg>
+				<span>1 234</span>
+				</div>
+
+				<img src="/media/photo_2023-11-23_10-04-29.jpg" alt="Новость 1">
+		</div>
+					
+		<div class="news-item">
+			<h5>Обновление сайта</h5>
+				<div style="display: flex; align-items: center; gap: 8px; font-family: Arial, sans-serif; color: #555; font-size: 14px;">
+				<span>20 мая 2025</span>
+				<svg xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px; fill: #888;" viewBox="0 0 24 24">
+					<path d="M12 5c-7.633 0-12 7-12 7s4.367 7 12 7 12-7 12-7-4.367-7-12-7zm0 12c-2.757 0-5-2.243-5-5s2.243-5 
+					5-5 5 2.243 5 5-2.243 5-5 5zm0-8c-1.657 0-3 1.343-3 
+					3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z"/>
+				</svg>
+				<span>1 234</span>
+				</div>
+
+			<img src="/media/photo_2023-11-23_10-04-29.jpg" alt="Новость 1">
+		</div>
 	  </div>
   
 	 
@@ -91,17 +116,14 @@
 
   
 	<div class="announcement-group">
+		{% for a in adt %}
 	  <div class="announcement">
-		<h4 class="h-announcement-column">Сдача книг</h4>
-		<p class="date">10 мая 2025</p>
-		<p>Педагогикалык инновациялар: сабактарда интерактивдүү окутуу ыкмалары... Просим всех студентов сдать книги до 25 мая, чтобы избежать штрафов.</p>
+		<h4 class="h-announcement-column">{{a.title}}</h4>
+		<p class="date">{{a.create_date}}</p>
+		<p>{{a.text}}</p>
 	  </div>
-  
-	  <div class="announcement">
-		<h4 class="h-announcement-column">Сдача книг</h4>
-		<p class="date">10 мая 2025</p>
-		<p>Педагогикалык инновациялар: сабактарда интерактивдүү окутуу ыкмалары... Просим всех студентов сдать книги до 25 мая, чтобы избежать штрафов.</p>
-	  </div>
+	  	{% endfor %}
+	  
 
 	  <div class="announcement-footer">
 			<a href="{% url 'adt' %}" id="a-announcement-footer">Смотрите все объявления </a> 
@@ -762,44 +784,9 @@
 				</a>
 				<div class="catalog_items short_text count3 s120 ">
 
-					{% for s in structure %}
-					<div class="arr1">
-						<div class="col_4">
-							<div data-link="" class="image1 s120 radius shadow">
-								<img style="height: 100% !important;" data-lazy="1" src="{{s.d_img.url}}"
-									loading="lazy">
-							</div>
-							<div class="title1"><u><span style="font-size:20px">Директор</span></u></div>
-							<div class="txt1"><span style="font-size: 17px;">{{s.director}}</span></div>
-						</div>
-					</div>
-					{% endfor %}
-					{% for s in structure %}
-					<div class="arr1">
-						<div class="col_4">
-							<div data-link="" class="image1 s120 radius shadow">
-								<img style="height: 100% !important;" alt="" data-lazy="1" src="{{s.ibo_img.url}}"
-									loading="lazy">
-							</div>
-							<div class="title1"><u><span style="font-size:20px">ИБО</span></u></div>
-							<div class="txt1"><span style="font-size:17px">{{s.ibo}}</span><br></div>
-						</div>
-					</div>
-					{% endfor %}
-					{% for s in structure %}
-					<div class="arr1">
-						<div class="col_4">
-							<div data-link="" class="image1 s120 radius shadow">
-								<img style="height: 100% !important;" alt="" data-lazy="1" src="{{s.e_res_img.url}}"
-									loading="lazy">
-							</div>
-							<div class="title1"><u><span style="font-size:20px">Отдел электронных ресурсов</span></u>
-							</div>
-							<div class="txt1"><span style="font-size: 17px;">{{s.e_res}}</span></div>
-						</div>
-
-					</div>
-					{% endfor %}
+					
+					
+					
 
 				</div>
 			</div>

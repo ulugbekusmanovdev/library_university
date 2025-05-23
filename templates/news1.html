@@ -3,338 +3,211 @@
 {% load i18n %}
 
 {% block content %}
+<body class="editor_false lang_ru not_ie">
+  <div id="wrapper" class="" style="padding-top: 88px;">
+    {% include 'navbar.html' %}
 
-<body class="editor_false  lang_ru     not_ie">
+    <div data-hcolor="#ff6600" class="section clip_none bg_text show_btn no_image section301 animate"
+         style="background-image:url(/media/fon.jpg);padding-top:90px;padding-bottom:70px;"
+         data-id="4722812" id="b_4722812"><a name="anchor7"></a>
+      <div class="section_inner width1170">
 
+        <style>
+          .news1-container {
+            max-width: 900px;
+            padding-top: 20px;
+          }
 
+          .news1-title {
+            font-size: 36px;
+            font-weight: 800;
+            margin-top: 20px;
+            margin-bottom: 20px;
+          }
 
-    <div id="wrapper" class="" style="padding-top: 88px;">
+          .news1-main-image {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            border-radius: 1px;
+            cursor: pointer;
+            transition: transform 0.3s;
+          }
 
-        {% include 'navbar.html' %}
+          .news1-text {
+            margin-top: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+          }
 
-        <div data-hcolor="#ff6600" class="section clip_none bg_text show_btn no_image section301 animate"
-            style="background-image:url(/media/fon.jpg);padding-top:90px;padding-bottom:70px;"
-            data-id="4722812" id="b_4722812"><a name="anchor7"></a>
-            <div class="section_inner width1170">
-              
-               
+          .news1-gallery {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+          }
 
-                    <!-- <style>
-                      * { box-sizing: border-box; }
-                      body { font-family: sans-serif; margin: 20px; }
-                  
-                      .news-grid {
-                        display: flex;
-                        flex-wrap: wrap;
-                        padding: 60px;
-                      }
-                  
-                      .news1-a {
-                        width: 700px;
-                        margin-right: 10px;
-                      }
-                  
-                      .news1-a img {
-                        width: 100%;
-                        height: 400px;
-                        object-fit: cover;
-                        border-radius: 6px;
-                        cursor: pointer;
-                      }
-                  
-                      .news-text {
-                        margin-top: 10px;
-                        max-width: 100%;
-                        word-wrap: break-word;
-                      }
-                  
-                      .topic {
-                        font-weight: bold;
-                        font-size: 18px;
-                        margin-bottom: 5px;
-                      }
-                  
-                      .desc {
-                        font-size: 14px;
-                        color: #444;
-                        line-height: 1.4;
-                      }
-                  
-                      .news1-b {
-                        
-                        display: flex;
-                        flex-direction: column; /* вертикальное расположение */
-                        gap: 10px;
-                        width: calc(100% - 710px);
-                        max-width: 400px;
-                       
-                        }
+          .news1-gallery img {
+            margin-top: 20px;
+            width: calc(25% - 10px);
+            max-width: 1200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 1px;
+            cursor: pointer;
+            transition: transform 0.3s;
+          }
 
-                        .news1-b img {
-                       margin-left: 50px;
-                        width: 70%; /* одна фотка в строку */
-                        height: 180px; /* можно увеличить размер */
-                        object-fit: cover;
-                        border-radius: 6px;
-                        cursor: pointer;
-                        transition: 0.3s;
-                        }
+          .news1-gallery img:hover,
+          .news1-main-image:hover {
+            transform: scale(1.03);
+          }
 
-                  
-                      .news1-b img:hover {
-                        transform: scale(1.03);
-                        box-shadow: 0 0 10px rgba(0,0,0,0.2);
-                      }
-                  
-                      .modal {
-                        display: none;
-                        position: fixed;
-                        z-index: 999;
-                        left: 0; top: 0;
-                        width: 100%; height: 100%;
-                        background: rgba(0,0,0,0.9);
-                        justify-content: center;
-                        align-items: center;
-                      }
-                  
-                      .modal img {
-                        max-width: 90%;
-                        max-height: 90%;
-                        border-radius: 8px;
-                      }
-                  
-                      @media (max-width: 1100px) {
-                        .news-grid {
-                          flex-direction: column;
-                        }
-                  
-                        .news1-a, .news1-b {
-                          width: 100%;
-                          max-width: 100%;
-                          margin-right: 0;
-                        }
-                  
-                        .news1-b {
-                          justify-content: center;
-                        }
-                  
-                        .news1-b img {
-                          width: 45%;
-                          height: 120px;
-                        }
-                      }
-                    </style>
-                  </head>
-                  <body>
-                  
-                  <div class="news-grid">
-                    <div class="news1-a">
-                      <img src="/media/23-филология.jpg" alt="Фото" onclick="openModal(this.src)">
-                      <div class="news-text">
-                        <div class="topic">Тема</div>
-                        <div class="desc">
-                          Это пример текста, который автоматически переносится и не выходит за границы блока. Он будет адаптивно уменьшаться на маленьких экранах.
-                          Это пример текста, который автоматически переносится и не выходит за границы блока. Он будет адаптивно уменьшаться на маленьких экранах.Это пример текста, который автоматически переносится и не выходит за границы блока. Он будет адаптивно уменьшаться на маленьких экранах.
-                        </div>
-                      </div>
-                    </div>
-                  
-                    <div class="news1-b">
-                      <img src="/media/12.png" onclick="openModal(this.src)">
-                      <img src="/media/12.png" onclick="openModal(this.src)">
-                      <img src="/media/12.png" onclick="openModal(this.src)">
-                      <img src="/media/12.png" onclick="openModal(this.src)">
-                      <img src="/media/12.png" onclick="openModal(this.src)">
-                      <img src="/media/12.png" onclick="openModal(this.src)">
-                    </div>
-                  </div>
-                  
-                  <div class="modal" id="imgModal" onclick="this.style.display='none'">
-                    <img id="modalImg" src="">
-                  </div>
-                  
-                  <script>
-                    function openModal(src) {
-                      document.getElementById("modalImg").src = src;
-                      document.getElementById("imgModal").style.display = "flex";
-                    }
-                  
-                    document.addEventListener("keydown", function(e) {
-                      if (e.key === "Escape") {
-                        document.getElementById("imgModal").style.display = "none";
-                      }
-                    });
-                  </script>
-                  
-                  </body>
-                  </html> -->
+          .news1-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+          }
 
+          .news1-modal img {
+            max-width: 95%;
+            max-height: 95%;
+          }
 
+          .news1-modal .news1-btn {
+              background-color: #333;
+              margin: 0 20px 0 20px;
+              width: 40px;
+          }
 
+          .news1-modal .news1-btn:hover {
+            
+            color: #000000;
+          }
 
+          .news1-modal .news1-prev {
+            left: 30px;
+          }
 
+          .news1-modal .news1-next {
+            right: 30px;
+          }
 
-  <style>
-   
+          @media (max-width: 768px) {
+            .news1-gallery img {
+              width: calc(50% - 10px);
+            }
+          }
 
-    .news1-container {
-    
-      max-width: 900px;
-      padding-top: 20px;
-    }
+          @media (max-width: 480px) {
+            .news1-title {
+              font-size: 22px;
+            }
 
-    .news1-title {
-      font-size: 118px;
-      font-weight: 800;
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
+            .news1-text {
+              font-size: 14px;
+              width: 100px;
+            }
 
-    .news1-main-image {
-        margin-top: 20px;
-      width: 100%;
-      max-width: 700px;
-      height: auto;
-      border-radius: 1px;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
+            .news1-gallery img {
+              width: 100%;
+            }
 
-    .news1-text {
-      margin-top: 20px;
-      font-size: 16px;
-      line-height: 1.6;
-      color: #333;
-    }
+            .news1-modal .news1-btn {
+              font-size: 32px;
+            }
 
-    .news1-gallery {
-      margin-top: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+            .news1-modal .news1-prev {
+              left: 10px;
+            }
 
-    .news1-gallery img {
-        margin-top: 20px;
-      width: calc(25% - 10px);
-      max-width: 500px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 1px;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
+            .news1-modal .news1-next {
+              right: 10px;
+            }
+          }
+        </style>
 
-    .news1-gallery img:hover,
-    .news1-main-image:hover {
-      transform: scale(1.03);
-    }
+        <div class="news1-container">
+          <h1 class="news1-title">Деятельность “Talking Club”, направленная на развитие свободного общения на английском языке</h1>
 
-    /* Модальное окно */
-    .news1-modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
+          <div style="display: flex; align-items: center; gap: 8px; font-family: Arial, sans-serif; color: #555; font-size: 14px; margin-top: 10px;">
+            <span>20 мая 2025</span>
+            <svg xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px; fill: #888;" viewBox="0 0 24 24">
+              <path d="M12 5c-7.633 0-12 7-12 7s4.367 7 12 7 12-7 12-7-4.367-7-12-7zm0 12c-2.757 0-5-2.243-5-5s2.243-5 
+              5-5 5 2.243 5 5-2.243 5-5 5zm0-8c-1.657 0-3 1.343-3 
+              3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z"/>
+            </svg>
+            <span>1 234</span>
+          </div>
 
-    .news1-modal img {
-      max-width: 90%;
-      max-height: 90%;
-   
-    }
+          <img class="news1-main-image" src="/media/newspaper-943004_1280.jpg" alt="Основное фото" onclick="openModal(this.src)" style="margin-top: -2px;">
 
-    @media (max-width: 768px) {
-      .news1-gallery img {
-        width: calc(50% - 10px);
-      }
-    }
+          <p class="news1-text">
+            Это адаптивный текст, расположенный под большой фотографией. Он не выходит за границы контейнера и красиво смотрится на любых устройствах.
+            Это адаптивный текст, расположенный под большой фотографией. Он не выходит за границы контейнера и красиво смотрится на любых устройствах.
+          </p>
 
-    @media (max-width: 480px) {
-      .news1-title {
-        font-size: 22px;
-      }
-
-      .news1-text {
-        font-size: 14px;
-      }
-
-      .news1-gallery img {
-        width: 100%;
-      }
-    }
-  </style>
-</head>
-<body>
-
-<div class="news1-container">
-  <h1 class="news1-title">Деятельность “Talking Club”, направленная на развитие свободного общения на английском языке</h1>
-
-  <img class="news1-main-image" src="/media/newspaper-943004_1280.jpg" alt="Основное фото" onclick="openModal(this.src)">
-  <p class="news-date">10.05.25</p>  
-
-  <p class="news1-text">
-    Это адаптивный текст, расположенный под большой фотографией. Он не выходит за границы контейнера и красиво смотрится на любых устройствах.
-    Это адаптивный текст, расположенный под большой фотографией. Он не выходит за границы контейнера и красиво смотрится на любых устройствах.
-    Это адаптивный текст, расположенный под большой фотографией. Он не выходит за границы контейнера и красиво смотрится на любых устройствах.
-    Это адаптивный текст, расположенный под большой фотографией. Он не выходит за границы контейнера и красиво смотрится на любых устройствах.
-    Это адаптивный текст, расположенный под большой фотографией. Он не выходит за границы контейнера и красиво смотрится на любых устройствах.
-    Это адаптивный текст, расположенный под большой фотографией. Он не выходит за границы контейнера и красиво смотрится на любых устройствах.
-  </p>
-
-  <div class="news1-gallery">
-    <img src="/media/WhatsApp_Image_2025-03-14_at_13.39.03.jpeg" alt="Фото 1" onclick="openModal(this.src)">
-    <img src="/media/WhatsApp_Image_2025-03-14_at_13.39.03.jpeg" alt="Фото 1" onclick="openModal(this.src)">
-    <img src="/media/WhatsApp_Image_2025-03-14_at_13.39.03.jpeg" alt="Фото 1" onclick="openModal(this.src)">
-    <img src="/media/WhatsApp_Image_2025-03-14_at_13.39.03.jpeg" alt="Фото 1" onclick="openModal(this.src)">
-  
-   
-  </div>
-</div>
-
-<!-- Модалка -->
-<div class="news1-modal" id="news1Modal" onclick="closeModal()">
-  <img id="news1ModalImg" src="">
-</div>
-
-<script>
-  function openModal(src) {
-    document.getElementById('news1ModalImg').src = src;
-    document.getElementById('news1Modal').style.display = 'flex';
-  }
-
-  function closeModal() {
-    document.getElementById('news1Modal').style.display = 'none';
-  }
-
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeModal();
-  });
-</script>
-
-</body>
-</html>
-
-                  
-
-                  
-                
-
-
-            </div>
-
-
+          <div class="news1-gallery">
+            <img src="/media/WhatsApp_Image_2025-03-14_at_13.39.03.jpeg" alt="Фото 1" onclick="openModal(this.src)">
+            <img src="/media/WhatsApp_Image_2025-03-14_at_13.39.03.jpeg" alt="Фото 2" onclick="openModal(this.src)">
+            <img src="/media/WhatsApp_Image_2025-03-14_at_13.39.03.jpeg" alt="Фото 3" onclick="openModal(this.src)">
+            <img src="/media/WhatsApp_Image_2025-03-14_at_13.39.03.jpeg" alt="Фото 4" onclick="openModal(this.src)">
+          </div>
         </div>
 
+        <!-- Модальное окно с кнопками по бокам -->
+        <div class="news1-modal" id="news1Modal">
+          <button class="news1-btn news1-prev" onclick="changeImage(-1)">&#10094;</button>
+          <img id="news1ModalImg" src="">
+          <button class="news1-btn news1-next" onclick="changeImage(1)">&#10095;</button>
+        </div>
 
+        <script>
+          const galleryImages = [
+            document.querySelector('.news1-main-image'),
+            ...document.querySelectorAll('.news1-gallery img')
+          ];
+          let currentImageIndex = 0;
+
+          function openModal(src) {
+            currentImageIndex = galleryImages.findIndex(img => img.src === src);
+            document.getElementById('news1ModalImg').src = src;
+            document.getElementById('news1Modal').style.display = 'flex';
+          }
+
+          function closeModal() {
+            document.getElementById('news1Modal').style.display = 'none';
+          }
+
+          function changeImage(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) currentImageIndex = galleryImages.length - 1;
+            if (currentImageIndex >= galleryImages.length) currentImageIndex = 0;
+            document.getElementById('news1ModalImg').src = galleryImages[currentImageIndex].src;
+          }
+
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+            if (e.key === 'ArrowLeft') changeImage(-1);
+            if (e.key === 'ArrowRight') changeImage(1);
+          });
+
+          document.getElementById('news1Modal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+          });
+        </script>
+      </div>
     </div>
-
-
+  </div>
 </body>
 {% include 'footer.html' %}
-
 {% endblock content %}

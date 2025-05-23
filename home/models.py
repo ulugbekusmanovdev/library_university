@@ -9,6 +9,7 @@ class News(models.Model):
     title = models.CharField(max_length=200, verbose_name='Заголовок')
     text = models.TextField(verbose_name='Текст')
     image = models.ImageField(null=True, blank=True, verbose_name='Картинки')
+    social_website = models.URLField(max_length=200, blank=True, null=True, verbose_name='Ссылка')
     create_date = models.DateTimeField(auto_now=True, verbose_name='Дата')
     news_view = models.IntegerField(default=0)
 
@@ -19,7 +20,13 @@ class News(models.Model):
 
     def __str__(self):
         return f'{self.title} - {self.create_date}'
+    
+class NewsImage(models.Model):
+    news =  models.ForeignKey(News, on_delete=models.CASCADE, related_name='images')
+    image = models.ImageField(upload_to='img/')
 
+    def __str__(self):
+        return self.news
 
 class Ads(models.Model):
     title = models.CharField(max_length=200, blank=True, null=True, verbose_name='Заголовок')
@@ -32,7 +39,7 @@ class Ads(models.Model):
         verbose_name_plural = 'Обявление'
 
     def __str__(self):
-        return self.title
+        return f'{self.title}'
 
 
 class About(models.Model):
@@ -131,17 +138,6 @@ class PostImage(models.Model):
     image = models.ImageField(upload_to='img/')
 
 
-class Newspaper(models.Model):
-    number = models.IntegerField(null=True, blank=True)
-    title = models.CharField(max_length=200, null=True, blank=True)
-
-    def __str__(self):
-        return str(self.title)
-
-    class Meta:
-        verbose_name = 'Газета'
-        verbose_name_plural = 'Газета'
-        ordering = ('id',)
 
 class Readers(models.Model):
     text = models.TextField()

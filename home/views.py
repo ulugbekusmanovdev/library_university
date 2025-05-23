@@ -63,9 +63,9 @@ def adt(request):
 
 
 def readers(request):
-    newspapers = Newspaper.objects.all()
+    
     readers = Readers.objects.all()
-    context = {'newspapers': newspapers, 'readers': readers}
+    context = { 'readers': readers}
     return render(request, 'readers.html', context) 
 
 
@@ -141,7 +141,10 @@ def profs(request):
     return render(request, 'profsoyz.html')
 
 def kfond(request):
-    return render(request, 'kfond.html')
+    b_catalog = Catalog.objects.filter(id=1)
+    el_catalog = Catalog.objects.filter(id=2)
+    context = {'b_catalog': b_catalog, 'el_catalog': el_catalog}
+    return render(request, 'kfond.html', context)
 
 def bibliograf(request):
     return render(request, 'bibliograf.html')

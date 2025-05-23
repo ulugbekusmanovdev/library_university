@@ -13,7 +13,7 @@
 
   <div id="wrapper" style="padding-top: 88px;">
 
-        <div class="readers">
+        <div class="readers" style="display: flex;">
             <div class="structure_container">
                 <h1 class="structure_title" style="color: #2c2c2c;">Каталог</h1>
                 <div class="readers_content">
@@ -55,8 +55,8 @@
                 </div>
 
                 <div class="readers_content">
-                    <div class="readers_box">
-                        <div style="width: 100%;" id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                    <div class="readers_box" style="">
+                        <div style="width: 100%; "  id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
                                 <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
@@ -86,14 +86,20 @@
                     </div>
 
                     {% for i in el_catalog %}
-                    <div class="readers_text">
+                    <div class="readers_text" >
+                         <br><br><br>
                         <h1 style="color: #2c2c2c; font-size: 26px;">{{i.title}}</h1>
                         <p>{{i.text|linebreaksbr}}</p>
                     </div>
                     {% endfor %}
 
                 </div>
-                <h1 style="font-size: 26px; color: #2c2c2c;" >{% trans 'Систематические каталоги' %}</h1>
+               
+            </div>
+
+
+            <div class="ttest">
+                 <h1 style="font-size: 26px; color: #2c2c2c;" >{% trans 'Систематические каталоги' %}</h1>
 		
 
 
@@ -185,6 +191,7 @@
             }
         </script>
             </div>
+     
         </div>
 
     </div> 
