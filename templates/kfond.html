@@ -11,14 +11,14 @@
 
 
 
-  <div id="wrapper" style="padding-top: 88px;">
+  <div id="wrapper" style="padding-top: 98px;">
 
         <div class="readers" style="display: flex;">
-            <div class="structure_container">
-                <h1 class="structure_title" style="color: #2c2c2c;">Каталог</h1>
-                <div class="readers_content">
+            <div class="structure_container" >
+                <h1 class="structure_title" style="color: #2c2c2c; margin-top: 100px;  margin-left: 60px;">Каталог</h1>
+                <div class="readers_content" style="display: block;">
                     <div class="readers_box">
-                        <div style="width: 100%;" id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
+                        <div style="width: 100%; margin-left: 60px;" id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
                                 <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
@@ -26,13 +26,13 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img class="d-block w-100" style="height: 470px;" src="../static/img/katalog.jpg" alt="First slide">
+                                    <img class="d-block w-100" style="height: 420px;" src="../static/img/katalog.jpg" alt="First slide">
                                 </div>
                                 <div class="carousel-item">
-                                    <img class="d-block w-100" style="height: 470px;" src="../static/img/katalog2.jpg" alt="Second slide">
+                                    <img class="d-block w-100" style="height: 420px;" src="../static/img/katalog2.jpg" alt="Second slide">
                                 </div>
                                 <div class="carousel-item">
-                                    <img class="d-block w-100" style="height: 470px;" src="../static/img/katalog3.jpg" alt="Third slide">
+                                    <img class="d-block w-100" style="height: 420px;" src="../static/img/katalog3.jpg" alt="Third slide">
                                 </div>
                             </div>
                             <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
@@ -46,15 +46,16 @@
                         </div>
                         
                     </div>
+                    
                     {% for i in b_catalog %}
-                    <div class="readers_text">
+                    <div class="readers_text" style="width: 600px;">
                         <h1 style="color: #2c2c2c;font-size: 26px;">{{i.title}}</h1>
                         <p style="text-align: justify;">{{ i.text|linebreaksbr }}</p>
                     </div>
                     {% endfor %}
                 </div>
 
-                <div class="readers_content">
+                <div class="readers_content" style="display: block;">
                     <div class="readers_box" style="">
                         <div style="width: 100%; "  id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
@@ -86,9 +87,9 @@
                     </div>
 
                     {% for i in el_catalog %}
-                    <div class="readers_text" >
+                    <div class="readers_text" style="width: 600px;">
                          <br><br><br>
-                        <h1 style="color: #2c2c2c; font-size: 26px;">{{i.title}}</h1>
+                        <h1 style="color: #2c2c2c; font-size: 26px;;">{{i.title}}</h1>
                         <p>{{i.text|linebreaksbr}}</p>
                     </div>
                     {% endfor %}
@@ -99,14 +100,15 @@
 
 
             <div class="ttest">
-                 <h1 style="font-size: 26px; color: #2c2c2c;" >{% trans 'Систематические каталоги' %}</h1>
+                 
 		
 
 
     
 
-        <div class="catalog-box">
-            <ul class="catalog-link">
+        <div class="catalog-box" style=" position: absolute;right: 120px; top: 145px;">
+            <h1 style="font-size: 26px; color: #2c2c2c;" >{% trans 'Систематические каталоги' %}</h1>
+            <ul class="catalog-link" style="margin-top: 50px;">
                 <li><a target="_blank" href=https://base.oshsu.kg/resurs/document/PDF-20180419151514-kitep_osu.pdf>Текущий библиографический указатель 2014 года II квартал</a></li>
 				<li><a target="_blank" href=https://base.oshsu.kg/resurs/document/PDF-20180419151215-kitep_osu.pdf>Текущий библиографический указатель 2014 года III квартал</a></li>
 				<!-- <li><a target="_blank" href=https://base.oshsu.kg/resurs/document/PDF-20180419143207-kitep_osu.pdf>Текущий библиографический указатель 2014  года IV квартал</a></li>
