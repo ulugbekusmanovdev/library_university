@@ -21,8 +21,9 @@ urlpatterns = [
     path('calendar/', views.calendar, name='calendar'),
     path('bibizdanie/', views.bibizdanie, name='bibizdanie'),
     path('question/', views.question, name='question'),
-    path('news1/', views.news1, name='news1'),
+    path('detail/<int:pk>/', views.news1, name='detail'),
     path('strukture', views.strukture, name='strukture'),
+    path('createNews', views.createNews, name="createNews"),
 
     path('photo_detail/<int:photo_id>/', views.photo_detail, name='photo_detail'),
     path('search/<slug:category_slug>/', views.list_category, name='list-category'),

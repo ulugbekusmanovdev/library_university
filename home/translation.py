@@ -19,7 +19,7 @@ class HistoryTranslationOptions(TranslationOptions):
 
 @register(Structure)
 class StructureTranslationOptions(TranslationOptions):
-    fields = ('director_info', 'ibo_info', 'e_res_info',)
+    fields = ('name', 'info',)
 
 @register(Readers)
 class ReadersTranslationOptions(TranslationOptions):

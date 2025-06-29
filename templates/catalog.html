@@ -55,9 +55,27 @@ padding: 30px;
             <table style="width: 380px;">
               <tr><td>Кыргыз тилиндеги китептер</td><td>{{fond.kyrgyz_num}}</td></tr>
               <tr><td>Орус тилиндеги китептер</td><td>{{fond.russ_num}}</td></tr>
+
+              {% if fond.inter_num %}
+              <tr><td>Дүйнөлүк тилдеги китептер</td><td>{{fond.inter_num}}</td></tr>
+              {% endif %}
+              
+              {% if fond.eng_name %}
               <tr><td>{{fond.eng_name}}</td><td>{{fond.eng_num}}</td></tr>
+              {% endif %}
+
+              {% if fond.ger_name %}
               <tr><td>{{fond.ger_name}}</td><td>{{fond.ger_num}}</td></tr>
+              {% endif %}
+
+              {% if fond.fra_name %}
               <tr><td>{{fond.fra_name}}</td><td>{{fond.fra_num}}</td></tr>
+              {% endif %}
+
+              {% if fond.tur_name %}
+              <tr><td>{{fond.tur_name}}</td><td>{{fond.tur_num}}</td></tr>
+              {% endif %}
+
             </table>
           </div>
         </div>

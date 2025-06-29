@@ -23,10 +23,10 @@ class News(models.Model):
     
 class NewsImage(models.Model):
     news =  models.ForeignKey(News, on_delete=models.CASCADE, related_name='images')
-    image = models.ImageField(upload_to='img/')
+    images = models.ImageField(upload_to='img/')
 
     def __str__(self):
-        return self.news
+        return self.news.title
 
 class Ads(models.Model):
     title = models.CharField(max_length=200, blank=True, null=True, verbose_name='Заголовок')
@@ -65,21 +65,13 @@ class History(models.Model):
 
 
 class Structure(models.Model):
-    director = models.CharField(max_length=200, null=True, blank=True)
-    director_info = models.TextField()
-    d_img = models.ImageField(upload_to='avatars/', null=True, blank=True, default='avatars/default.png',
-                              verbose_name='Картинки')
-    ibo = models.CharField(max_length=200, null=True, blank=True)
-    ibo_info = models.TextField()
-    ibo_img = models.ImageField(upload_to='avatars/', null=True, blank=True, default='avatars/default.png',
+    name = models.CharField(max_length=200, null=True, blank=True)
+    info = models.TextField()
+    img = models.ImageField(upload_to='avatars/', null=True, blank=True, default='avatars/default.png',
                                 verbose_name='Картинки')
-    e_res = models.CharField(max_length=200, blank=True)
-    e_res_info = models.TextField(blank=True)
-    e_res_img = models.ImageField(upload_to='avatars/', blank=True, default='avatars/default.png',
-                                  verbose_name='Картинки')
 
     def __str__(self):
-        return f'{self.director} - {self.ibo}'
+        return str(self.name)
 
 
 class Category(models.Model):
@@ -147,7 +139,7 @@ class Readers(models.Model):
 
     class Meta:
         verbose_name = 'Читатель'
-        verbose_name_plural = 'Читатель'
+        verbose_name_plural = 'Читатель' 
 
 
 class Video(models.Model):
@@ -199,3 +191,25 @@ class BookFond(models.Model):
         verbose_name = 'Книжный фонд'
         verbose_name_plural = 'Книжный фонд'
         ordering = ('id',)
+
+class SistemCatalog(models.Model):
+    title = models.CharField(max_length=200, null=True, blank=True)
+    pdf = models.FileField(upload_to='catalog/pdfs/')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Систематический каталог"
+        verbose_name_plural = "Систематический каталог"
+
+class Director(models.Model):
+    name = models.CharField(max_length=200, null=True, blank=True)
+    bio = models.TextField()
+    img = models.ImageField(upload_to='avatars/', null=True, blank=True, default='avatars/default.png',
+                              verbose_name='Картинки')
+    
+    def __str__(self):
+        return self.name
+    
+    

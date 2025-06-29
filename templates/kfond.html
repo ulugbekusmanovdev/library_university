@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="readers_content" style="display: block;">
-                    <div class="readers_box" style="">
+                    <div class="readers_box">
                         <div style="width: 100%; "  id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
@@ -108,9 +108,15 @@
 
         <div class="catalog-box" style=" position: absolute;right: 120px; top: 145px;">
             <h1 style="font-size: 26px; color: #2c2c2c;" >{% trans 'Систематические каталоги' %}</h1>
-            <ul class="catalog-link" style="margin-top: 50px;">
-                <li><a target="_blank" href=https://base.oshsu.kg/resurs/document/PDF-20180419151514-kitep_osu.pdf>Текущий библиографический указатель 2014 года II квартал</a></li>
-				<li><a target="_blank" href=https://base.oshsu.kg/resurs/document/PDF-20180419151215-kitep_osu.pdf>Текущий библиографический указатель 2014 года III квартал</a></li>
+            <ul class="catalog-link" style="margin-top: 65px;">
+                
+                {% for c in catalog_list %}
+                    <li><a target="_blank" href="{{ c.pdf.url }}">{{c.title}}</a></li>
+                {% endfor %}
+                    
+                
+				<li><a target="_blank" href=https://base.oshsu.kg/resurs/document/PDF-20180419151514-kitep_osu.pdf>Текущий библиографический указатель 2014 года II квартал</a></li>
+                <li><a target="_blank" href=https://base.oshsu.kg/resurs/document/PDF-20180419151215-kitep_osu.pdf>Текущий библиографический указатель 2014 года III квартал</a></li>
 				<!-- <li><a target="_blank" href=https://base.oshsu.kg/resurs/document/PDF-20180419143207-kitep_osu.pdf>Текущий библиографический указатель 2014  года IV квартал</a></li>
 				<li><a target="_blank" href=https://base.oshsu.kg/resurs/document/PDF-20180419134615-kitep_osu.pdf>Текущий библиографический указатель 2015 года II-III квартал</a></li>
 				<li><a target="_blank" href=https://base.oshsu.kg/resurs/document/PDF-20180419152146-kitep_osu.pdf>Текущий библиографический указатель 2016 года I квартал</a></li>
@@ -134,27 +140,41 @@
 				<li><a target="_blank" href=https://base.oshsu.kg/resurs/document/XLSX-20201214141515-Kitep_osu.xlsx>Образец заполнения заявки на приобретение учебной литературы</a></li> -->
             </ul>
         
-            <!-- Кнопка для открытия модального окна -->
-            <button class="catalog-btn" id="addFileBtn">Добавить файл</button>
+            
         </div>
         
-        <!-- Модальное окно -->
+        {% if request.user.is_authenticated %}
+
+        <!-- Кнопка для открытия модального окна -->
+     <div style="position: relative;">
+       <div style="position: absolute; top: 140px; right: 40px; width: 150px; z-index: 10;">
+          <button id="addFileBtn" style="background-color: #0c6dd5c6; width: 100%;">
+            <p style="font-size: 14px; margin: 0;">Добавить файл</p>
+          </button>
+      </div>
+     </div>
+
+
+       <!-- Модальное окно -->
         <div id="myModal" class="catalog-modal">
             <div class="catalog-modal-content">
                 <span class="catalog-close">&times;</span>
                 <h2>Добавить файл</h2>
-                <form id="fileForm" class="catalog-form" enctype="multipart/form-data">
+                
+                <form id="fileForm" method="POST" class="catalog-form" enctype="multipart/form-data">
+                    {% csrf_token %}
                     <label for="fileName">Название файла:</label>
-                    <input type="text" id="fileName" name="fileName" required><br>
+                    <input type="text" id="fileName" name="title" required><br>
         
                     <label for="fileUpload">Выберите файл:</label>
-                    <input type="file" id="fileUpload" name="fileUpload" required><br>
-        
+                    <input type="file" id="fileUpload" name="pdf" required><br>
+    
                     <button type="submit">Добавить</button>
                 </form>
                 <p id="successMessage" class="catalog-success">Успешно добавлено!</p>
             </div>
         </div>
+        {% endif %}
         
         <script>
             // Получаем элементы

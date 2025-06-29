@@ -137,7 +137,7 @@
         </style>
 
         <div class="news1-container">
-          <h1 class="news1-title">Деятельность “Talking Club”, направленная на развитие свободного общения на английском языке</h1>
+          <h1 class="news1-title">{{single_news.title}}</h1>
 
           <div style="display: flex; align-items: center; gap: 8px; font-family: Arial, sans-serif; color: #555; font-size: 14px; margin-top: 10px;">
             <span>20 мая 2025</span>
@@ -146,14 +146,13 @@
               5-5 5 2.243 5 5-2.243 5-5 5zm0-8c-1.657 0-3 1.343-3 
               3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z"/>
             </svg>
-            <span>1 234</span>
+            <span>{{single_news.news_view}}</span>
           </div>
 
-          <img class="news1-main-image" src="/media/newspaper-943004_1280.jpg" alt="Основное фото" onclick="openModal(this.src)" style="margin-top: -2px;">
+          <img class="news1-main-image" src="{{single_news.image.url}}" alt="Основное фото" onclick="openModal(this.src)" style="margin-top: -2px;">
 
           <p class="news1-text">
-            Это адаптивный текст, расположенный под большой фотографией. Он не выходит за границы контейнера и красиво смотрится на любых устройствах.
-            Это адаптивный текст, расположенный под большой фотографией. Он не выходит за границы контейнера и красиво смотрится на любых устройствах.
+            {{single_news.text}}
           </p>
 
           <div class="news1-gallery">

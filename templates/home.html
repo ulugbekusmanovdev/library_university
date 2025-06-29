@@ -55,57 +55,53 @@
 		
 	  </div>
   
+	  {% if last_news %}
 	  <div class="main-news">
-		<a href="{% url 'news1' %}" > 
-		<h2>Открытие нового здания</h2> 	</a>
+		<a href="/" > 
+		<h2>{{last_news.title}}</h2> 	</a>
 		<div style="display: flex; align-items: center; gap: 8px; font-family: Arial, sans-serif; color: #555; font-size: 14px;">
-		<span>20 мая 2025</span>
+		<span>{{last_news.create_date}}</span>
 		<svg xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px; fill: #888;" viewBox="0 0 24 24">
 			<path d="M12 5c-7.633 0-12 7-12 7s4.367 7 12 7 12-7 12-7-4.367-7-12-7zm0 12c-2.757 0-5-2.243-5-5s2.243-5 
 			5-5 5 2.243 5 5-2.243 5-5 5zm0-8c-1.657 0-3 1.343-3 
 			3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z"/>
 		</svg>
-		<span>1 234</span>
+		<span>{{last_news.news_view}}</span>
 		</div>
-		<img src="/media/20240205_100227.jpg" alt="Главная новость">
+		<img src="{{ last_news.image.url }}" alt="Главная новость">
 	  </div>
+	  <!-- {% else %}
+	  <p>no news</p>
+	  {% endif %}  -->
+	 
   
 	  <div class="news-item-df" style=" display: flex; margin-left:15px; ">
-		<div class="news-item">
-			<h5>Выставка проектов</h5>
+		{% for new in news %}
+		<div class="news-item" style=" ">
+			<h5>{{new.title}}</h5>
 				<div style="display: flex; align-items: center; gap: 8px; font-family: Arial, sans-serif; color: #555; font-size: 14px;">
-				<span>20 мая 2025</span>
+				<span>{{last_news.create_date}}</span>
 				<svg xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px; fill: #888;" viewBox="0 0 24 24">
 					<path d="M12 5c-7.633 0-12 7-12 7s4.367 7 12 7 12-7 12-7-4.367-7-12-7zm0 12c-2.757 0-5-2.243-5-5s2.243-5 
 					5-5 5 2.243 5 5-2.243 5-5 5zm0-8c-1.657 0-3 1.343-3 
 					3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z"/>
 				</svg>
-				<span>1 234</span>
+				
+				<span>{{last_news.news_view}}</span>
+				
 				</div>
-
-				<img src="/media/photo_2023-11-23_10-04-29.jpg" alt="Новость 1">
+				  <div class="img-test" style=" ">  
+					<img style="display: block;  margin-top: 10px; width: 50px; height: 160px ; "  
+					   src="{{new.image.url}}"  alt="">
+				  </div>
 		</div>
-					
-		<div class="news-item">
-			<h5>Обновление сайта</h5>
-				<div style="display: flex; align-items: center; gap: 8px; font-family: Arial, sans-serif; color: #555; font-size: 14px;">
-				<span>20 мая 2025</span>
-				<svg xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px; fill: #888;" viewBox="0 0 24 24">
-					<path d="M12 5c-7.633 0-12 7-12 7s4.367 7 12 7 12-7 12-7-4.367-7-12-7zm0 12c-2.757 0-5-2.243-5-5s2.243-5 
-					5-5 5 2.243 5 5-2.243 5-5 5zm0-8c-1.657 0-3 1.343-3 
-					3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z"/>
-				</svg>
-				<span>1 234</span>
-				</div>
-
-			<img src="/media/photo_2023-11-23_10-04-29.jpg" alt="Новость 1">
-		</div>
-	  </div>
-  
+		{% endfor %}		
 	 
-	</div>
-  
+	  </div>
 
+	
+	</div>
+ 
 
 	<!-- Объявления -->
 	
@@ -120,7 +116,7 @@
 	  <div class="announcement">
 		<h4 class="h-announcement-column">{{a.title}}</h4>
 		<p class="date">{{a.create_date}}</p>
-		<p>{{a.text}}</p>
+		<p>{{a.text|slice:":250"}}</p>
 	  </div>
 	  	{% endfor %}
 	  
@@ -135,7 +131,6 @@
 
   </div>
   
-
 
 
 
@@ -773,24 +768,24 @@
 
 		</div>
 
-		<div data-hcolor="#ff6600"
+		<!-- <div data-hcolor="#ff6600"
 			class="section section130 clip_none s_mode_s120 mobile_col2 inner_width img_square transparent_ico"
 			style="background-color:#ffffff;padding-top:30px;padding-bottom:60px;--tiles_radius:0px;--tiles_shadow:none;--bg_color:#ffffff;"
 			data-id="4722806" id="b_4722806"><a name="anchor3"></a>
 			<div class="section_inner all_border"
 				style="--icon_size:64px;--btn_fweight:300;--btn_fsize:18px;--item_title_fweight:400;">
-				<a style="text-decoration: none; color: #000;" href="{% url 'structure' %}">
+				<a style="text-decoration: none; color: #000;" href="/">
 					<div class="title">Структура<br></div>
 				</a>
 				<div class="catalog_items short_text count3 s120 ">
 
-					
+					 
 					
 					
 
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 	</div>
 
@@ -798,10 +793,10 @@
 
 
   
-  <div class="g" style="position:fixed;" > 
+  <!-- <div class="g" style="position:fixed;" > 
 	<h2 class="greeting">Вы успешно зарегистрировались <br> Здравствуйте пользователь 	<img src="/media/img/check.png" alt="" width="50px" height="50px"></h2>
 
- </div>
+ </div> -->
 
 
 
@@ -845,7 +840,6 @@
 }
 }
 </style>
-
 
 
 </body>

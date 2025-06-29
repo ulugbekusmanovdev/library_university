@@ -20,36 +20,33 @@
 </head>
 <body>
 
-
+  {% for d in director %}
     <div class="struktura-wrapper">
         <div class="struktura1">
-          <img src="/media/23-c.jpg" alt="Директор">
-          <h1>Ф.И.О. Директора</h1>
+          <img src="{{d.img.url}}" alt="Директор">
+          <h1>{{d.name}}</h1>
           <p>Должность: Директор</p>
-          <p>Телефон: +7 (xxx) xxx-xx-xx</p>
-          <p>Адрес: Город, улица, дом</p>
+          <p>Телефон: +996-554-206-434</p>
           <p>О себе: Руководитель с опытом и видением будущего.</p>
         </div>
       
         <div class="biography">
           <h2>Биография</h2>
           <p>
-            Родился в 19XX году. Имеет высшее образование по специальности " ".
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum nisi tempore quod veritatis. Dolorem recusandae, 
-            nobis vitae beatae nemo alias aliquam ipsam incidunt similique dicta quam iste eos minus repellendus esse odio.
-             Atque dignissimos itaque ullam quibusdam corrupti tempora aspernatur nulla! Modi error dolorem esse temporibus quibusdam molestias, quae a?
+            {{d.bio}}
           </p>
         </div>
       </div>
+      {% endfor %}
       
       
 
   
   <div class="layout">
     <div class="sidebar">
-      <button onclick="showDepartment(1)">1 отдел</button>
-      <button onclick="showDepartment(2)">2 отдел</button>
-      <button onclick="showDepartment(3)">3 отдел</button>
+      <button onclick="showDepartment(1)">Китепти комплектөө жана сактоо бөлүмү</button>
+      <button onclick="showDepartment(2)">Электрондук ресурстар жана тейлөө бөлүмү</button>
+      <button onclick="showDepartment(3)">Библиограф</button>
     </div>
 
     <div class="content">
@@ -57,21 +54,27 @@
         <p>Выберите отдел, чтобы увидеть сотрудников.</p>
       </div>
     </div>
-  </div>
+  </div> 
 
   <script>
     const departments = {
+     
       1: [
-        { name: "Алиса Иванова", img: "/media/ff.jpg", phone: "+7...", address: "Город, ул. 1", position: "Библиотекарь" },
+        { name: "", img: "/static/img/his1.jpg", phone: "+7...", address: "Город, ул. 1", position: "Библиотекарь" },
        
-        { name: "Борис Петров", img: "photo2.jpg", phone: "+7...", address: "Город, ул. 2", position: "Ассистент" }
-      ],
+          ],
+
+
       2: [
-        { name: "Виктория Сидорова", img: "photo3.jpg", phone: "+7...", address: "Город, ул. 3", position: "Менеджер" }
+        { name: "Виктория Сидорова", img: "/static/img/his2.jpg", phone: "+7...", address: "Город, ул. 3", position: "Менеджер" }
       ],
+
+
       3: [
         { name: "Дмитрий Смирнов", img: "photo4.jpg", phone: "+7...", address: "Город, ул. 4", position: "Аналитик" }
       ]
+
+
     };
 
     function showDepartment(dept) {
@@ -90,6 +93,7 @@
       });
     }
   </script>
+  
 
 </body>
 </html>

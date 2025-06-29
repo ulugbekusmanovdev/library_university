@@ -1,0 +1,135 @@
+{% extends 'index.html' %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
+{% block content %}
+
+{% include 'navbar.html' %}
+
+
+    <style>
+        /* Стиль модального окна */
+        .catalog-modal {
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            display: block; /* Сразу видно */
+        }
+
+        .catalog-modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 400px;
+            border-radius: 10px;
+        }
+
+        .catalog-form input {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+     #successMessage {
+    display: none;
+    position: fixed;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+
+    
+    color:#007bff;
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 8px 16px;
+
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+
+        @keyframes fadeFlash {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+                
+            }
+            70% {
+                opacity: 0.8;
+            }
+            100% {
+                opacity: 1;
+            
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Модальное окно -->
+<div id="myModal" class="catalog-modal">
+    <div class="catalog-modal-content">
+        <h2>Добавить файл</h2>
+        <form id="fileForm" class="catalog-form" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <label for="fileName">{{n_form.title.label}}</label>
+            {{n_form.title}}<br>
+
+            <label for="fileUpload">{{n_form.text.label}}</label>
+            {{n_form.text}}<br>
+
+            <label for="fileUpload">{{n_form.image.label}}</label>
+            {{n_form.image}}<br>
+
+            <label for="fileUpload">{{n_form.social_website.label}}</label>
+            {{n_form.social_website}}<br>
+
+            <label for="fileUpload">{{i_form.images.label}}</label>
+            {{i_form.images}}<br>
+
+            <button type="submit">Добавить</button>
+        </form>
+    </div>
+</div>
+
+<!-- Сообщение об успехе -->
+<div id="successMessage">Успешно добавлено!</div>
+
+<script>
+    const form = document.getElementById("fileForm");
+    const successMessage = document.getElementById("successMessage");
+
+    form.onsubmit = function(event) {
+        event.preventDefault();
+        form.reset();
+
+        // Показать сообщение с анимацией
+        successMessage.style.display = "block";
+        successMessage.style.animation = "none";
+        void successMessage.offsetWidth;
+        successMessage.style.animation = "fadeFlash 2s ease-in-out forwards";
+
+        // Скрыть сообщение через 5 секунд
+        setTimeout(() => {
+            successMessage.style.display = "none";
+            successMessage.style.opacity = "0";
+        }, 5000);
+    };
+</script>
+
+
+
+
+{% endblock %}

@@ -1,8 +1,9 @@
 from django.db.models import Q
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 from django.shortcuts import get_object_or_404
-
+from .forms import NewsForm, ImageForm
+from .utils import check_read_articles
 
 #multilanguage
 from urllib.parse import urlparse
@@ -36,14 +37,15 @@ def set_language(request, language):
 # Create your views here.
 def homepage(request):
     books = Book.objects.all().order_by('-id')[0:5]
-    news = News.objects.all().order_by('-create_date')[0:3]
+    news = News.objects.all().order_by('-create_date')[0:2]
+    last_news = News.objects.order_by('-create_date').first()
     adt = Ads.objects.all().order_by('-id')[0:2]
     structure = Structure.objects.all()
     about = About.objects.all()
     history = History.objects.filter(id=3)
     history1 = History.objects.filter(id=4)
     videos = Video.objects.all()
-    context = {'news': news,  'adt': adt, 'structure': structure,
+    context = {'news': news, 'last_news': last_news, 'adt': adt, 'structure': structure,
                 'about': about, 'books': books, 'videos': videos,
                 'history': history, 'history1': history1}
     return render(request, 'home.html', context)
@@ -71,15 +73,15 @@ def readers(request):
 
 def catalog(request):
     bookfond = BookFond.objects.all()
+
+    # topSkills = profile.skill_set.exclude(description__exact='')
     
     context = {'bookfond': bookfond}
     return render(request, 'catalog.html', context)
 
 
 def structure(request):
-    structure = Structure.objects.all()
-    context = {'structure': structure}
-    return render(request, 'structure.html', context)
+    pass
 
 
 def categories(request):
@@ -141,9 +143,20 @@ def profs(request):
     return render(request, 'profsoyz.html')
 
 def kfond(request):
+    catalog_list = SistemCatalog.objects.all()
+
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        pdf = request.FILES.get('pdf')
+
+        if title and pdf:
+            SistemCatalog.objects.create(title=title,pdf=pdf)
+            return redirect('kfond')
+
+
     b_catalog = Catalog.objects.filter(id=1)
     el_catalog = Catalog.objects.filter(id=2)
-    context = {'b_catalog': b_catalog, 'el_catalog': el_catalog}
+    context = {'b_catalog': b_catalog, 'el_catalog': el_catalog, 'catalog_list': catalog_list}
     return render(request, 'kfond.html', context)
 
 def bibliograf(request):
@@ -158,11 +171,44 @@ def bibizdanie(request):
 def question(request):
     return render(request, 'question.html')
 
-def news1(request):
-    return render(request, 'news1.html')
+def news1(request, pk):
+    single_news = News.objects.get(id=pk)
+
+    request.session.modified = True
+    if single_news.id in check_read_articles(request):
+        pass
+    else:
+        check_read_articles(request).append(single_news.id)
+        single_news.news_view += 1
+        single_news.save()
+
+    context = {'single_news': single_news}
+    return render(request, 'news1.html', context)
 
 def strukture(request):
-    return render(request, 'strukture.html')
+    director = Director.objects.all()
+    structure1 = Structure.objects.all()
 
+    context = {'structure': structure1, 'director': director}
+    return render(request, 'strukture.html', context)
+
+def createNews(request):
+    newsform = NewsForm()
+    imageform = ImageForm()
+
+    if request.method == 'POST':
+        files = request.FILES.getlist('images')
+        newsform = NewsForm(request.POST, request.FILES)
+        if newsform.is_valid():
+            news = newsform.save(commit=False)
+            news.save()
+
+            for file in files:
+                NewsImage.objects.create(news=news, images=files)
+            
+            return redirect('news/')
+
+    context = {'n_form': newsform, 'i_form': imageform}
+    return render(request, 'createnews.html', context)
 
 
