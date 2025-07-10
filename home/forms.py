@@ -15,8 +15,8 @@ class NewsForm(ModelForm):
   
 
 
-class ImageForm(ModelForm):
-    images = forms.ImageField(widget=forms.FileInput(attrs={"class":"form-control", "multiple": True}))
-    class Meta:
-        model = NewsImage
-        fields = ['images']
+# class ImageForm(ModelForm):
+#     images = forms.ImageField(widget=forms.FileInput(attrs={"class":"form-control", "multiple": True}))
+#     class Meta:
+#         model = NewsImage
+#         fields = ['images']

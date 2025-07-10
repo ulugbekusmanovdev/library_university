@@ -41,58 +41,55 @@
       
       
 
-  
   <div class="layout">
-    <div class="sidebar">
-      <button onclick="showDepartment(1)">Китепти комплектөө жана сактоо бөлүмү</button>
-      <button onclick="showDepartment(2)">Электрондук ресурстар жана тейлөө бөлүмү</button>
-      <button onclick="showDepartment(3)">Библиограф</button>
+  <div class="sidebar">
+    <button onclick="showDepartment('dept1')">Китепти комплектөө жана сактоо бөлүмү</button>
+    <button onclick="showDepartment('dept2')">Электрондук ресурстар жана тейлөө бөлүмү</button>
+    <button onclick="showDepartment('dept3')">Библиограф</button>
+  </div>
+
+  <div class="content">
+    <div id="dept1" class="staff-grid active">
+      <div class="staff-card">
+        <img src="/static/img/his1.jpg" alt="Имя сотрудника">
+        <h3>Имя сотрудника</h3>
+        <p><strong>Должность:</strong> Библиотекарь</p>
+        <p><strong>Тел:</strong> +7...</p>
+        <p><strong>Адрес:</strong> Город, ул. 1</p>
+      </div>
+     
     </div>
 
-    <div class="content">
-      <div class="staff-grid" id="staffContainer">
-        <p>Выберите отдел, чтобы увидеть сотрудников.</p>
+    <div id="dept2" class="staff-grid" style="display: none;">
+      <div class="staff-card">
+        <img src="/static/img/his2.jpg" alt="Виктория Сидорова">
+        <h3>Виктория Сидорова</h3>
+        <p><strong>Должность:</strong> Менеджер</p>
+        <p><strong>Тел:</strong> +7...</p>
+        <p><strong>Адрес:</strong> Город, ул. 3</p>
       </div>
     </div>
-  </div> 
 
-  <script>
-    const departments = {
-     
-      1: [
-        { name: "", img: "/static/img/his1.jpg", phone: "+7...", address: "Город, ул. 1", position: "Библиотекарь" },
-       
-          ],
+    <div id="dept3" class="staff-grid" style="display: none;">
+      <div class="staff-card">
+        <img src="photo4.jpg" alt="Дмитрий Смирнов">
+        <h3>Дмитрий Смирнов</h3>
+        <p><strong>Должность:</strong> Аналитик</p>
+        <p><strong>Тел:</strong> +7...</p>
+        <p><strong>Адрес:</strong> Город, ул. 4</p>
+      </div>
+    </div>
+  </div>
+</div>
 
+<script>
+  function showDepartment(id) {
+    const sections = document.querySelectorAll('.staff-grid');
+    sections.forEach(sec => sec.style.display = 'none');
+    document.getElementById(id).style.display = 'grid';
+  }
+</script>
 
-      2: [
-        { name: "Виктория Сидорова", img: "/static/img/his2.jpg", phone: "+7...", address: "Город, ул. 3", position: "Менеджер" }
-      ],
-
-
-      3: [
-        { name: "Дмитрий Смирнов", img: "photo4.jpg", phone: "+7...", address: "Город, ул. 4", position: "Аналитик" }
-      ]
-
-
-    };
-
-    function showDepartment(dept) {
-      const container = document.getElementById('staffContainer');
-      container.innerHTML = '';
-      departments[dept].forEach(staff => {
-        container.innerHTML += `
-          <div class="staff-card">
-            <img src="${staff.img}" alt="${staff.name}">
-            <h3>${staff.name}</h3>
-            <p><strong>Должность:</strong> ${staff.position}</p>
-            <p><strong>Тел:</strong> ${staff.phone}</p>
-            <p><strong>Адрес:</strong> ${staff.address}</p>
-          </div>
-        `;
-      });
-    }
-  </script>
   
 
 </body>

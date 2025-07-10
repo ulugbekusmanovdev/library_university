@@ -2,7 +2,7 @@ from django.db.models import Q
 from django.shortcuts import render, redirect
 from .models import *
 from django.shortcuts import get_object_or_404
-from .forms import NewsForm, ImageForm
+from .forms import NewsForm
 from .utils import check_read_articles
 
 #multilanguage
@@ -192,23 +192,23 @@ def strukture(request):
     context = {'structure': structure1, 'director': director}
     return render(request, 'strukture.html', context)
 
-def createNews(request):
-    newsform = NewsForm()
-    imageform = ImageForm()
+# def createNews(request):
+#     newsform = NewsForm()
+#     imageform = ImageForm()
 
-    if request.method == 'POST':
-        files = request.FILES.getlist('images')
-        newsform = NewsForm(request.POST, request.FILES)
-        if newsform.is_valid():
-            news = newsform.save(commit=False)
-            news.save()
+#     if request.method == 'POST':
+#         files = request.FILES.getlist('images')
+#         newsform = NewsForm(request.POST, request.FILES)
+#         if newsform.is_valid():
+#             news = newsform.save(commit=False)
+#             news.save()
 
-            for file in files:
-                NewsImage.objects.create(news=news, images=files)
+#             for file in files:
+#                 NewsImage.objects.create(news=news, images=files)
             
-            return redirect('news/')
+#             return redirect('news/')
 
-    context = {'n_form': newsform, 'i_form': imageform}
-    return render(request, 'createnews.html', context)
+#     context = {'n_form': newsform, 'i_form': imageform}
+#     return render(request, 'createnews.html', context)
 
 

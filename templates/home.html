@@ -69,13 +69,15 @@
 		<span>{{last_news.news_view}}</span>
 		</div>
 		<img src="{{ last_news.image.url }}" alt="Главная новость">
+		<p style="font-size: 15px; width: 450px;">Lorem ipsum dolor sit amet consectetur oribus aliquid harum explicabo nihil,
+			 reiciendis consequatur a.</p>
 	  </div>
 	  <!-- {% else %}
 	  <p>no news</p>
 	  {% endif %}  -->
 	 
   
-	  <div class="news-item-df" style=" display: flex; margin-left:15px; ">
+	  <!-- <div class="news-item-df" style=" display: flex; margin-left:15px; ">
 		{% for new in news %}
 		<div class="news-item" style=" ">
 			<h5>{{new.title}}</h5>
@@ -93,11 +95,45 @@
 				  <div class="img-test" style=" ">  
 					<img style="display: block;  margin-top: 10px; width: 50px; height: 160px ; "  
 					   src="{{new.image.url}}"  alt="">
+					   <p style="font-size: 12px; ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eveniet omnis quia, placeat voluptatum doloribus aliquid harum explicabo nihil,
+			 reiciendis bconsequatur a.</p>
 				  </div>
 		</div>
 		{% endfor %}		
 	 
-	  </div>
+	  </div> -->
+
+
+
+
+<div class="news-item-df">
+  {% for new in news %}
+  <div class="news-item">
+    <h5>{{new.title}}</h5>
+    <div class="news-meta">
+      <span>{{last_news.create_date}}</span>
+      <svg xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px; fill: #888;" viewBox="0 0 24 24">
+        <path d="M12 5c-7.633 0-12 7-12 7s4.367 7 12 7 12-7 12-7-4.367-7-12-7zm0 12c-2.757 0-5-2.243-5-5s2.243-5 
+        5-5 5 2.243 5 5-2.243 5-5 5zm0-8c-1.657 0-3 1.343-3 
+        3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z"/>
+      </svg>
+      <span>{{last_news.news_view}}</span>
+    </div>
+   <div class="img-test" style="display: flex; flex-direction: column; gap: 10px;">
+  <div>
+    <img style="display: block; margin-top: 10px; width: 50px; height: 160px;" src="{{new.image.url}}" alt="">
+  </div>
+
+  <p style="margin: 0; font-size: 12px; width: 350px;">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.  placeat voluptatum doloribus aliquid harum explicabo nihil,
+    reiciendis consequatur a.
+  </p>
+</div>
+
+  </div>
+  {% endfor %}
+</div>
+
 
 	
 	</div>
@@ -114,7 +150,7 @@
 	<div class="announcement-group">
 		{% for a in adt %}
 	  <div class="announcement">
-		<h4 class="h-announcement-column">{{a.title}}</h4>
+		<h4 class="h-announcement-column">{{a.title}}</h4>  
 		<p class="date">{{a.create_date}}</p>
 		<p>{{a.text|slice:":250"}}</p>
 	  </div>
