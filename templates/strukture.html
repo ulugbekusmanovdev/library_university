@@ -27,7 +27,7 @@
           <h1>{{d.name}}</h1>
           <p>Должность: Директор</p>
           <p>Телефон: +996-554-206-434</p>
-          <p>О себе: Руководитель с опытом и видением будущего.</p>
+          <p>{% trans 'О себе: Руководитель с опытом и видением будущего.' %}</p>
         </div>
       
         <div class="biography">
@@ -43,42 +43,45 @@
 
   <div class="layout">
   <div class="sidebar">
-    <button onclick="showDepartment('dept1')">Китепти комплектөө жана сактоо бөлүмү</button>
-    <button onclick="showDepartment('dept2')">Электрондук ресурстар жана тейлөө бөлүмү</button>
+    <button onclick="showDepartment('dept1')">{% trans 'Отдел комплектования и хранения книг' %}</button>
+    <button onclick="showDepartment('dept2')">{% trans 'Отдел электронных ресурсов и услуг' %}</button>
     <button onclick="showDepartment('dept3')">Библиограф</button>
   </div>
 
   <div class="content">
+
+    
+    {% for s1 in structure1 %}
     <div id="dept1" class="staff-grid active">
       <div class="staff-card">
-        <img src="/static/img/his1.jpg" alt="Имя сотрудника">
-        <h3>Имя сотрудника</h3>
-        <p><strong>Должность:</strong> Библиотекарь</p>
-        <p><strong>Тел:</strong> +7...</p>
-        <p><strong>Адрес:</strong> Город, ул. 1</p>
+        <img src="{{s1.img.url}}" alt="Имя сотрудника">
+        <h3>{{s1.name}}</h3>
+        <p>{{s1.info}}</p>
       </div>
-     
     </div>
+     {% endfor %}
 
+    {% for s2 in structure2 %}
     <div id="dept2" class="staff-grid" style="display: none;">
       <div class="staff-card">
-        <img src="/static/img/his2.jpg" alt="Виктория Сидорова">
-        <h3>Виктория Сидорова</h3>
-        <p><strong>Должность:</strong> Менеджер</p>
-        <p><strong>Тел:</strong> +7...</p>
-        <p><strong>Адрес:</strong> Город, ул. 3</p>
+        <img src="{{s2.img.url}}" alt="Виктория Сидорова">
+        <h3>{{s2.name}}</h3>
+        <p>{{s2.info}}</p>
       </div>
     </div>
+    {% endfor %}
 
+    {% for s3 in structure3 %}
     <div id="dept3" class="staff-grid" style="display: none;">
       <div class="staff-card">
-        <img src="photo4.jpg" alt="Дмитрий Смирнов">
-        <h3>Дмитрий Смирнов</h3>
-        <p><strong>Должность:</strong> Аналитик</p>
-        <p><strong>Тел:</strong> +7...</p>
-        <p><strong>Адрес:</strong> Город, ул. 4</p>
+        <img src="{{s3.img.url}}" alt="Дмитрий Смирнов">
+        <h3>{{s3.name}}</h3>
+        <p>{{s3.info}}</p>
       </div>
     </div>
+    {% endfor %}
+
+
   </div>
 </div>
 

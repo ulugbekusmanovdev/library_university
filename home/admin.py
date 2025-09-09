@@ -16,6 +16,9 @@ class CategoryAdmin(admin.ModelAdmin):
 class CatalogAdmin(admin.ModelAdmin):
     list_display =('id','title')
 
+class StructureAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name')
+
 
 class HistoryAdmin(admin.ModelAdmin):
     list_display =('id',)
@@ -40,7 +43,7 @@ class PhotoAdmin(admin.ModelAdmin):
 admin.site.register(News)
 admin.site.register(Ads)
 admin.site.register(About)
-admin.site.register(Structure)
+admin.site.register(Structure, StructureAdmin)
 admin.site.register(Book, BookAdmin)
 admin.site.register(Photo, PhotoAdmin)
 admin.site.register(PostImage)

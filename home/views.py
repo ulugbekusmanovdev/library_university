@@ -39,7 +39,7 @@ def homepage(request):
     books = Book.objects.all().order_by('-id')[0:5]
     news = News.objects.all().order_by('-create_date')[0:2]
     last_news = News.objects.order_by('-create_date').first()
-    adt = Ads.objects.all().order_by('-id')[0:2]
+    adt = Ads.objects.all().order_by('-id')[0:3]
     structure = Structure.objects.all()
     about = About.objects.all()
     history = History.objects.filter(id=3)
@@ -187,9 +187,13 @@ def news1(request, pk):
 
 def strukture(request):
     director = Director.objects.all()
-    structure1 = Structure.objects.all()
+    structure = Structure.objects.all()
+    structure1 = Structure.objects.filter(id=1)
+    structure2 = Structure.objects.filter(id=2)
+    structure3 = Structure.objects.filter(id=3)
 
-    context = {'structure': structure1, 'director': director}
+    context = {'structure1': structure1, 'structure2': structure2, 
+               'structure3': structure3, 'director': director}
     return render(request, 'strukture.html', context)
 
 # def createNews(request):

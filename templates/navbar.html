@@ -82,7 +82,7 @@
     <div class="nav-item-navbar">
       <a href="{% url 'home'  %}#anchor4" class="nav-link-navbar"><i class="fas fa-box-archive"></i>  {% trans "Ресурсы библиотеки" %}  </a>
       <div class="submenu-navbar">
-        <a href="https://lib.oshsu.kg">Irbis</a>
+        <a href="https://lib.oshsu.kg">Электронная библиотека</a>
         <a href="http://ibooks.oshsu.kg/">iBooks</a>
         <a href="https://kyrlibnet.kg/ru/">KirLibNet</a>
         <a href="https://scopus.com/">Scopus</a>
@@ -105,10 +105,10 @@
     </div>
 
     <div class="nav-item-navbar">
-      <a href="#" class="nav-link-navbar"><i class="fas fa-book"></i> Книжный фонд</a>
+      <a href="{% url 'catalog' %}" class="nav-link-navbar"><i class="fas fa-book"></i> Книжный фонд</a>
       <div class="submenu-navbar">
         
-        <a href="{% url 'catalog' %}">{% trans 'Книжный фонд' %} </a>
+        <!-- <a href="/">{% trans 'Книжный фонд' %} </a> -->
         <a href="{% url 'kfond' %}">{% trans 'Каталог' %}  </a>
      
       </div>
@@ -117,13 +117,13 @@
     <div class="nav-item-navbar">
       <a href="#" class="nav-link-navbar"><i class="fas fa-bookmark"></i> Библиограф</a>
       <div class="submenu-navbar">
-        <a  href="{% url 'bibizdanie' %}">Библиографические издания</a>
-        <a href="{% url 'calendar' %}">Календарь знаменательных дат</a>
-        <a href="{% url 'question' %}">Задать вопрос библиографу</a>
+        <a  href="{% url 'bibizdanie' %}">{% trans 'Библиографические издания' %}</a>
+        <a href="{% url 'calendar' %}">{% trans 'Календарь знаменательных дат' %}</a>
+        <a href="{% url 'question' %}">{% trans 'Задать вопрос библиографу' %}</a>
       </div>
     </div>
     <div class="nav-item-navbar">
-      <a href="{% url 'readers'  %}#anchor8" class="nav-link-navbar">	<i class="fas fa-users"></i>  Читатель</a>
+      <a href="{% url 'readers' %}" class="nav-link-navbar">	<i class="fas fa-users"></i>  Читатель</a>
      
     </div>
     <!-- <div class="nav-item-navbar">

@@ -21,6 +21,10 @@ class HistoryTranslationOptions(TranslationOptions):
 class StructureTranslationOptions(TranslationOptions):
     fields = ('name', 'info',)
 
+@register(Director)
+class DirectorTranslationOptions(TranslationOptions):
+    fields = ('name', 'bio',)
+
 @register(Readers)
 class ReadersTranslationOptions(TranslationOptions):
     fields = ('text',)
@@ -28,3 +32,4 @@ class ReadersTranslationOptions(TranslationOptions):
 @register(Catalog)
 class CatalogTranslationOptions(TranslationOptions):
     fields = ('title', 'text',)
+

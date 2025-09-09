@@ -46,104 +46,84 @@
 
 <!-- test -->
 
-<div class="container-home">
+<div class="container-home" style="display: flex;">
 	<!-- Новости -->
-	<div class="news-column">
-	  <div class="section-header">
-		<div class="section-title-new"> <a href="#"> Новости в нашем блоге</a> </div>
-		<a href="{% url 'news' %}" style="margin-right: 40px;  font-weight: 400;  color: #a22929;"  >все новости</a> 
-		
-	  </div>
-  
-	  {% if last_news %}
-	  <div class="main-news">
-		<a href="/" > 
-		<h2>{{last_news.title}}</h2> 	</a>
-		<div style="display: flex; align-items: center; gap: 8px; font-family: Arial, sans-serif; color: #555; font-size: 14px;">
-		<span>{{last_news.create_date}}</span>
-		<svg xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px; fill: #888;" viewBox="0 0 24 24">
-			<path d="M12 5c-7.633 0-12 7-12 7s4.367 7 12 7 12-7 12-7-4.367-7-12-7zm0 12c-2.757 0-5-2.243-5-5s2.243-5 
-			5-5 5 2.243 5 5-2.243 5-5 5zm0-8c-1.657 0-3 1.343-3 
-			3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z"/>
-		</svg>
-		<span>{{last_news.news_view}}</span>
-		</div>
-		<img src="{{ last_news.image.url }}" alt="Главная новость">
-		<p style="font-size: 15px; width: 450px;">Lorem ipsum dolor sit amet consectetur oribus aliquid harum explicabo nihil,
-			 reiciendis consequatur a.</p>
-	  </div>
-	  <!-- {% else %}
-	  <p>no news</p>
-	  {% endif %}  -->
-	 
-  
-	  <!-- <div class="news-item-df" style=" display: flex; margin-left:15px; ">
-		{% for new in news %}
-		<div class="news-item" style=" ">
-			<h5>{{new.title}}</h5>
-				<div style="display: flex; align-items: center; gap: 8px; font-family: Arial, sans-serif; color: #555; font-size: 14px;">
-				<span>{{last_news.create_date}}</span>
-				<svg xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px; fill: #888;" viewBox="0 0 24 24">
-					<path d="M12 5c-7.633 0-12 7-12 7s4.367 7 12 7 12-7 12-7-4.367-7-12-7zm0 12c-2.757 0-5-2.243-5-5s2.243-5 
-					5-5 5 2.243 5 5-2.243 5-5 5zm0-8c-1.657 0-3 1.343-3 
-					3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z"/>
-				</svg>
-				
-				<span>{{last_news.news_view}}</span>
-				
-				</div>
-				  <div class="img-test" style=" ">  
-					<img style="display: block;  margin-top: 10px; width: 50px; height: 160px ; "  
-					   src="{{new.image.url}}"  alt="">
-					   <p style="font-size: 12px; ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eveniet omnis quia, placeat voluptatum doloribus aliquid harum explicabo nihil,
-			 reiciendis bconsequatur a.</p>
-				  </div>
-		</div>
-		{% endfor %}		
-	 
-	  </div> -->
-
-
-
-
-<div class="news-item-df">
-  {% for new in news %}
-  <div class="news-item">
-    <h5>{{new.title}}</h5>
-    <div class="news-meta">
-      <span>{{last_news.create_date}}</span>
-      <svg xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px; fill: #888;" viewBox="0 0 24 24">
-        <path d="M12 5c-7.633 0-12 7-12 7s4.367 7 12 7 12-7 12-7-4.367-7-12-7zm0 12c-2.757 0-5-2.243-5-5s2.243-5 
-        5-5 5 2.243 5 5-2.243 5-5 5zm0-8c-1.657 0-3 1.343-3 
-        3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z"/>
-      </svg>
-      <span>{{last_news.news_view}}</span>
-    </div>
-   <div class="img-test" style="display: flex; flex-direction: column; gap: 10px;">
-  <div>
-    <img style="display: block; margin-top: 10px; width: 50px; height: 160px;" src="{{new.image.url}}" alt="">
-  </div>
-
-  <p style="margin: 0; font-size: 12px; width: 350px;">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit.  placeat voluptatum doloribus aliquid harum explicabo nihil,
-    reiciendis consequatur a.
-  </p>
-</div>
-
-  </div>
-  {% endfor %}
-</div>
-
 
 	
-	</div>
- 
+	
+
+
+
+
+
+
+<div class="news-column" style="display: flex;">
+
+
+<div data-hcolor="#ff6600" class="section clip_none bg_text show_btn no_image section301 animate"
+		style="background-color:#ffffff;background-image:url(/img/1920x0/image_10047.jpg);padding-top:90px;padding-bottom:70px; width: 100px;"
+		data-id="4722812" id="b_4722812"><a name="anchor7"></a>
+		<div class="section_inner width1170">
+			<div class="title"><span style="color:#2c2c2c; font-size:50px">{% trans "Новости в нашем блоге" %}</span></div>
+			<div class="sub_title">
+				<p><span style="color:#000000"><span style="font-size:22px"></span></span><span
+						style="font-size:20px">{% trans "Самые интересные и востребованные новости в нашей страничке" %}</span><span style="color:#000000"><span style="font-size:22px"></span></span></p>
+			</div>
+
+
+			{% for new in news %}
+			<div class="arr1 size_700x500 btn_under_text" style="margin-left: 40px; ">
+				
+				<div data-link="" class="image1 link_on size_700x500 ">
+					<img data-lazy="1" loading="lazy" width="300px" height="220px" src="{{new.image.url}}">
+				</div>
+
+				
+
+				<div class="right size_700x500 btn_under_text ">
+					
+					
+
+					<div class="txt1 " style="width: 100px;" >
+						<p><span style="color:#424242"><span
+									style="font-size:20px"><strong>{{new.title}}</strong></span></span></p>
+						<p><br></p>
+						<p style="text-align: justify; padding-right: 10px;"><span style="font-family:montserrat"><span
+									style="font-size:17px">{{ new.text|truncatewords:60|linebreaksbr}}</span></span></p>
+					</div> <div class="date-right" > <a href="{% url 'news' %}" class="btn1 surround  dark" data-hcolor="#f78960"
+						style="background-color:#f78960; border-radius: 2em; box-shadow: 0">{% trans 'Все' %}</a>
+						  <p class="date-p">{{ new.create_date|date:"d-m-Y"}}</p> 
+						</div>
+
+				</div>
+			</div>
+			{% endfor %}
+
+
+		</div>
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	<!-- Объявления -->
 	
 <div class="announcement-column">
 	
-	  <div class="section-title-new" style="margin-top: -16px;"> <a href="{% url 'adt' %}"> Объявления </a></div>
+	  <div class="section-title-new" style="margin-top: -16px;"> <a href="{% url 'adt' %}"> {% trans 'Объявления' %}</a></div>
 	  <!-- <button class="btn-news1">Все объявления</button> -->
 
   
@@ -158,7 +138,7 @@
 	  
 
 	  <div class="announcement-footer">
-			<a href="{% url 'adt' %}" id="a-announcement-footer">Смотрите все объявления </a> 
+			<a href="{% url 'adt' %}" id="a-announcement-footer">{% trans 'Смотрите все объявления' %}</a> 
 	  </div>
 	</div>
 	
@@ -252,6 +232,7 @@
 				<p><span style="color:#000000"><span style="font-size:22px"></span></span><span
 						style="font-size:20px">{% trans "Самые интересные и востребованные новости в нашей страничке" %}</span><span style="color:#000000"><span style="font-size:22px"></span></span></p>
 			</div>
+
 
 
 			{% for new in news %}
@@ -852,7 +833,7 @@
  
  <div class="pravila">
 	<div class="scroll-text">
-		<h1>правило №1 Войдя в библиотеку, поздоровайся, а получив книгу, обязательно скажи СПАСИБО!</h1>
+		<h1> правило №1 Войдя в библиотеку, поздоровайся, а получив книгу, обязательно скажи СПАСИБО!</h1>
 		<h1> правило №2  НЕ приходи в библиотеку с сумками и пакетами, напитками и едой</h1>
 		<h1> Правило Nº 3. В библиотеке соблюдай порядок, веди себя ТИХО, разговаривай шёпотом, так как шум мешает другим читателям. </h1>
 		<h1> Правило.Nº 4. Еели надо поговорить по мобильному телефону, выйди в коридор. </h1>

@@ -671,11 +671,11 @@
 		}
 
 		.section {
-			width: 100%;
-			min-width: 1170px;
+			width: 90%;
+			min-width: 870px;
 			padding: 40px 0;
 			line-height: 1.4;
-			background-position: center center;
+			background-position: left left;
 			background-repeat: repeat;
 			transition: .5s;
 			opacity: 1
@@ -34739,7 +34739,7 @@
 
 		.section301.bg_text .txt1 {
 			color: #000;
-			width: calc(100% - 60px) !important;
+			width: calc(100% - 190px) !important;
 			margin: 20px;
 			box-sizing: border-box
 		}
@@ -34932,17 +34932,18 @@
 		}
 
 		.section301 .section_inner.width1170 .arr1 {
-			display: flex
+			display: flex;
+			width: 900px;
 		}
 
 		.section301.section .section_inner .right,
 		.section301.section .section_inner .txt1 {
-			width: 100%
+			width: 90%
 		}
 
 		.section301 .right.size_200x200.btn_under_text .txt1,
 		.section301 .right.size_400x400.btn_under_text .txt1 {
-			max-height: 130px
+			max-height: 70px
 		}
 
 		@media (max-width:960px) {
@@ -39939,7 +39940,7 @@
 
 		.section334 .arr1,
 		.section334 .slide {
-			width: 100%;
+			width: 90%;
 			height: var(--slider-height);
 			position: relative;
 			float: left;
@@ -55739,7 +55740,7 @@
 .date-right {
 	display: flex;
 
-	align-items: center;
+	align-items: left;
 	justify-content: space-between; 
 	gap: 10px;
 	padding: 10px; 
@@ -55747,7 +55748,7 @@
 
 .date-right p {
 	margin: 0; 
-	margin-right: 41px;
+	margin-right: 150px;
 }
 
 
