@@ -1,8 +1,5 @@
 
-* {
-	margin: 0;
-	padding: 0;
-}
+
 		body.modal,
 		body.noscroll,
 		body>#wrapper {
@@ -77,7 +74,6 @@
 		}
 
 		body {
-			
 			font-family: var(--styles_text_font, var(--base_font_familty));
 			font-weight: var(--styles_text_font_weight, 300);
 			color: var(--styles_text_color, #000);
@@ -671,11 +667,11 @@
 		}
 
 		.section {
-			width: 90%;
-			min-width: 870px;
+			width: 100%;
+			min-width: 1170px;
 			padding: 40px 0;
 			line-height: 1.4;
-			background-position: left left;
+			background-position: center center;
 			background-repeat: repeat;
 			transition: .5s;
 			opacity: 1
@@ -17093,7 +17089,7 @@
 			display: -webkit-flex;
 			-webkit-box-pack: justify;
 			-ms-flex-pack: justify;
-			justify-content: space-between;
+			justify-content: space-around;
 			-webkit-box-align: center;
 			-ms-flex-align: center;
 			align-items: center
@@ -17104,7 +17100,7 @@
 		}
 
 		.section2116 .wrapp .logo {
-			width: 200px;
+			width: auto;
 			display: flex;
 			display: -webkit-box;
 			display: -ms-flexbox;
@@ -17120,12 +17116,9 @@
 		}
 
 		.section2116 .wrapp .logo img {
-			
+			max-width: 100%;
 			height: auto;
-			display: block;
-			margin-left:-180px ;
-			 background-color: #ffffff;	
-	
+			display: block
 		}
 
 		.section2116 .logo_left .menu1 {
@@ -17155,20 +17148,16 @@
 			display: -webkit-box;
 			display: -ms-flexbox;
 			display: -webkit-flex;
-			margin-left : -300px;
-			margin-top: 9px;
+			margin: 0;
 			padding: 0;
 			text-align: center;
 			-ms-flex-wrap: wrap;
 			flex-wrap: wrap;
-			-webkit-box-pack: center;
-			-ms-flex-pack: center;
-			justify-content: center;
-			align-items: center;
+			-webkit-box-pack: end;
+			-ms-flex-pack: end;
+			justify-content: flex;
 			overflow: hidden;
-			
-			
-			/* max-height: 80px */
+			max-height: 80px
 		}
 
 		.section2116 li {
@@ -17189,14 +17178,14 @@
 			-ms-flex-pack: unset;
 			justify-content: unset
 		}
-/* вот */
+
 		.section2116 ul a {
 			display: flex;
 			display: -webkit-box;
 			display: -ms-flexbox;
 			-webkit-box-pack: center;
 			-ms-flex-pack: center;
-			/* justify-content: center; */
+			justify-content: center;
 			display: -webkit-flex;
 			color: inherit;
 			padding: 0 10px;
@@ -17204,9 +17193,8 @@
 			-webkit-transform-origin: center;
 			-ms-transform-origin: center;
 			transform-origin: center;
-			transition: .9s;
-			line-height: unset !important;
-			
+			transition: .3s;
+			line-height: unset !important
 		}
 
 		.section2116 .level1 a:hover {
@@ -17344,7 +17332,6 @@
 		.section2116 .logo_img {
 			max-width: 270px;
 			width: auto
-			
 		}
 
 		.section2116 .logo_center .logo_img {
@@ -17393,143 +17380,7 @@
 			}
 		}
 
-		@media (max-width:1400px) {
-
-			#wrapper.padding_wrapper .section130 .section_inner {
-				margin-left: 100px;
-				min-width: auto;
-				width: calc(100% - 180px)
-			}
-
-			.section2116 .navbar_lang .lang_li a {
-				font-size: 15px;
-					
-		}
-
-		.section2116 ul a {	
-			font-size: 15px;
-			
-		}
-
-		.section2116 ul {
-			/* justify-content: left;	 */
-			margin-left : -146px;
-		}
-
-	}
-
-	@media (max-width:960px) {
-
-		
-				.section2116 .wrapp .logo img {
-					margin-left:-30px ;
-				}
-	
-				.section2116 .navbar_lang {
-					display: flex;
-					width: 120px;
-				}
-
-				.section2116  .navbar_lang .lang_li {
-					
-					width: 45px;	
-					height: 50px;
-					justify-content: left;
-					padding-left: -15px;
-					padding-top: 10px;
-					/* font-size: 50px;  */
-					
-				}
-
-				.section2116 .navbar_lang .lang_li a {
-					font-size: 26px;
-					
-				}
-				/* тут сег */
-
-
-			
-			.section2116 .wrapp  {
-				width: 1500px;
-				max-width: 230px;
-				/* -webkit-box-ordinal-group: 2;
-				-ms-flex-order: 1;
-				order: 1;
-				min-height: 60px */
-			}
-		
-
-	}
-
-	@media (max-width:642px) {
-
-		
-		.section2116 .wrapp .logo img {
-			margin-left:-30px ;
-		}
-
-		.section2116 .navbar_lang {
-			display: flex;
-			/* width: 320px; */
-		}
-
-		.section2116  .navbar_lang .lang_li {
-			
-			width: 25px;	
-			height: 20px;
-			justify-content: left;
-			/* padding-left: -15px;
-			padding-top: 10px; */
-			/* font-size: 50px;  */
-			
-		}
-
-		.section2116 .navbar_lang .lang_li a {
-			font-size: 26px;
-			
-		}
-		/* тут сег */
-
-
-	
-	.section2116 .wrapp  {
-		width: 1500px;
-		max-width: 230px;
-	}
-
-
-}
-
-
-
-		@media (max-width:1260px) {
-
-				.section2116 .wrapp .logo img {
-					margin-left:-30px ;
-				}
-	
-				.section2116 .navbar_lang {
-					display: flex;
-					
-				}
-
-				.section2116 .navbar_lang .lang_li {
-					
-					width: 56px;	
-					height: 50px;
-					justify-content: left;
-					
-				}
-
-				.section2116 .navbar_lang .lang_li a {
-					font-size: 14px;
-				}
-
-			/* .section2116 .wrapp .logo img {
-				margin-left:-330px ;
-			} */
-
-
+		@media (max-width:960px) {
 			.section2116.dark .menu-toogler.active {
 				-webkit-filter: invert(1);
 				filter: invert(1)
@@ -17573,14 +17424,12 @@
 				-webkit-box-orient: vertical;
 				-webkit-box-direction: reverse;
 				-ms-flex-direction: column-reverse;
-				flex-direction: column-reverse;
-					width: 1500px;
-					max-width: 230px;
+				flex-direction: column-reverse
 			}
 
 			.section2116 .wrapp .logo {
 				width: auto;
-				max-width: 750px;
+				max-width: 250px;
 				-webkit-box-ordinal-group: 2;
 				-ms-flex-order: 1;
 				order: 1;
@@ -17622,7 +17471,7 @@
 			}
 
 			.section2116.dark .menu1 {
-				background: #c01717
+				background: #333
 			}
 
 			.section2116 .section_inner {
@@ -17697,12 +17546,8 @@
 			.section2116 .menu1 ul>li.level0 a,
 			.section2116 .menu2 ul>li.level0 a {
 				border: none;
-				/* display: block; */
-				padding: 10px 7px;
-				/* ; */
-				justify-content: left;
-				margin-left: 190px;
-				color: #cb1212c9;
+				display: block;
+				padding: 10px 7px
 			}
 
 			.section2116 .menu1 ul>li.level0,
@@ -17790,8 +17635,7 @@
 			.section2116 .menu-toogler svg {
 				max-width: 32px;
 				max-height: 32px;
-				fill: currentColor;
-
+				fill: currentColor
 			}
 
 			.section2116 .menu-toogler.new_burger.circle svg {
@@ -21169,23 +21013,6 @@
 		.section130 .image_box.image_size_300x450 .overlay_image_title {
 			margin-top: 200px
 		}
-
-		/* начало */
-		/* .logo_img{
-			margin-left:-130px ;
-		
-		} */
-
-		
-		
-
-	/* .ulm {
-		background-color: #dcb827;
-		margin-left: -100px;
-	} */
-
-
-
 
 		.section130 .overlay_image_title {
 			font-size: 24px;
@@ -34739,7 +34566,7 @@
 
 		.section301.bg_text .txt1 {
 			color: #000;
-			width: calc(100% - 190px) !important;
+			width: calc(100% - 60px) !important;
 			margin: 20px;
 			box-sizing: border-box
 		}
@@ -34932,18 +34759,17 @@
 		}
 
 		.section301 .section_inner.width1170 .arr1 {
-			display: flex;
-			width: 900px;
+			display: flex
 		}
 
 		.section301.section .section_inner .right,
 		.section301.section .section_inner .txt1 {
-			width: 90%
+			width: 100%
 		}
 
 		.section301 .right.size_200x200.btn_under_text .txt1,
 		.section301 .right.size_400x400.btn_under_text .txt1 {
-			max-height: 70px
+			max-height: 130px
 		}
 
 		@media (max-width:960px) {
@@ -39940,7 +39766,7 @@
 
 		.section334 .arr1,
 		.section334 .slide {
-			width: 90%;
+			width: 100%;
 			height: var(--slider-height);
 			position: relative;
 			float: left;
@@ -44868,7 +44694,13 @@
 			height: 31vw
 		}
 
-		
+		@media (max-width:1400px) {
+			#wrapper.padding_wrapper .section130 .section_inner {
+				margin-left: 100px;
+				min-width: auto;
+				width: calc(100% - 180px)
+			}
+		}
 
 		@media (max-width:1366px) {
 			#wrapper.padding_wrapper .section334.inner_width940 .slider {
@@ -55655,6 +55487,20 @@
 			color: #fafafa;
 			font-size: 18px
 		}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+		
 
 		@media (max-width:1545px) {
 			.section2116 .wrapp .logo img {
@@ -55917,6 +55763,5 @@
     transform: scale(1.05);
 	 
 }
-
 
 
