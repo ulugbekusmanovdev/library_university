@@ -37,7 +37,7 @@ def set_language(request, language):
 # Create your views here.
 def homepage(request):
     books = Book.objects.all().order_by('-id')[0:5]
-    news = News.objects.all().order_by('-create_date')[0:2]
+    news = News.objects.all().order_by('-create_date')[0:3]
     last_news = News.objects.order_by('-create_date').first()
     adt = Ads.objects.all().order_by('-id')[0:3]
     structure = Structure.objects.all()

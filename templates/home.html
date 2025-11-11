@@ -20,9 +20,9 @@
 </head>
 <link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
 
-<script src="/static/pdf-js/build/pdf.mjs" type="module"></script>
-<script src="/static/pdf-js/web/viewer.mjs" type="module"></script>
-<link rel="stylesheet" href="/static/pdf-js/web/viewer.css">
+<script src="{% static 'pdf-js/build/pdf.mjs' %}" type="module"></script>
+<script src="{% static 'pdf-js/web/viewer.mjs' %}" type="module"></script>
+<link rel="stylesheet" href="{% static 'pdf-js/web/viewer.css' %}">
 </head>
 <style>
 
@@ -35,7 +35,7 @@
 
 		 background: 
     linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), /* полупрозрачный цвет поверх */
-    url('/media/fffon.jpeg'); /* твоя картинка */ 
+    url('static/img/fon/fffon.jpeg'); /* твоя картинка */ 
     
       justify-content: center;
       align-items: center;
@@ -80,118 +80,83 @@
 
 <div class="zz" style="display: flex;"> -->
 
+	
 	<div data-hcolor="#ff6600" class="section clip_none bg_text show_btn no_image section301 animate"
-     style="background-color:#ffffff;background-image:url(/img/1920x0/image_10047.jpg);padding-top:100px;padding-bottom:70px;width:100%;"
-     data-id="4722812" id="b_4722812"><a name="anchor7"></a>
+		style="background-color:#ffffff;background-image:url(/img/1920x0/image_10047.jpg);padding-top:90px;padding-bottom:70px;"
+		data-id="4722812" id="b_4722812"><a name="anchor7"></a>
+		<div class="section_inner width1170">
+			<div class="title"><span style="color:#2c2c2c; font-size:50px">{% trans "Новости в нашем блоге" %}</span></div>
+			<div class="sub_title">
+				<p><span style="color:#9a2929"><span style="font-size:22px"></span></span><span
+						style="font-size:20px">{% trans "Самые интересные и востребованные новости в нашей страничке" %}</span><span style="color:#000000"><span style="font-size:22px"></span></span></p>
+			</div>
 
-  <div class="section_inner width1170" style="display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start;">
 
-    <!-- Новости -->
-    <div class="news-block" style="flex:1 1 65%;">
+			{% for new in news %}
+			<div class="arr1 size_700x500 btn_under_text">
+				
+				<div data-link="" class="image1 link_on size_700x500 ">
+					<img data-lazy="1" loading="lazy" width="350px" height="250px" src="{{new.image.url}}">
+				</div>
 
-      <div class="title">
-        <span style="color:#2c2c2c;font-size:46px">{% trans "Новости в нашем блоге" %}</span>
-      </div>
-      <div class="sub_title">
-        <p><span style="font-size:18px">{% trans "Самые интересные и востребованные новости в нашей страничке" %}</span></p>
-      </div>
+				
 
-      {% for new in news %}
-      <div class="arr1 size_700x500 btn_under_text" style="display:flex;flex-wrap:wrap;gap:15px;margin-bottom:30px;">
-            <div class="ddd3"> 
-        <!-- Фото -->
-        <div class="image1 link_on size_700x500" style="flex:1 1 100%;text-align:center; justify-content: center;">
-          <img data-lazy="1" loading="lazy" src="{{new.image.url}}" alt="{{ new.title }}"
-               style="width:400px;max-width:100%;height:auto;display:inline-block;border-radius:8px;">
-        </div>
+				<div class="right size_700x500 btn_under_text ">
+					
+					
 
-        <!-- Текст -->
-        <div class="right size_700x500 btn_under_text" style="flex:1 1 100%;margin-top:15px;">
-          <div class="txt1">
-            <p><span style="color:#424242;font-size:18px"><strong>{{new.title}}</strong></span></p>
-            <p style="text-align:justify;padding-right:10px;font-size:15px;line-height:1.5;">
-              {{ new.text|truncatewords:60|linebreaksbr }}
-            </p>
-          </div>
-          <div class="date-right" style="margin-top:10px;display:flex;align-items:center;gap:10px;">
-            <a href="{% url 'news' %}" class="btn1 surround dark"
-               style="background-color:#f78960;border-radius:2em;padding:6px 15px;color:#fff;text-decoration:none;">
-              {% trans 'Все' %}
-            </a>
-            <p class="date-p" style="margin:0;font-size:13px;color:#777;">{{ new.create_date|date:"d-m-Y"}}</p>
-          </div>
-        </div>
-</div>
-      </div>
-      {% endfor %}
-    </div>
+					<div class="txt1 ">
+						<p><span style="color:#424242"><span style="font-size:20px"><strong>{{new.title}}</strong></span></span></p>
+						<p><br></p>
+						<p style="text-align: justify; padding-right: 10px;"><span style="font-family:montserrat"><span
+									style="font-size:17px">{{ new.text|truncatewords:60|linebreaksbr}}</span></span></p>
+					</div> 
+					<div class="date-right" > <a href="{% url 'news' %}" class="btn1 surround  dark" data-hcolor="#f78960"
+						style="background-color:#f78960; border-radius: 2em; box-shadow: 0">{% trans 'Все' %}</a>
+						  <p class="date-p">{{ new.create_date|date:"d-m-Y"}}</p> 
+						</div>
 
-    <!-- Объявления -->
-    <div class="announcement-column" style="flex:0 0 30%;">
+				</div>
+			</div>
+			{% endfor %}
 
-      <div class="section-title-new" style="margin-top:-10px;">
-        <a href="{% url 'adt' %}" style="font-size:18px;">{% trans 'Объявления' %}</a>
-      </div>
 
-      <div class="announcement-group" style="margin-top:15px;">
-        {% for a in adt %}
-        <div class="announcement" style="margin-bottom:15px;padding:10px;border:1px solid #ddd;border-radius:6px;">
-          <h4 class="h-announcement-column" style="margin:0 0 5px;font-size:15px;">{{a.title}}</h4>
-          <p class="date" style="margin:0;font-size:12px;color:#666;">{{a.create_date}}</p>
-          <p style="margin:5px 0 0;font-size:14px;line-height:1.4;">{{a.text|slice:":250"}}</p>
-        </div>
-        {% endfor %}
+		</div>
+		   </div>
 
-        <div class="announcement-footer" style="margin-top:10px;">
-          <a href="{% url 'adt' %}" id="a-announcement-footer" style="font-size:14px;color:#f78960;text-decoration:none;">
-            {% trans 'Смотрите все объявления' %}
-          </a>
-        </div>
-      </div>
 
-    </div>
+<div class="obyavlenie">
+	 <!-- Объявления -->
+<div class="announcement-column">
 
+  <div class="section-title-new">
+    <a href="{% url 'adt' %}">{% trans 'Объявления' %}</a>
   </div>
+
+  <div class="announcement-group" style="margin-top:15px;">
+    {% for a in adt %}
+    <div class="announcement" style="margin-bottom:15px;padding:10px;border:1px solid #ddd;border-radius:6px;">
+      <h4 class="h-announcement-column" style="margin:0 0 5px;font-size:20px;">{{a.title}}</h4>
+      <p class="date" style="margin:0;font-size:15px;color:#666;">{{a.create_date}}</p>
+      <p style="margin:5px 0 0;font-size:19px;line-height:1.4;">{{a.text|slice:":250"}}</p>
+    </div>
+    {% endfor %}
+
+    <div class="announcement-footer" style="margin-top:-15px;">
+      <a href="{% url 'adt' %}" id="a-announcement-footer" style="font-size:19px;color:#f78960;text-decoration:none;">
+        {% trans 'Смотрите все объявления' %}
+      </a>
+    </div>
+  </div>
+
 </div>
 
-<!-- Адаптив -->
-<style>
-  @media (max-width: 900px) {
-	.ddd3 {
-    display: block !important;
-  }
-
-    .section_inner {
-      flex-direction: column !important;
-    }
-    .arr1 {
-      flex-direction: column !important;
-    }
-    .image1 {
-      text-align: center !important;
-    }
-    .image1 img {
-      width: 100% !important;
-      max-width: 500px !important;
-    }
-    .right {
-      flex: 1 1 100% !important;
-      margin-top: 15px !important;
-    }
-    .announcement-column {
-      width: 100% !important;
-      margin-top: 25px !important;
-	  max-width: 550px;
-      margin: 0 auto;
-      padding: 20px;
-      font-family: "Segoe UI", sans-serif;
-      height: 600px;
-    }
-  }
-</style>
+</div>
 
 
 
+
+     
 
 
 
@@ -207,6 +172,7 @@
 			style="background-color:#ffffff;padding-top:80px;padding-bottom:80px;--tiles_radius:0px;--tiles_shadow:none;--bg_color:#fff; width: 100%;"
 			data-id="anchor6" id="anchor6"><a name="a_4732122"></a>
 
+			
 			<div class="section_inner all_border btn_move"
 				style="--icon_size:64px;--btn_fweight:300;--btn_fsize:18px;--item_title_fweight:400;">
 				<a style="text-decoration: none; color: #2c2c2c;" href="{% url 'books' %}">
@@ -679,11 +645,7 @@
 
 						{% video item.url '650x240' %}
 
-						<iframe width="100%" height="100%"
-							src="https://www.youtube.com/embed/t5QTaJWomlU?si=BG4aFw-avIi7hVss"
-							title="YouTube video player" frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-							allowfullscreen></iframe>
+						
 					</div>
 						{% endfor %}
 				</div>
@@ -791,7 +753,7 @@
 
 	 <div style="border-radius: 100px;position: fixed;  right:80px; bottom:30px;" > 
 		<a href="https://www.instagram.com/studclub.oshsu?igsh=MXI0dDFlbWY1Z3NtZQ==" target="_blank">
-			<img src="/media/img/studclub.jpeg" alt="" width="90px" height="90px" style="border-radius: 110px;">
+			<img src="/static/img/fon/studclub.jpeg" alt="" width="90px" height="90px" style="border-radius: 110px;">
 		  </a>
 	 </div>
 	 
@@ -807,12 +769,12 @@
 		<h1> правило №1 Войдя в библиотеку, поздоровайся, а получив книгу, обязательно скажи СПАСИБО!</h1>
 		<h1> правило №2  НЕ приходи в библиотеку с сумками и пакетами, напитками и едой</h1>
 		<h1> Правило Nº 3. В библиотеке соблюдай порядок, веди себя ТИХО, разговаривай шёпотом, так как шум мешает другим читателям. </h1>
-		<h1> Правило.Nº 4. Еели надо поговорить по мобильному телефону, выйди в коридор. </h1>
+		<h1> Правило.Nº 4. Если надо поговорить по мобильному телефону, выйди в коридор. </h1>
 		<h1> Правило. Nº 5. С библиотечными книгами обращайся бережно, не загибай углы, не пиши ручкой, пользуйся закладкой. </h1>
 		<h1> Правило Nº 6. Не теряй библиотечные книги. </h1>
 		<h1> Правило.Nº 7. Если книга повреждена, « ПОДЛЕЧИ ЕЕ». Заклей. </h1>
 		<h1> Правило. Nº 8. Просматривая книги на полке, ставь обратно точно на то место, где ты их взял. </h1>
-		<h1> Правило.Nº 9. Возвращай книги в библиотску вовремя. Их ждут другие читатели. </h1>
+		<h1> Правило.Nº 9. Возвращай книги в библиотеку вовремя. Их ждут другие читатели. </h1>
 		<h1> Правило.Nº 10. Уходя из библиотеки, не забудь попрошаться.</h1>
 	</div>
 </div>

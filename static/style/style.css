@@ -1036,14 +1036,19 @@ text-shadow: 1px 1px 2px rgba(209, 8, 8, 0.231);
   height: 1500px;
 }
 .outer-container-home {
-  max-width: 1180px;
+  max-width: 1700px;
   position: relative;
   overflow: hidden;
   box-shadow: 0 0 15px rgb(0, 0, 0);
   margin: 0 auto;
-  height: 5500px;
+  height: auto;
 }
-
+@media (max-width:1400px) {
+    #wrapper {
+        overflow: hidden
+    }
+}
+ 
 .inner-container {
   margin-top: 240px;
   position: relative;
@@ -2088,24 +2093,29 @@ button:hover {
       margin-bottom: 15px;
     }
 
-	.section-title-new{
+	/* .section-title-new{
 		margin: 5px 0 5px 0;
 		
-	}
-
-	.section-title-new a {
+	} */
+.section-title-new {
+  display: flex;
+  justify-content: center; /* центрируем по горизонтали */
+  margin-top: -10px; /* перенести из инлайн-стиля сюда */
+}
+.section-title-new a {
   margin-top: 20px;
-  margin-left: 20px;
   font-size: 28px;
-  color: #000000;
-  font-weight: 400;
+  color: #272626;
+  font-weight: 500;
   font-family: Georgia, serif;
   border: none;
-  display: inline-block;
+  /* можно убрать display:inline-block, или оставить */
 }
+
 
 .section-title-new a:hover {
   text-decoration: none;
+  
 }
 
     /* Новости */
@@ -2383,14 +2393,15 @@ button:hover {
 
 
 	.announcement-column {
-  max-width: 550px;
+  max-width: 1050px;
   margin: 0 auto;
-  padding: 20px;
-  /* background-color: #ffffff; */
+  padding: 15px;
+  /* background-color: #a22929; */
   border-radius: 12px;
   /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); */
   font-family: "Segoe UI", sans-serif;
   height: 600px;
+  
 }
 
 .section-header {
@@ -2423,97 +2434,185 @@ button:hover {
 }
 
 
+
+
+
+/* тест */
+/* Контейнер объявлений */
+
+.obyavlenie{
+  background-color: #ffffff;
+  height:500px ;
+}
 .announcement-group {
-  background: #dedcdc93;
-  padding: 10px;
+  background: #dedcdc7a;
+  padding: 20px 10px;
   border-radius: 10px;
-  max-width: 550px;
+  max-width: 2200px; /* Увеличенная максимальная ширина */
+  width: 110%;       
+  margin: 40px 20px 0 -10px  ;
   box-sizing: border-box;
-  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  text-align: center;
 }
 
+
+
+/* Один блок объявления */
 .announcement {
-  margin-bottom: 24px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid #e0e0e0;
+  flex: 1 1 calc(33.333% - 20px); /* три блока в ряд с учетом gap */
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 280px;
 }
 
+/* Заголовок */
 .h-announcement-column {
-  font-size: 20px;
-  font-weight: 400;
+  width: 1000px;
+  font-size: 35px;
+  font-weight: 600;
   color: #800020;
-  margin: 5px 0 10px 0;
+  margin: 15px 0 20px 0;
+
 }
 
+/* Дата */
 .announcement .date {
-  font-size: 14px;
-  color: #888;
-  margin-bottom: 10px;
+  font-size: 25px;
+  color: #666;
+  margin-bottom: 15px;
 }
 
+/* Текст объявления */
 .announcement p {
-  font-size: 16px;
+  font-size: 22px;
   color: #333;
   line-height: 1.6;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
+/* Футер */
 .announcement-footer {
-  margin-top: 24px;
-  padding-top: 12px;
+  width: 100%;
+  margin-top: 30px;
+  padding-top: 15px;
   text-align: center;
-  font-size: 15px;
+  font-size: 22px;
   color: #777;
 }
+
 #a-announcement-footer {
-	color: #800020;
+  color: #800020;
+  font-size: 22px;
+  text-decoration: none;
+  font-weight: 600;
 }
-:hover #a-announcement-footer {
-	color: #942f48;
+
+#a-announcement-footer:hover {
+  color: #942f48;
+}
+
+/* Адаптивность */
+
+/* Средние экраны (планшеты) */
+@media (max-width: 1400px) {
+  .obyavlenie{
+  height:750px ;
+}
+  .announcement-group {
+    max-width: 100%;
+    padding: 15px 20px;
+    
+  }
+
+  .announcement {
+    flex: 1 1 calc(50% - 20px);
+  }
+
+  .h-announcement-column {
+    font-size: 24px;
+  }
+
+  .announcement .date {
+    font-size: 16px;
+  }
+
+  .announcement p {
+    font-size: 18px;
+  }
+
+  .announcement-footer {
+    font-size: 18px;
+  }
+
+  #a-announcement-footer {
+    font-size: 20px;
+  }
+}
+
+/* Мобильные экраны */
+@media (max-width: 768px) {
+  .obyavlenie{
+  height: 18px;
+}
+  .announcement {
+    flex: 1 1 100%;
+    min-width: auto;
+  }
+
+  .announcement-group {   
+  margin-left: auto ;
+  }
+
+  .announcement .date {
+    font-size: 14px;
+  }
+
+  .announcement p {
+    font-size: 16px;
+  }
+
+  .announcement-footer {
+    font-size: 16px;
+  }
+
+  #a-announcement-footer {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 901px) {
    .container-home {
     height: 1620px;
   }
- 
-.announcement-column {
-  margin-top: 988px;
-
 }
-.announcement-group {
-  width: 750px;
-}
-}
-
-
 @media (max-width: 768px) {
- .container-home {
-    height: 1620px;
-  }
-
-.announcement-column {
-  margin-top: 1050px;
-
+.obyavlenie{
+  height:800px ;
 }
-
+   .announcement {
+    min-width: 100px;
+  }
 } 
 
 @media (max-width: 660px) {
  .container-home {
     height: 1720px;
   }
-
-.announcement-column {
-  margin-top: 1050px;
-  margin-right: -70px;
-
+.obyavlenie{
+  height:970px ;
 }
-
-.announcement-group {
-  width: 400px;
-
-}
-
 } 
 
 @media (max-width: 569px) {
@@ -2521,57 +2620,32 @@ button:hover {
     height: 1790px;
   }
 
-.announcement-column {
-  margin-top: 1000px;
-  margin-right: -130px;
-}
-
-.announcement-group {
-  width: 350px;
-  
-}
 } 
 @media (max-width: 500px) {
  .container-home {
     height: 1790px;
   }
-
-.announcement-column {
-  margin-top: 1000px;
-  margin-right: -180px;
+.obyavlenie{
+  height:990px ;
 }
 
-.announcement-group {
-  width: 300px;
-}
 } 
 @media (max-width: 451px) {
  .container-home {
     height: 1860px;
   }
-
-.announcement-column {
-  margin-top: 1000px;
-  margin-right: -230px;
-}
-
-.announcement-group {
-  width: 260px;
-}
+.obyavlenie{
+  height:1150px ;
+} 
 } 
 @media (max-width: 405px) {
- .container-home {
-    height: 1860px;
+ 
+   .announcement {
+    min-width: 100px;
   }
 
-.announcement-column {
-  margin-top: 1000px;
-  margin-right: -280px;
-}
 
-.announcement-group {
-  width: 210px;
-}
+
 } 
 
 

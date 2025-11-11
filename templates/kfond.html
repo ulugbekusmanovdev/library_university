@@ -110,14 +110,12 @@
             <h1 style="font-size: 26px; color: #2c2c2c;" >{% trans 'Систематические каталоги' %}</h1>
             <ul class="catalog-link" style="margin-top: 65px;">
                 
-                {% for c in catalog_list %}
-                    <li><a target="_blank" href="{{ c.pdf.url }}">{{c.title}}</a></li>
-                {% endfor %}
+                
                     
                 
 				<li><a target="_blank" href=https://base.oshsu.kg/resurs/document/PDF-20180419151514-kitep_osu.pdf>Текущий библиографический указатель 2014 года II квартал</a></li>
                 <li><a target="_blank" href=https://base.oshsu.kg/resurs/document/PDF-20180419151215-kitep_osu.pdf>Текущий библиографический указатель 2014 года III квартал</a></li>
-				<!-- <li><a target="_blank" href=https://base.oshsu.kg/resurs/document/PDF-20180419143207-kitep_osu.pdf>Текущий библиографический указатель 2014  года IV квартал</a></li>
+				<li><a target="_blank" href=https://base.oshsu.kg/resurs/document/PDF-20180419143207-kitep_osu.pdf>Текущий библиографический указатель 2014  года IV квартал</a></li>
 				<li><a target="_blank" href=https://base.oshsu.kg/resurs/document/PDF-20180419134615-kitep_osu.pdf>Текущий библиографический указатель 2015 года II-III квартал</a></li>
 				<li><a target="_blank" href=https://base.oshsu.kg/resurs/document/PDF-20180419152146-kitep_osu.pdf>Текущий библиографический указатель 2016 года I квартал</a></li>
 				<li><a target="_blank" href=https://base.oshsu.kg/resurs/document/PDF-20180419152547-kitep_osu.pdf>Текущий библиографический указатель 2016 года II квартал</a></li>
@@ -137,7 +135,11 @@
 				<li><a target="_blank" href=https://base.oshsu.kg/resurs/document/PDF-20201215101919-Kitep_osu.pdf>Текущий библиографический указатель 2020 года I квартал</a></li>
 				<li><a target="_blank" href=https://base.oshsu.kg/resurs/document/PDF-20201215102339-Kitep_osu.pdf>Текущий библиографический указатель 2020 года III квартал</a></li>
 				<li><a target="_blank" href=https://base.oshsu.kg/resurs/document/PDF-20210316101154-Kitep_osu.pdf>Текущий библиографический указатель 2020 года IV квартал</a></li>
-				<li><a target="_blank" href=https://base.oshsu.kg/resurs/document/XLSX-20201214141515-Kitep_osu.xlsx>Образец заполнения заявки на приобретение учебной литературы</a></li> -->
+				<li><a target="_blank" href=https://base.oshsu.kg/resurs/document/XLSX-20201214141515-Kitep_osu.xlsx>Образец заполнения заявки на приобретение учебной литературы</a></li>
+
+                {% for c in catalog_list %}
+                    <li><a target="_blank" href="{{ c.pdf.url }}">{{c.title}}</a></li>
+                {% endfor %}
             </ul>
         
             

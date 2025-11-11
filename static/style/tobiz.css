@@ -55593,8 +55593,8 @@
 }
 
 .date-right p {
-	margin: 0; 
-	margin-right: 150px;
+	margin-right: 15px;
+	margin-top: 15px;
 }
 
 
@@ -55606,11 +55606,22 @@
 
 }
 
-.date-p {
-    margin: 0; 
-	margin-right: 50px;
-}
 
+@media (max-width: 960px) { 
+ .date-p {  
+
+} 
+}
+@media (max-width: 480px) { 
+ .date-p {  
+	width: 400px;
+} 
+}
+@media (max-width: 380px) { 
+ .date-p {  
+	width: 800px;
+} 
+}
 /* проба 2 */
 
 
