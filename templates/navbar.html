@@ -72,7 +72,7 @@
     </div>
 
     <div class="nav-item-navbar">
-      <a href="/" class="nav-link-navbar"><i class="fas fa-sitemap"></i> Структура</a>
+      <a href="{% url 'strukture'  %}" class="nav-link-navbar"><i class="fas fa-sitemap"></i> Структура</a>
       <div class="submenu-navbar">
         <a href="{% url 'profs' %}"> {% trans 'Профсоюз' %} </a>
       
@@ -115,14 +115,14 @@
     </div> 
     
       <div class="nav-item-navbar">
-      <a href="/" class="nav-link-navbar"><i class="fas fa-bookmark"></i> Библиограф</a>
-      {% comment %}
+      <a href="{% url 'bibliograf' %}" class="nav-link-navbar"><i class="fas fa-bookmark"></i> Библиограф</a>
+      
       <div class="submenu-navbar">
         <a  href="{% url 'bibizdanie' %}">{% trans 'Библиографические издания' %}</a>
         <a href="{% url 'calendar' %}">{% trans 'Календарь знаменательных дат' %}</a>
         <a href="{% url 'question' %}">{% trans 'Задать вопрос библиографу' %}</a>
       </div>
-      {% endcomment %}
+     
     </div>
     
     
