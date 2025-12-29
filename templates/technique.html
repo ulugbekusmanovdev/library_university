@@ -1,0 +1,137 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}"> 
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Учёт техники факультетов</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Шапка страницы */
+.header {
+     margin-top: 80px;
+    color: rgb(20, 12, 12);
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.header p {
+    margin: 5px 0 0;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h3>Учёт техники факультетов</h3>
+</div>
+
+<!-- ======= Факультет 1 ======= -->
+<div class="faculty-block">
+    <h2>Факультет .... </h2>
+    <p><strong>общий техника </strong> 12 </p>
+
+    <div class="main">
+        <div class="left-panel">
+            <button onclick="showTable(this,'computers')">Компьютеры</button>
+            <button onclick="showTable(this,'printers')">Принтеры</button>
+        </div>
+        <div class="right-panel">
+            <div class="table-block computers hidden">
+                <h3>Компьютеры</h3>
+                <table>
+                    <tr><th>№</th><th>Характеристика</th><th>ИНН</th><th>имя ответсвенного </th></tr>
+                    <tr><td>1</td><td>Dell Optiplex i4</td><td>ИНН</td><td>ФИО</td></tr>
+                    <tr><td>2</td><td>HP ProDesk i3</td><td>ИНН</td><td>16 ФИО</td></tr>
+                </table>
+            </div>
+            <div class="table-block printers hidden">
+                <h3>Принтеры</h3>
+                <table>
+                    <tr><th>№</th><th>Характеристика</th><th>ИНН</th><th>имя ответсвенного </th></tr>
+                    <tr><td>1</td><td>HP LaserJet</td><td>ИНН</td><td>ФИО</td></tr>
+                    <tr><td>2</td><td>Canon Pixma</td><td>ИНН</td><td>ФИО</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ======= Факультет 2 ======= -->
+<div class="faculty-block">
+    <h2>Факультет .... </h2>
+    <p><strong>Общий техника </strong> 12 </p>
+
+    <div class="main">
+        <div class="left-panel">
+            <button onclick="showTable(this,'computers')">Компьютеры</button>
+            <button onclick="showTable(this,'printers')">Принтеры</button>
+            <button onclick="showTable(this,'scaner')">sc</button>
+        </div>
+        <div class="right-panel">
+            <div class="table-block computers hidden">
+                <h3>Компьютеры</h3>
+                <table>
+                    <tr><th>№</th><th>Характеристика</th><th>ИНН</th><th>имя ответсвенного </th></tr>
+                    <tr><td>1</td><td>Lenovo ThinkPad i2</td><td>ИНН</td><td>ФИО</td></tr>
+                    <tr><td>2</td><td>Asus VivoPC i5</td><td>ИНН</td><td>ФИО</td></tr>
+                </table>
+            </div>
+            <div class="table-block printers hidden">
+                <h3>Принтеры</h3>
+                <table>
+                    <tr><th>№</th><th>Характеристика</th><th>ИНН</th><th>имя ответсвенного </th></tr>
+                    <tr><td>1</td><td>Brother HL</td><td>ИНН</td><td>ФИО</td></tr>
+                    <tr><td>2</td><td>Canon i-Sensys</td><td>ИНН</td><td>ФИО</td></tr>
+                </table>
+            </div>
+            <div class="table-block scaner hidden">
+                <h3>сканеры</h3>
+                <table>
+                    <tr><th>№</th><th>Характеристика</th><th>ИНН</th><th>имя ответсвенного </th></tr>
+                    <tr><td>1</td><td> sc Brother HL</td><td>ИНН</td><td>ФИО</td></tr>
+                    <tr><td>2</td><td>Canon i-Sensys</td><td>ИНН</td><td>ФИО</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ======= Можно добавлять факультеты дальше ======= -->
+
+<script>
+
+function showTable(button, type) {
+    const faculty = button.closest('.faculty-block');
+    faculty.querySelectorAll('.table-block').forEach(block => {
+        block.classList.add('hidden');
+    });
+    faculty.querySelector('.' + type).classList.remove('hidden');
+}
+</script>
+
+</body>
+</html>
+
+
+</body>
+{% include 'footer.html' %}
+{% endblock content %}
+</html>

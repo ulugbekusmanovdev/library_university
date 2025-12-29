@@ -171,6 +171,9 @@ def bibizdanie(request):
 def question(request):
     return render(request, 'question.html')
 
+def technique(request):
+    return render(request, 'technique.html')
+
 def news1(request, pk):
     single_news = News.objects.get(id=pk)
 

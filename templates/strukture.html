@@ -1,103 +1,171 @@
 {% extends 'index.html' %}
 {% load static %}
 {% load i18n %}
+
 {% block content %}
+{% include 'navbar.html' %}
 
-{% include 'navbar.html' %}   
-
-
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Библиотека — Сотрудники</title>
 
   <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f0f2f5;
-      color: #333;
+    :root{--bg:#f7f8fb;--card:#fff;--accent:#7c3aed;--chief:#a44a31;;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, Arial; margin:0; background:var(--bg); color:#111}
+    header{background:linear-gradient(90deg,#fff,#f3f4f6);padding:18px 20px;border-bottom:1px solid #e6e7eb;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:46px;height:46px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#4f46e5);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    main{padding:20px}
+    .layout{display:grid;grid-template-columns:280px 1fr;gap:22px}
+
+    .director-card{background:var(--card);padding:16px;border-radius:14px;border:2px solid var(--chief);box-shadow:0 4px 12px rgba(0,0,0,0.06)}
+    .director-photo{width:100%;border-radius:12px;height:240px;object-fit:cover;border:2px solid var(--chief)}
+    .director-name{font-size:18px;font-weight:700;margin-top:10px}
+    .director-position{font-size:14px;color:var(--muted)}
+
+    .card{background:var(--card);padding:16px;border-radius:12px;border:1px solid #e6e7eb}
+    .table{width:100%;border-collapse:collapse;margin-top:10px}
+    .table th,.table td{padding:10px 6px;border-bottom:1px solid #eef2ff;text-align:left}
+    .chief-mark{color:var(--chief);font-weight:600}
+
+    .dept-btn{
+      padding:8px 14px;
+      width: 300px;
+      border:none;
+      border-radius:8px;
+      background:linear-gradient(90deg,#b7433a,#810505);
+      color:#fff;
+      font-weight:600;
+      cursor:pointer;
+      transition:all 0.3s ease;
+    }
+    .dept-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 4px 12px rgba(0,0,0,0.2);
+      background:linear-gradient(90deg,#d36363,#b14949);
     }
 
+    @media(max-width:860px){
+      .layout{grid-template-columns:1fr}
+      .director-photo{height:200px}
+    }
   </style>
 </head>
+
 <body>
 
-  {% for d in director %}
-    <div class="struktura-wrapper">
-        <div class="struktura1">
-          <img src="{{d.img.url}}" alt="Директор">
-          <h1>{{d.name}}</h1>
-          <p>Должность: Директор</p>
-          <p>Телефон: +996-554-206-434</p>
-          <p>{% trans 'О себе: Руководитель с опытом и видением будущего.' %}</p>
-        </div>
-      
-        <div class="biography">
-          <h2>Биография</h2>
-          <p>
-            {{d.bio}}
-          </p>
-        </div>
-      </div>
-      {% endfor %}
-      
-      
+<header>
+  <div class="brand">
+    <div class="logo">Б</div>
+  </div>
+</header>
 
+<main>
   <div class="layout">
-  <div class="sidebar">
-    <button onclick="showDepartment('dept1')">{% trans 'Отдел комплектования и хранения книг' %}</button>
-    <button onclick="showDepartment('dept2')">{% trans 'Отдел электронных ресурсов и услуг' %}</button>
-    <button onclick="showDepartment('dept3')">Библиограф</button>
+
+    <!-- директор -->
+    <aside class="director-card">
+      <div class="director-name">Директор научной библиотеки</div>
+      <img src="/media/img/director.jpg" class="director-photo">
+      <div class="director-name">Орозбаев Азамат Мамасадыкович</div>
+      <div style="margin-top:12px;font-size:13px">
+        О себе: Руководитель с опытом и видением будущего.
+      </div>
+    </aside>
+
+    <!-- сотрудники -->
+    <section class="card">
+      <h2 style="margin:0 0 10px">Отделения</h2>
+
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:15px">
+        <button class="dept-btn" data-dept="1">Отдел комплектования и хранения книг</button>
+        <button class="dept-btn" data-dept="2">Отдел электронных ресурсов и услуг</button>
+        <button class="dept-btn" data-dept="3">Библиограф</button>
+      </div>
+
+      <h3 id="deptTitle" style="margin:10px 0">Выберите отдел…</h3>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Имя</th>
+            <th>Должность</th>
+            <th>Отдел</th>
+          </tr>
+        </thead>
+
+        <!-- отдел 1 -->
+        <tbody id="dept-1" class="dept-body" style="display:none">
+          <tr style="background:#fef3c7;font-weight:600">
+            <td>1</td>
+            <td>Козубай кызы Гулшайыр <span class="chief-mark">★</span></td>
+            <td>Должность</td>
+            <td>Отдел комплектования и хранения книг</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Имя</td>
+            <td>Должность</td>
+            <td>Отдел комплектования и хранения книг</td>
+          </tr>
+        </tbody>
+
+        <!-- отдел 2 -->
+        <tbody id="dept-2" class="dept-body" style="display:none">
+          <tr style="background:#fef3c7;font-weight:600">
+            <td>1</td>
+            <td>Абжапарова Гулбара <span class="chief-mark">★</span></td>
+            <td>Должность</td>
+            <td>Отдел электронных ресурсов и услуг</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><a style="color: #111;" href="{% url 'technique' %}">{% trans 'Улукбек' %}  </a> </td> 
+            <td>Должность</td>
+            <td>Отдел электронных ресурсов и услуг</td>
+          </tr>
+        </tbody>
+
+        <!-- отдел 3 -->
+        <tbody id="dept-3" class="dept-body" style="display:none">
+          <tr style="background:#fef3c7;font-weight:600">
+            <td>1</td>
+            <td>Динара <span class="chief-mark">★</span></td>
+            <td>Должность</td>
+            <td>Библиограф</td>
+          </tr>
+        </tbody>
+
+      </table>
+    </section>
+
   </div>
-
-  <div class="content">
-
-    
-    {% for s1 in structure1 %}
-    <div id="dept1" class="staff-grid active">
-      <div class="staff-card">
-        <img src="{{s1.img.url}}" alt="Имя сотрудника">
-        <h3>{{s1.name}}</h3>
-        <p>{{s1.info}}</p>
-      </div>
-    </div>
-     {% endfor %}
-
-    {% for s2 in structure2 %}
-    <div id="dept2" class="staff-grid" style="display: none;">
-      <div class="staff-card">
-        <img src="{{s2.img.url}}" alt="Виктория Сидорова">
-        <h3>{{s2.name}}</h3>
-        <p>{{s2.info}}</p>
-      </div>
-    </div>
-    {% endfor %}
-
-    {% for s3 in structure3 %}
-    <div id="dept3" class="staff-grid" style="display: none;">
-      <div class="staff-card">
-        <img src="{{s3.img.url}}" alt="Дмитрий Смирнов">
-        <h3>{{s3.name}}</h3>
-        <p>{{s3.info}}</p>
-      </div>
-    </div>
-    {% endfor %}
-
-
-  </div>
-</div>
+</main>
 
 <script>
-  function showDepartment(id) {
-    const sections = document.querySelectorAll('.staff-grid');
-    sections.forEach(sec => sec.style.display = 'none');
-    document.getElementById(id).style.display = 'grid';
-  }
-</script>
+const deptNames = {
+  1: 'Отдел комплектования и хранения книг',
+  2: 'Отдел электронных ресурсов и услуг',
+  3: 'Библиограф'
+};
 
-  
+function showDept(dept) {
+  document.getElementById('deptTitle').textContent = deptNames[dept];
+  document.querySelectorAll('.dept-body').forEach(tb => tb.style.display = 'none');
+  document.getElementById('dept-' + dept).style.display = '';
+}
+
+document.querySelectorAll('.dept-btn').forEach(btn => {
+  btn.addEventListener('click', () => showDept(btn.dataset.dept));
+});
+</script>
 
 </body>
 </html>
-
-
 
 {% endblock content %}

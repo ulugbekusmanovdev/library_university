@@ -23,6 +23,7 @@ urlpatterns = [
     path('question/', views.question, name='question'),
     path('detail/<int:pk>/', views.news1, name='detail'),
     path('strukture', views.strukture, name='strukture'),
+    path('technique', views.technique, name='technique'),
     # path('createNews', views.createNews, name="createNews"),
 
     path('photo_detail/<int:photo_id>/', views.photo_detail, name='photo_detail'),

@@ -5,10 +5,13 @@
 {% block content %}
 
 {% include 'navbar.html' %}
-
-<!-- пока утуруп турсун Динара эже алып кой дедиле -->
-
+<head>
 <link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
+
+<script src="/static/pdf-js/build/pdf.mjs" type="module"></script>
+<script src="/static/pdf-js/web/viewer.mjs" type="module"></script>
+<link rel="stylesheet" href="/static/pdf-js/web/viewer.css">
+</head>
 <style>
 
     * {
@@ -24,124 +27,60 @@
       min-height: 100vh;
     }
 
-   
+    .body1 {
+      padding: 0 40px;
+      background-image: url('/media/fffon.jpeg');
+      box-shadow: 0 4px 10px rgba(223, 96, 96, 0.2);
+      width: 100%;
+      height: 1000px;
+    }
+
+    .outer-container1 {
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #ffffffcd;
+  box-shadow: 0 0 15px rgb(0, 0, 0);
+  margin: 0 auto;
+  height: 1000px;
+}
+
 </style>
 </head>
-
 <body>
   <div class="body1">
-    <div class="outer-container">
-    
-      <div class="inner-container">
-        <div class="bib-polka"><img src="/media/img/книжный полка.png" alt=""></div>
-        <h1 >Бюллетень новых <br> поступлений </h1>
-        <h5> Дорогие читатели!</h5>
-        <p>
-          Вашему вниманию представлены новинки книг, поступившие в нашу Центральную районную библиотеку.<br><br>
-          Информационный Бюллетень новых поступлений содержит перечень литературы, поступившей в библиотеки Центральной районной библиотеки Учалинского района РБ, отраженной в справочно-поисковом аппарате.<br><br>
-          Материал в Бюллетене расположен по отраслям знаний (УДК), внутри каждого раздела по алфавиту авторов и названий. В каждом библиографическом описании книги указаны полочный шифр хранения, количество поступивших экземпляров в структурные подразделения библиотеки.
-        </p>
+    <div class="outer-container1">
+       
+<!--      
+        <h1 style="margin-top: 90px;" >Библиографические издания </h1> -->
+      
+       
 
-        <!-- <h2>Бюллетень новых поступлений за 20259 год</h2>
-          
-        <embed src="/media/pdf-js/8-марта.pdf" type="application/pdf" width="100%" height="600px" /> -->
-<!-- 
+
+
+        <!-- <embed 
+        src="{% static 'pdf/тест.pdf' %}" 
+        type="application/pdf" 
+        width="80%" 
+        height="900px" 
+        style="border: none; margin: 120px 80px 30px 120px;"> -->
+
         <iframe 
-          src="/media-pdf-js/web/viewer.html?file=/media/pdf/ардегер(1).pdf" 
-          width="450px" 
-          height="400px" 
-          style=" border-radius: 10px; margin-top: 10px;">
-        </iframe> -->
+        src="{% static 'pdf/Основные библиотечные термины.pdf' %}" 
+        width="90%" 
+        height="1000px" 
+        style="border: none;  margin: 90px 80px 30px 70px;">
+      </iframe> 
+      <!-- важно  -->
+      <!-- кыргызча версиясы-  src="{% static 'pdf/Китепкана ишинин негизги терминдери.docx .pdf' %}" -->
+      
+
 
       </div>
       
 
-      <div class="container-wrapper">
-        <div class="box">
-          <h2>Бюллетень новых <br>поступлений за 2021 год</h2>
-          <h6 onclick="openModal('modal1')">Бюллетень 1</h6>
-          <h6 onclick="openModal('modal2')">Бюллетень 2</h6>
-          <h6 onclick="openModal('modal3')">Бюллетень 3</h6>
-          <h6 onclick="openModal('modal4')">Бюллетень 4</h6>
-        </div>
-      
-        <div class="box">
-          <h2>Бюллетень новых <br>поступлений за 2021 год</h2>
-          <h6 onclick="openModal('modal5')">Бюллетень 1</h6>
-          <h6 onclick="openModal('modal6')">Бюллетень 2</h6>
-          <h6 onclick="openModal('modal7')">Бюллетень 3</h6>
-          <h6 onclick="openModal('modal8')">Бюллетень 4</h6>
-        </div>
-      </div>
-      <img src="/media/pdf/ардегер (1).pdf" alt="">
-      
-      
-      <!-- Модальные окна -->
-   
-      <div class="modal" id="modal1">
-        <div class="modal-content">
-          <h2>Бюллетень новых поступлений за 2025 год</h2>
-          
-          <iframe 
-            src="/media-pdf-js/web/viewer.html?file=/media/pdf/ардегер%20(1).pdf" 
-            width="150px" 
-            height="400px" 
-            style="border: none; border-radius: 10px; margin-top: 10px;">
-          </iframe>
-      
-          <div class="close-btn" onclick="closeModal('modal1')">Закрыть</div>
-        </div>
-      </div>
-      
-      
-      
-      <div class="modal" id="modal2">
-        <div class="modal-content">
-          <h2>Бюллетень 2</h2>
-          <a href="https://example.com/link2" target="_blank">Скачать</a>
-          <div class="close-btn" onclick="closeModal('modal2')">Закрыть</div>
-        </div>
-      </div>
-      
-      <div class="modal" id="modal3">
-        <div class="modal-content">
-          <h2>Бюллетень 3</h2>
-          <a href="https://example.com/link3" target="_blank">Скачать</a>
-          <div class="close-btn" onclick="closeModal('modal3')">Закрыть</div>
-        </div>
-      </div>
-      
-      <div class="modal" id="modal4">
-        <div class="modal-content">
-          <h2>Бюллетень 4</h2>
-          <a href="https://example.com/link4" target="_blank">Скачать</a>
-          <div class="close-btn" onclick="closeModal('modal4')">Закрыть</div>
-        </div>
-      </div>
-      
-      <div class="modal" id="modal5">
-        <div class="modal-content">
-          <h2>Бюллетень 55555555555</h2>
-          <a href="https://example.com/link4" target="_blank">Скачать</a>
-          <div class="close-btn" onclick="closeModal('modal5')">Закрыть</div>
-        </div>
-      </div>
 
 
-    </div>
-  </div>
-
-
-      <script>
-        function openModal(id) {
-          document.getElementById(id).style.display = 'flex';
-        }
-      
-        function closeModal(id) {
-          document.getElementById(id).style.display = 'none';
-        }
-      </script>
-      
 
 
 </body>

@@ -29,55 +29,205 @@
     }
 
 
+/* Контейнер и текст */
+.container {
+    max-width: 95%;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    text-align: center;
+    margin: 90px auto 0;
+   
+}
 
+.container h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
 
+.container h5 {
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+.container p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+/* Фото */
+.image-container {
+    margin-bottom: 30px;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.6s ease, box-shadow 0.6s ease; 
+}
+
+.image-container img {
+    max-width: 80%;
+    border-radius: 235px;
+    box-shadow: 0 5px 20px rgba(255,255,255,0.95);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(255,255,255,0.95);
+}
+
+/* Модальное окно PDF */
+.pdf-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.pdf-content {
+    background: #fff;
+    width: 100%;
+    max-width: 1200px;
+    height: 96%;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    animation: zoomIn 0.5s ease forwards;
+}
+
+.pdf-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background: #2c3e50;
+}
+
+.pdf-header button {
+    background: #d15a3ad4 ;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.pdf-body {
+    flex: 1;
+    display: flex;
+}
+
+.pdf-list {
+    width: 20%;
+    background: #ecf0f1;
+    overflow-y: auto;
+    padding: 15px;
+    border-right: 1px solid #bdc3c7;
+}
+
+.pdf-list button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    background: #963c23e2;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.pdf-list button:hover {
+    background: #ef5c54;
+}
+
+.pdf-viewer {
+    flex: 1;
+    background: #bdc3c7;
+    overflow: hidden;
+    border: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
 </style>
-</head>
-<body>
-
-    <div class="outer-container">
-    
-      <div class="inner-container">
-        <div class="bib-polka"><img src="/media/img/книжный полка.png" alt=""></div>
-        <h1 >Календарь знаменательных дат </h1>
-        <h5> Дорогие читатели!</h5>
-        <p>
-          Вашему вниманию представлены новинки книг, поступившие в нашу Центральную районную библиотеку.<br><br>
-          Информационный Бюллетень новых поступлений содержит перечень литературы, поступившей в библиотеки Центральной районной библиотеки Учалинского района РБ, отраженной в справочно-поисковом аппарате.<br><br>
-          Материал в Бюллетене расположен по отраслям знаний (УДК), внутри каждого раздела по алфавиту авторов и названий. В каждом библиографическом описании книги указаны полочный шифр хранения, количество поступивших экземпляров в структурные подразделения библиотеки.
-        </p>
 
 
 
+<div class="container">
+    <h1>Календарь знаменательных дат</h1>
 
-
-
-      </div>
-      
-
-      <div class="container-wrapper">
-        
-        <div class="box" onclick="openPDF('/media/pdf/ардегер (1).pdf')">
-            <h2>Календарь знаменательных  дат за 2025 год</h2>
-          </div>
-      
-      
-        <div class="box" onclick="openPDF('/media/pdf/ардегер (1).pdf')">
-            <h2>Календарь знаменательных дат за 2024 год</h2>
-          </div>
-      
-      
-
+    <!-- Фото после текста -->
+    <div class="image-container" onclick="openPDFModal()">
+        <img src="{% static 'img/sample_animation.gif' %}" alt="Анимированная картинка" >
 
     </div>
-  </div>
+</div>
+ 
+<!-- Модальное окно PDF -->
+<div class="pdf-modal" id="pdfModal">
+    <div class="pdf-content">
+       
+       <div class="pdf-body">
+    <div class="pdf-list" id="pdfList">
+        <button data-pdf="{% static 'pdf/Белгилүү күндөрдүн жана окуялардын жылнаамасы.pdf' %}">Белгилүү күндөрдүн жана окуялардын жылнаамасы </button>
+        <button data-pdf="{% static 'pdf/Календар знаменательных и памятных дат на 2025 год (1).pdf' %}">Календар знаменательных и памятных дат на 2025 год  </button>
+        
+    </div>
+    <iframe id="pdfViewer" class="pdf-viewer" src="{% static 'pdf/Белгилүү күндөрдүн жана окуялардын жылнаамасы.pdf' %}"></iframe>
+</div>
+
+ <div class="pdf-header">
+            <button onclick="closePDFModal()">Закрыть</button>
+        </div>
+    </div>
+</div>
+
+<script>
+  
+const pdfButtons = document.querySelectorAll('#pdfList button');
+const pdfViewer = document.getElementById('pdfViewer');
+
+pdfButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const url = button.getAttribute('data-pdf');
+        pdfViewer.src = url;
+    });
+});
+
+function openPDFModal() {
+    document.getElementById('pdfModal').style.display = 'flex';
+}
+
+function closePDFModal() {
+    document.getElementById('pdfModal').style.display = 'none';
+}
+
+function changePDF(url) {
+    document.getElementById('pdfViewer').src = url;
+}
+</script>
 
 
-  <script>
-    function openPDF(url) {
-      window.open(url, '_blank');
-    }
-  </script>
+
       
 
 

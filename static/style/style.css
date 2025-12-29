@@ -1813,18 +1813,13 @@ button:hover {
   transition: background-color 0.3s, border-color 0.3s;
   }
   
-  .kfondmenu button:hover {
-  background-color: #f0f0f0;
-  border-color: #bbb;
-  }
-  
+
   .kfondmenu .kfondbutnum {
   display: flex;
-  background-color: #ffffff;
   padding-left: 60px;
   font-size: 18px;
   border: none;
-  width: 710px;
+  width: 910px;
   font-size: 1.5rem;
   font-weight: bold;
   color: #141414;
@@ -1868,6 +1863,8 @@ button:hover {
   transform: translateX(0);
   position: relative;
   z-index: 1;
+ 
+  width: 1600px;
   }
   
   .kfondcardtable {
@@ -2053,9 +2050,17 @@ button:hover {
     background-color: #000000;
   }
 
-  .h-announcement-column {
-    font-size: 18px;
-  }
+.h-announcement-column {
+  font-size: 18px;
+  max-width: 150px;         /* не шире 150px */
+  width: 50px;             /* фиксированная ширина (убирай, если надо гибкий max) */
+  box-sizing: border-box;
+  white-space: nowrap;      /* не переносить строки */
+  overflow: hidden;         /* скрыть то, что не помещается */
+  text-overflow: ellipsis;  /* показать "..." в конце */
+}
+
+
 
   .announcement p {
     font-size: 15px;
@@ -2757,8 +2762,9 @@ button:hover {
       height: 1100px;
     }
 
-    .inner-container {
-      margin-top: 240px;
+    .inner-container { 
+      margin-top: 100px;
+      margin-bottom: 00px;
       position: relative;
       z-index: 5;
       background-color: #ffffffe8;
@@ -3482,5 +3488,75 @@ button:hover {
     .ddd3{
       display: flex;
     }
+
+
+
+
+
+    /* Основной блок факультета */
+.faculty-block {
+    background: #fff;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Основной контент внутри факультета */
+.main {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+/* Левая панель с кнопками */
+.left-panel {
+    width: 200px;
+}
+
+.left-panel button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #34495e;
+    color: white;
+    font-size: 16px;
+}
+
+.left-panel button:hover {
+    background: #2c3e50;
+}
+
+/* Правая панель для таблиц */
+.right-panel {
+    flex: 1;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+/* Таблицы */
+.table-block table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.table-block th, .table-block td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+.table-block th {
+    background: #ecf0f1;
+}
+
+/* Скрытые блоки */
+.hidden {
+    display: none;
+}
  
  

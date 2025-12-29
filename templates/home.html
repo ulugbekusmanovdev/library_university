@@ -80,6 +80,13 @@
 
 <div class="zz" style="display: flex;"> -->
 
+
+
+
+
+
+
+
 	
 	<div data-hcolor="#ff6600" class="section clip_none bg_text show_btn no_image section301 animate"
 		style="background-color:#ffffff;background-image:url(/img/1920x0/image_10047.jpg);padding-top:90px;padding-bottom:70px;"
@@ -136,7 +143,7 @@
   <div class="announcement-group" style="margin-top:15px;">
     {% for a in adt %}
     <div class="announcement" style="margin-bottom:15px;padding:10px;border:1px solid #ddd;border-radius:6px;">
-      <h4 class="h-announcement-column" style="margin:0 0 5px;font-size:20px;">{{a.title}}</h4>
+      <h4  style="margin:0 0 5px;font-size:20px; color: #9a2929;">{{a.title}}</h4>
       <p class="date" style="margin:0;font-size:15px;color:#666;">{{a.create_date}}</p>
       <p style="margin:5px 0 0;font-size:19px;line-height:1.4;">{{a.text|slice:":250"}}</p>
     </div>
@@ -595,8 +602,8 @@
 
 
 
-
-		<div class="section clip_none section147" style="background-color:#ffffff;" data-id="4732138" id="b_4732138"><a
+<!-- Photo video -->
+		<!-- <div class="section clip_none section147" style="background-color:#ffffff;" data-id="4732138" id="b_4732138"><a
 				name="a_4732138"></a>
 
 			<div class="vid">
@@ -650,7 +657,7 @@
 						{% endfor %}
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 
 
@@ -796,6 +803,77 @@
 }
 }
 </style>
+
+
+<script>
+// ===== закрытие модального окна =====
+document.getElementById('closeNewYear').addEventListener('click', () => {
+    document.getElementById('newYearModal').style.display = 'none';
+});
+
+// ===== простой салют =====
+const canvas = document.getElementById('fireworkCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+class Particle {
+    constructor(x, y, color) {
+        this.x = x;
+        this.y = y;
+        this.color = color;
+        this.radius = Math.random() * 2 + 1;
+        this.speedX = (Math.random() - 0.5) * 5;
+        this.speedY = (Math.random() - 0.5) * 5;
+        this.alpha = 1;
+    }
+    update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.alpha -= 0.01;
+    }
+    draw() {
+        ctx.globalAlpha = this.alpha;
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+    }
+}
+
+let particles = [];
+
+function spawnFirework(){
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * canvas.height / 2;
+    const colors = ['#ff3', '#f00', '#0f0', '#0ff', '#f0f', '#fff'];
+    for(let i=0; i<50; i++){
+        particles.push(new Particle(x, y, colors[Math.floor(Math.random()*colors.length)]));
+    }
+}
+
+function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach((p, i)=>{
+        p.update();
+        p.draw();
+        if(p.alpha <= 0) particles.splice(i,1);
+    });
+    requestAnimationFrame(animate);
+}
+
+// запуск салюта каждые 800 мс
+setInterval(spawnFirework, 800);
+animate();
+
+// корректировка размера canvas при ресайзе
+window.addEventListener('resize', ()=>{
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+</script>
+
  </body>
 </body>
 

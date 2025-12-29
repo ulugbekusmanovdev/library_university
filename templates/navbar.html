@@ -1,212 +1,235 @@
-
 {% load i18n %}
 {% load static %}
-
-
-
-
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Сайт с Navbar и снегом</title>
 
 <link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
 <link rel="stylesheet" href="/static/style/style.css">
-
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
- 
- <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f9f9f9;
-    }
- 
-  </style> 
 
-  
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+}
 
+/* ===== СНЕГ ===== */
+#snow-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 99999;
+}
+
+.snowflake {
+  position: absolute;
+  top: -20px;
+  color: white;
+  opacity: 0.9;
+  user-select: none;
+  animation-name: snow-fall;
+  animation-timing-function: linear;
+}
+
+@keyframes snow-fall {
+  to {
+    transform: translateY(110vh);
+  }
+}
+
+#snowToggle {
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 15px;
+}
+</style>
 </head>
+
 <body>
- <div class="navbar0"> 
-<div class="topbar-navbar">
-  
 
-  <div class="language-navbar">
-    <a href="{% url 'set-language' 'ky' %}">Кыргызча</a>
-    <a href="/">Русский</a>
+<!-- ❄️ Контейнер снега -->
+<div id="snow-container"></div>
+
+<!-- ===== NAVBAR ===== -->
+<div class="navbar0"> 
+  <div class="topbar-navbar">
+
+    <div class="language-navbar">
+      <a href="{% url 'set-language' 'ky' %}">Кыргызча</a>
+      <a href="/">Русский</a>
+    </div>
+
+    <div class="profile-navbar">
+      <a href="{% url 'login' %}"> <i class="fas fa-user-circle"></i>  </a> 
+      <div class="profile-submenu-navbar" style="display:none;">
+       
+      </div>
+    </div>
+
+    
+
+    <a href="{% url 'home'  %}#anchor8" style="font-weight:300;margin-left:5px;color:#151414;">Контакты</a>
+  
+     <!-- ❄️ кнопка снега -->
+    <i id="snowToggle" class="fas fa-snowflake" title="Снег"></i>
+  
   </div>
-  <div class="profile-navbar">
-    <a href="{% url 'login' %}"> <i class="fas fa-user-circle"></i>  </a> 
-  </div>
 
-  <a href="{% url 'home'  %}#anchor8" style="font-weight: 300; margin-left: 5px; color: #151414;">Контакты</a>
+  <div class="menu-icon" id="menu-icon">&#9776;</div>
 
-</div>
-<div class="menu-icon" id="menu-icon" style="margin-top: -23px;">&#9776;</div>
-<nav>
-  
-  <div class="nav-left-navbar">
-  
+  <nav>
+    <div class="nav-left-navbar">
 
-    <div class="nav-item-navbar active">
-      <div class="logo" style="margin-left: 30px;">
-        <a href="{% url 'home' %}">
-            <div class="logo_img"  > 
-                <img data-lazy="1" src="{% static 'img/logo.jpg' %}" width="85px" height="60px">
+      <div class="nav-item-navbar active">
+        <div class="logo" style="margin-left:30px;">
+          <a href="{% url 'home' %}">
+            <div class="logo_img"> 
+              <img data-lazy="1" src="{% static 'img/logo.jpg' %}" width="85px" height="60px">
             </div>
-        </a> 	
-    </div>
-
-
-     
-
-    
-      
-    </div>
- 
-    <div class="nav-item-navbar">
-      <a href="{% url 'home'  %}"  class="nav-link-navbar"><i class="fas fa-house"></i> {% trans 'Главная' %}</a>
-      
-      <div class="submenu-navbar">
-        <a href="{% url 'news'  %}">{% trans 'Новости' %}</a>
-        <a href="{% url 'home'  %}#anchor6">{% trans 'Книги' %}</a>
-     
+          </a> 	
+        </div>
       </div>
-    </div>
 
-    <div class="nav-item-navbar">
-      <a href="{% url 'strukture'  %}" class="nav-link-navbar"><i class="fas fa-sitemap"></i> Структура</a>
-      <div class="submenu-navbar">
-        <a href="{% url 'profs' %}"> {% trans 'Профсоюз' %} </a>
-      
-      </div>
-    </div>
-
-    <div class="nav-item-navbar">
-      <a href="{% url 'home'  %}#anchor4" class="nav-link-navbar"><i class="fas fa-box-archive"></i>  {% trans "Ресурсы библиотеки" %}  </a>
-      <div class="submenu-navbar">
-        <a href="https://lib.oshsu.kg">Электронная библиотека</a>
-        <a href="http://ibooks.oshsu.kg/">iBooks</a>
-        <a href="https://kyrlibnet.kg/ru/">KirLibNet</a>
-        <a href="https://scopus.com/">Scopus</a>
-        <a href="https://www.oshsu.kg/ru">OshSU</a>
-        <a href="https://homeread.net/">LibKG</a>
-        <a href="https://web.p.ebscohost.com/ehost/search/basic?vid=0&sid=b0360df0-7ff3-465d-b690-5aa7d0ffddf4%40redis">EBSCO</a>
-        <a href="https://www.cochranelibrary.com/"> Cochrane Library</a>
-        <a href="https://elibrary.ru/">eLibrary</a>
-        <a href="http://library.manas.edu.kg/index.php/ru/">Manas Library</a>
-        <a href="https://edu.gov.kg/">Министерство образования</a>
-        <a href="https://vak.kg/">НАК ПКР</a>
-        <a href="http://neb.kg/index.php/ru/">NEB</a>
-        <a href="https://www.okuma.kg/">OKUMA</a>
-        <a href="https://www.wiley.com/en-us/customer-success/wiley-online-library-translated-resources/wiley-online-library-translated-resources-in-russian">Wiley Online Library</a>
-        <a href="http://window.edu.ru/">Единое окно </a>
-        <a href="https://msp.org/publications/">Mathematical Sciences Publishers</a>
-        <a href="https://www.cambridge.org/core/publications/journals">Cambridge</a>
-        <a href="https://link.springer.com/">Springer Nature</a>
-      </div>
-    </div>
-
-    <div class="nav-item-navbar">
-      <a href="{% url 'catalog' %}" class="nav-link-navbar"><i class="fas fa-book"></i> Книжный фонд</a>
-      <div class="submenu-navbar">
-        
-        <!-- <a href="/">{% trans 'Книжный фонд' %} </a> -->
-        <a href="{% url 'kfond' %}">{% trans 'Каталог' %}  </a>
-     
-      </div>
-    </div> 
-    
       <div class="nav-item-navbar">
-      <a href="{% url 'bibliograf' %}" class="nav-link-navbar"><i class="fas fa-bookmark"></i> Библиограф</a>
-      
-      <div class="submenu-navbar">
-        <a  href="{% url 'bibizdanie' %}">{% trans 'Библиографические издания' %}</a>
-        <a href="{% url 'calendar' %}">{% trans 'Календарь знаменательных дат' %}</a>
-        <a href="{% url 'question' %}">{% trans 'Задать вопрос библиографу' %}</a>
+        <a href="{% url 'home' %}" class="nav-link-navbar"><i class="fas fa-house"></i> {% trans 'Главная' %}</a>
+        <div class="submenu-navbar">
+          <a href="{% url 'news'  %}">{% trans 'Новости' %}</a>
+          <a href="{% url 'home'  %}#anchor6">{% trans 'Книги' %}</a>
+        </div>
       </div>
-     
-    </div>
-    
-    
-    <div class="nav-item-navbar">
-      <a href="{% url 'readers' %}" class="nav-link-navbar">	<i class="fas fa-users"></i>  Читатель</a>
-     
-    </div>
-    <!-- <div class="nav-item-navbar">
-      <a href="{% url 'home'  %}#anchor8" class="nav-link-navbar"> <i class="fas fa-address-book"></i>  Контакты</a>
-     
-    </div> -->
-</div>
-  </div>
 
-</nav>
+      <div class="nav-item-navbar">
+        <a href="{% url 'strukture'  %}" class="nav-link-navbar"><i class="fas fa-sitemap"></i> Структура</a>
+        <div class="submenu-navbar">
+          <a href="{% url 'profs' %}"> {% trans 'Профсоюз' %} </a>
+        </div>
+      </div>
+
+      <div class="nav-item-navbar">
+        <a href="{% url 'home'  %}#anchor4" class="nav-link-navbar"><i class="fas fa-box-archive"></i>  {% trans "Ресурсы библиотеки" %}</a>
+        <div class="submenu-navbar">
+          <a href="https://lib.oshsu.kg">Электронная библиотека</a>
+          <a href="http://ibooks.oshsu.kg/">iBooks</a>
+          <a href="https://kyrlibnet.kg/ru/">KirLibNet</a>
+          <a href="https://scopus.com/">Scopus</a>
+          <a href="https://www.oshsu.kg/ru">OshSU</a>
+          <a href="https://homeread.net/">LibKG</a>
+          <a href="https://web.p.ebscohost.com/ehost/search/basic?vid=0&sid=b0360df0-7ff3-465d-b690-5aa7d0ffddf4%40redis">EBSCO</a>
+          <a href="https://www.cochranelibrary.com/">Cochrane Library</a>
+          <a href="https://elibrary.ru/">eLibrary</a>
+          <a href="http://library.manas.edu.kg/index.php/ru/">Manas Library</a>
+          <a href="https://edu.gov.kg/">Министерство образования</a>
+          <a href="https://vak.kg/">НАК ПКР</a>
+          <a href="http://neb.kg/index.php/ru/">NEB</a>
+          <a href="https://www.okuma.kg/">OKUMA</a>
+          <a href="https://www.wiley.com/en-us/customer-success/wiley-online-library-translated-resources/wiley-online-library-translated-resources-in-russian">Wiley Online Library</a>
+          <a href="http://window.edu.ru/">Единое окно</a>
+          <a href="https://msp.org/publications/">Mathematical Sciences Publishers</a>
+          <a href="https://www.cambridge.org/core/publications/journals">Cambridge</a>
+          <a href="https://link.springer.com/">Springer Nature</a>
+        </div>
+      </div>
+
+      <div class="nav-item-navbar">
+        <a href="{% url 'catalog' %}" class="nav-link-navbar"><i class="fas fa-book"></i> Книжный фонд</a>
+        <div class="submenu-navbar">
+          <a href="{% url 'kfond' %}">{% trans 'Каталог' %}  </a>
+        </div>
+      </div> 
+
+      <div class="nav-item-navbar">
+        <a href="{% url 'bibliograf' %}" class="nav-link-navbar"><i class="fas fa-bookmark"></i> Библиограф</a>
+        <div class="submenu-navbar">
+          <a href="{% url 'bibizdanie' %}">{% trans 'Библиографические издания' %}</a>
+          <a href="{% url 'calendar' %}">{% trans 'Календарь знаменательных дат' %}</a>
+          <a href="{% url 'question' %}">{% trans 'Задать вопрос библиографу' %}</a>
+        </div>
+      </div>
+
+      <div class="nav-item-navbar">
+        <a href="{% url 'readers' %}" class="nav-link-navbar"><i class="fas fa-users"></i>  Читатель</a>
+      </div>
+
+    </div>
+  </nav>
 </div> 
 
-<script>
 
+
+<script>
+/* ===== МЕНЮ ===== */
 const menuIcon = document.getElementById('menu-icon');
 const nav = document.querySelector('nav');
 const menuLinks = document.querySelectorAll('.nav-left-navbar a');
 
-// Открыть/закрыть меню при клике на иконку
 menuIcon.addEventListener('click', () => {
   nav.classList.toggle('active');
 });
 
-// Закрыть меню при клике на любую ссылку внутри
 menuLinks.forEach(link => {
   link.addEventListener('click', () => {
     nav.classList.remove('active');
   });
 });
 
+/* ===== ПОДМЕНЮ ПРОФИЛЯ ===== */
+const profileNavbar = document.querySelector('.profile-navbar');
+const profileSubmenu = document.querySelector('.profile-submenu-navbar');
 
+profileNavbar.addEventListener('mouseenter', () => { profileSubmenu.style.display = 'block'; });
+profileNavbar.addEventListener('mouseleave', () => { profileSubmenu.style.display = 'none'; });
+profileSubmenu.addEventListener('mouseenter', () => { profileSubmenu.style.display = 'block'; });
+profileSubmenu.addEventListener('mouseleave', () => { profileSubmenu.style.display = 'none'; });
 
+/* ===== СНЕГ С СОХРАНЕНИЕМ ===== */
+let snowing = false;
+let snowInterval;
 
-  const profileNavbar = document.querySelector('.profile-navbar');
-  const profileSubmenu = document.querySelector('.profile-submenu-navbar');
+const snowBtn = document.getElementById('snowToggle');
+const snowContainer = document.getElementById('snow-container');
 
-  // Показать подменю при наведении на иконку
-  profileNavbar.addEventListener('mouseenter', () => {
-    profileSubmenu.style.display = 'block';
-  });
+// Проверяем состояние снега при загрузке страницы
+document.addEventListener('DOMContentLoaded', () => {
+  if(localStorage.getItem('snowing') === 'true'){
+    snowing = true;
+    snowBtn.style.color = '#4fa3ff';
+    snowInterval = setInterval(createSnowflake, 150);
+  }
+});
 
-  // Скрыть подменю при выходе мыши из иконки или подменю
-  profileNavbar.addEventListener('mouseleave', () => {
-    profileSubmenu.style.display = 'none';
-  });
+snowBtn.addEventListener('click', () => {
+  snowing = !snowing;
+  localStorage.setItem('snowing', snowing); // сохраняем состояние
+  snowBtn.style.color = snowing ? '#4fa3ff' : '';
 
-  profileSubmenu.addEventListener('mouseenter', () => {
-    profileSubmenu.style.display = 'block'; // Не скрывать подменю при наведении на подменю
-  });
+  if (snowing) {
+    snowInterval = setInterval(createSnowflake, 150);
+  } else {
+    clearInterval(snowInterval);
+    snowContainer.innerHTML = '';
+  }
+});
 
-  profileSubmenu.addEventListener('mouseleave', () => {
-    profileSubmenu.style.display = 'none'; // Скрывать подменю при выходе из подменю
-  });
+function createSnowflake() {
+  const snowflake = document.createElement('div');
+  snowflake.className = 'snowflake';
+  snowflake.innerHTML = ['❄','❅','❆'][Math.floor(Math.random()*3)];
+  snowflake.style.left = Math.random() * window.innerWidth + 'px';
+  snowflake.style.fontSize = Math.random() * 12 + 10 + 'px';
+  snowflake.style.animationDuration = Math.random() * 5 + 6 + 's';
+  snowContainer.appendChild(snowflake);
+  setTimeout(() => snowflake.remove(), 12000);
+}
 </script>
+
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

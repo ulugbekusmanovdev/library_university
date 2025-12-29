@@ -32,50 +32,66 @@
       background-image: url('/media/fffon.jpeg');
       box-shadow: 0 4px 10px rgba(223, 96, 96, 0.2);
       width: 100%;
-      height: 1200px;
+      height: 1000px;
     }
 
     .outer-container1 {
-  max-width: 1250px;
+  max-width: 100%;
   position: relative;
   overflow: hidden;
   background: #ffffffcd;
   box-shadow: 0 0 15px rgb(0, 0, 0);
   margin: 0 auto;
-  height: 1200px;
+  height: 1000px;
 }
 
 </style>
 </head>
 <body>
   <div class="body1">
-    <div class="outer-container1">
-       
-<!--      
-        <h1 style="margin-top: 90px;" >Библиографические издания </h1> -->
-        <h5> </h5>
-       
+   
+
+<div class="pdf-container" style="margin:40px auto; background:rgba(255,255,255,0.95); border-radius:20px; padding:20px; box-shadow:0 10px 40px rgba(0,0,0,0.3); text-align:center; ">
 
 
 
-        <!-- <embed 
-        src="{% static 'pdf/тест.pdf' %}" 
-        type="application/pdf" 
-        width="80%" 
-        height="900px" 
-        style="border: none; margin: 120px 80px 30px 120px;"> -->
+    <!-- Ссылки сверху, центрируем -->
+    <div class="pdf-links" style="margin-bottom:20px;margin-top: 50px;  justify-content:center; gap:30px;">
+        <span class="pdf-link active" data-pdf="{% static 'pdf/Жолон Мамытовдун 85 жылдык юбилейине арналат.pdf' %}" style="cursor:pointer; color:#3498db; text-decoration:underline; font-weight:bold;">Жолон Мамытовдун 85 жылдык юбилейине арналат</span> <br>
+        <!-- орусчасы- пдф- Посвящается 85 - летию Жолона Мамытова.pdf -->
+        <span class="pdf-link" data-pdf="{% static 'pdf/Улуу Ата Мекендик согуштагы жеңиштин 80 жылдыгына арналат.pdf' %}" style="cursor:pointer; color:#3498db; text-decoration:underline;">Улуу Ата Мекендик согуштагы жеңиштин 80 жылдыгына арналат</span>
+        <!-- орусчасы- пдф- Посвящается  80- летию победы Великой  Отечественной войне.pdf.pdf -->
+    </div>
 
-        <iframe 
-        src="{% static 'pdf/тест.pdf' %}" 
-        width="90%" 
-        height="700px" 
-        style="border: none;  margin: 120px 80px 30px 70px;">
-      </iframe>
-      
+    <!-- Iframe для отображения PDF -->
+    <div id="pdfWrapper" style="width:100%; height:500px; overflow:hidden; border:2px solid #ccc; border-radius:10px;">
+        <iframe id="pdfViewer" src="{% static 'pdf/Жолон Мамытовдун 85 жылдык юбилейине арналат.pdf' %}" style="width:100%; height:100%; border:none; border-radius:10px;"></iframe>
+    </div>
 
+</div>
 
-      </div>
-      
+<script>
+const pdfLinks = document.querySelectorAll('.pdf-link');
+const pdfViewer = document.getElementById('pdfViewer');
+
+pdfLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        const url = link.getAttribute('data-pdf');
+        pdfViewer.src = url;
+
+        // Подсвечиваем активную ссылку
+        pdfLinks.forEach(l => {
+            l.classList.remove('active');
+            l.style.fontWeight = 'normal';
+            l.style.color = '#3498db';
+        });
+        link.classList.add('active');
+        link.style.fontWeight = 'bold';
+        link.style.color = '#2c3e50';
+    });
+});
+</script>
+
 
 
 
