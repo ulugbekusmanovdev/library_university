@@ -42,7 +42,7 @@ def homepage(request):
     adt = Ads.objects.all().order_by('-id')[0:3]
     structure = Structure.objects.all()
     about = About.objects.all()
-    history = History.objects.filter(id=3)
+    history = History.objects.filter(id=1)
     history1 = History.objects.filter(id=4)
     videos = Video.objects.all()
     context = {'news': news, 'last_news': last_news, 'adt': adt, 'structure': structure,

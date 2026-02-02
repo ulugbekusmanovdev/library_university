@@ -51,7 +51,7 @@ class About(models.Model):
         verbose_name_plural = 'О библиотеки'
 
     def __str__(self):
-        return self.title
+        return str(self.title)
 
 class History(models.Model):
     text = models.TextField()
