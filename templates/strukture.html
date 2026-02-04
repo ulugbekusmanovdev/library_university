@@ -11,6 +11,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Библиотека — Сотрудники</title>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
   <style>
     :root{--bg:#f7f8fb;--card:#fff;--accent:#7c3aed;--chief:#a44a31;;--muted:#6b7280}
@@ -34,7 +36,7 @@
 
     .dept-btn{
       padding:8px 14px;
-      width: 300px;
+      width: 210px;
       border:none;
       border-radius:8px;
       background:linear-gradient(90deg,#b7433a,#810505);
@@ -69,8 +71,9 @@
 
     <!-- директор -->
     <aside class="director-card">
-      <div class="director-name">Директор научной библиотеки</div>
+      
       <img src="/media/img/director.jpg" class="director-photo">
+      <div class="director-name">Директор научной библиотеки</div>
       <div class="director-name">Орозбаев Азамат Мамасадыкович</div>
       <div style="margin-top:12px;font-size:13px">
         О себе: Руководитель с опытом и видением будущего.
@@ -81,9 +84,11 @@
     <section class="card">
       <h2 style="margin:0 0 10px">Отделения</h2>
 
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:15px">
+      <div class="flex flex-wrap " style="gap:10px;flex-wrap:wrap;margin-bottom:15px">
         <button class="dept-btn" data-dept="1">Отдел комплектования и хранения книг</button>
         <button class="dept-btn" data-dept="2">Отдел электронных ресурсов и услуг</button>
+        <button class="dept-btn" data-dept="3">Библиограф</button>
+        <button class="dept-btn" data-dept="3">Библиограф</button>
         <button class="dept-btn" data-dept="3">Библиограф</button>
       </div>
 
