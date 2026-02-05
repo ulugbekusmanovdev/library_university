@@ -29,7 +29,60 @@ padding: 30px;
   <div class="kfondtext">
     <h3>ОшМУнун илимий китепканасынын жалпы китеп фонду <strong style="color: rgb(247, 137, 96);">572260</strong> даана китепти түзөт:</h3>
   </div>
+  
+  <div class="kfondcontentcontainer" style="margin-bottom:100px;">
+    
+    <div class="kfondcontainer" data-fond-id="{{fond.id}}">
+      
 
+      <div class="kfondcontentwrapper" style="margin-top:20px;">
+        <div class="kfondcontent active" data-content-type="one">
+          <div class="kfondcardtable">
+            <table style="width: 380px;">
+              <tr><td>Кыргыз тилиндеги китептер</td><td>{{fond.kyrgyz_num}}</td></tr>
+              <tr><td>Орус тилиндеги китептер</td><td>{{fond.russ_num}}</td></tr>
+
+              {% if fond.inter_num %}
+              <tr><td>Дүйнөлүк тилдеги китептер</td><td>{{fond.inter_num}}</td></tr>
+              {% endif %}
+              
+              {% if fond.eng_name %}
+              <tr><td>{{fond.eng_name}}</td><td>{{fond.eng_num}}</td></tr>
+              {% endif %}
+
+              {% if fond.ger_name %}
+              <tr><td>{{fond.ger_name}}</td><td>{{fond.ger_num}}</td></tr>
+              {% endif %}
+
+              {% if fond.fra_name %}
+              <tr><td>{{fond.fra_name}}</td><td>{{fond.fra_num}}</td></tr>
+              {% endif %}
+
+              {% if fond.tur_name %}
+              <tr><td>{{fond.tur_name}}</td><td>{{fond.tur_num}}</td></tr>
+              {% endif %}
+
+            </table>
+          </div>
+        </div>
+
+        <div class="kfondcontent" data-content-type="two">
+          <div class="kfondcardtable">
+            <table>
+              <tr><td class="td-blok" style="padding: 5px 10px; width: 350px; word-break: break-word;">1-блок: жалпы гуманитардык жана социалдык-экономикалык</td><td>{{fond.first_block}}</td></tr>
+              <tr><td class="td-blok">2-блок: табигый-илимий жана математикалык</td><td>{{fond.second_block}}</td></tr>
+              <tr><td class="td-blok">3-блок: техникалык</td><td>{{fond.third_block}}</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="kfondcontent" data-content-type="three">
+          <h2 class="kfhnumber">{{fond.teachers_work}}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  
   {% for fond in bookfond %}
   <div class="kfondcontentcontainer" style="margin-bottom:100px;">
     <h5 class="kfancytitleh5">
