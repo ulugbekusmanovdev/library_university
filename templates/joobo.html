@@ -1,0 +1,320 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load embed_video_tags %}
+{% load i18n %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+
+
+
+
+
+
+<head>
+	{% load static %}
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
+
+<script src="{% static 'pdf-js/build/pdf.mjs' %}" type="module"></script>
+<script src="{% static 'pdf-js/web/viewer.mjs' %}" type="module"></script>
+<link rel="stylesheet" href="{% static 'pdf-js/web/viewer.css' %}">
+</head>
+<style>
+	* {
+		padding: 0;
+		margin: 0;
+	}
+
+	body {
+
+		background:
+			linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+			/* полупрозрачный цвет поверх */
+			url('static/img/fon/fffon.jpeg');
+		/* твоя картинка */
+
+		justify-content: center;
+		align-items: center;
+		background-color: var(--main-bg);
+		font-family: var(--paragraph-font);
+		min-height: 100vh;
+	}
+</style>
+</head>
+
+<body>
+
+	<div class="outer-container-home">
+
+		<style>
+			@media (max-width: 1008px) {
+				.container-home {
+					margin-top: 15px;
+				}
+			}
+		</style>
+
+
+
+
+
+
+
+		
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<div data-hcolor="#f5550e"
+			class="section section130 clip_none s_mode_s200 mobile_col2 inner_width img_square flex_fix transparent_ico"
+			style="background-color:#ffffff;padding-top:80px;padding-bottom:80px;--tiles_radius:0px;--tiles_shadow:none;--bg_color:#fff; width: 100%;"
+			data-id="anchor6" id="anchor6"><a name="a_4732122"></a>
+
+
+			<div class="section_inner all_border btn_move"
+				style="--icon_size:64px;--btn_fweight:300;--btn_fsize:18px;--item_title_fweight:400; margin-top: 40px;">
+				<a style="text-decoration: none; color: #2c2c2c;" href="{% url 'books' %}">
+					<div class="title"><b>{% trans 'Ознакомьтесь с данными библиотеки' %}</b></div>
+				</a>
+			</div>
+			<div class="catalog_items short_text count5 s200" style="justify-content: center;">
+
+				
+				<div class="arr1">
+					<div class="col_4">
+						<div data-link="" class="image1 s200 shadow">
+							<img style="height: 230px;" data-lazy="1" loading="lazy" src="/static/img/жобо_r7cpOOc.jpg">
+						</div>
+						<div class="title1">Текущий библиографический указатель № 1</div>
+
+						<a class="btn1 surround  dark"
+							style="background-color:#f5550e; border-radius: 10em; text-decoration: none; color: #fff;"
+							href="http://library.oshsu.kg/media/book/pdfs/%D1%83%D0%BA%D0%B0%D0%B7._2025_1-4-%D0%BA%D0%B2..pdf">
+							{% trans 'Читать' %}
+						</a>
+
+					</div>
+                    
+				</div>
+                <div class="arr1">
+					<div class="col_4">
+						<div data-link="" class="image1 s200 shadow">
+							<img style="height: 230px;" data-lazy="1" loading="lazy" src="/static/img/жобо_r7cpOOc.jpg">
+						</div>
+						<div class="title1">Илимий китепкана аянты</div>
+
+						<a class="btn1 surround  dark"
+							style="background-color:#f5550e; border-radius: 10em; text-decoration: none; color: #fff;"
+							href="http://library.oshsu.kg/media/book/pdfs/%D0%96%D0%B0%D0%BB%D0%BF%D1%8B_%D0%BA%D0%B8%D1%82%D0%B5%D0%BF%D0%BA%D0%B0%D0%BD%D0%B0_%D0%B0%D1%8F%D0%BD%D1%82%D1%8B.pdf">
+							{% trans 'Читать' %}
+						</a>
+
+					</div>
+                    
+				</div>
+                <div class="arr1">
+					<div class="col_4">
+						<div data-link="" class="image1 s200 shadow">
+							<img style="height: 230px;" data-lazy="1" loading="lazy" src="/static/img/жобо_r7cpOOc.jpg">
+						</div>
+						<div class="title1">Илимий китепкананын жобосу</div>
+
+						<a class="btn1 surround  dark"
+							style="background-color:#f5550e; border-radius: 10em; text-decoration: none; color: #fff;"
+							href="http://library.oshsu.kg/media/book/pdfs/%D0%B6%D0%BE%D0%B1%D0%BE.pdf">
+							{% trans 'Читать' %}
+						</a>
+
+					</div>
+                    
+				</div>
+				
+
+			</div>
+		</div>
+
+
+
+		<div data-hcolor="#ff6600" class="section clip_none bg_text show_btn no_image section301 animate"
+			style="background-color:#ffffff;background-image:url(/img/1920x0/image_10047.jpg);padding-top:90px;padding-bottom:70px;width: 100%;"
+			data-id="4722812" id="b_4722812"><a name="anchor7"></a>
+			
+
+
+
+
+
+
+
+			<div class="clip_none section bg_text section250 mode_3" data-id="4754183" id="b_4754183"><a
+					name="a_4754183"></a>
+
+				{% block comment %}
+
+				{% endblock comment %}
+
+				
+
+
+
+
+
+
+
+
+
+
+
+
+				<!-- конец -->
+
+
+
+				
+
+
+
+
+
+
+
+
+
+
+			</div>
+
+
+
+
+
+
+
+
+			<div style="border-radius: 100px;position: fixed;  right:80px; bottom:30px;">
+				<a href="https://www.instagram.com/studclub.oshsu?igsh=MXI0dDFlbWY1Z3NtZQ==" target="_blank">
+					<img src="/static/img/fon/studclub.jpeg" alt="" width="90px" height="90px"
+						style="border-radius: 110px;">
+				</a>
+			</div>
+
+
+
+
+
+		</div>
+	</div>
+
+	
+	</div>
+
+
+	</div>
+	</div>
+	</div>
+	</div>
+
+	<style>
+		@keyframes scrollText {
+			0% {
+				transform: translateX(10%);
+			}
+
+			100% {
+				transform: translateX(-100%);
+			}
+		}
+	</style>
+
+
+	<script>
+		// ===== закрытие модального окна =====
+		document.getElementById('closeNewYear').addEventListener('click', () => {
+			document.getElementById('newYearModal').style.display = 'none';
+		});
+
+		// ===== простой салют =====
+		const canvas = document.getElementById('fireworkCanvas');
+		const ctx = canvas.getContext('2d');
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+
+		class Particle {
+			constructor(x, y, color) {
+				this.x = x;
+				this.y = y;
+				this.color = color;
+				this.radius = Math.random() * 2 + 1;
+				this.speedX = (Math.random() - 0.5) * 5;
+				this.speedY = (Math.random() - 0.5) * 5;
+				this.alpha = 1;
+			}
+			update() {
+				this.x += this.speedX;
+				this.y += this.speedY;
+				this.alpha -= 0.01;
+			}
+			draw() {
+				ctx.globalAlpha = this.alpha;
+				ctx.fillStyle = this.color;
+				ctx.beginPath();
+				ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+				ctx.fill();
+				ctx.globalAlpha = 1;
+			}
+		}
+
+		let particles = [];
+
+		function spawnFirework() {
+			const x = Math.random() * canvas.width;
+			const y = Math.random() * canvas.height / 2;
+			const colors = ['#ff3', '#f00', '#0f0', '#0ff', '#f0f', '#fff'];
+			for (let i = 0; i < 50; i++) {
+				particles.push(new Particle(x, y, colors[Math.floor(Math.random() * colors.length)]));
+			}
+		}
+
+		function animate() {
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			particles.forEach((p, i) => {
+				p.update();
+				p.draw();
+				if (p.alpha <= 0) particles.splice(i, 1);
+			});
+			requestAnimationFrame(animate);
+		}
+
+		// запуск салюта каждые 800 мс
+		setInterval(spawnFirework, 800);
+		animate();
+
+		// корректировка размера canvas при ресайзе
+		window.addEventListener('resize', () => {
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+		});
+	</script>
+
+</body>
+</body>
+
+{% include 'footer.html' %}
+{% endblock content %}
