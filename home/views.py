@@ -171,6 +171,9 @@ def bibizdanie(request):
 def question(request):
     return render(request, 'question.html')
 
+def jobo(request):
+    return render(request, 'joobo.html')
+
 def technique(request):
     return render(request, 'technique.html')
 
