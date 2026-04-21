@@ -112,6 +112,21 @@ class Book(models.Model):
     def get_absolute_url(self):
         return reverse('books', args=[self.slug])
 
+class Jobo(models.Model):
+    title = models.CharField(max_length=200, verbose_name='заголовок')
+    slug = models.SlugField(max_length=200, verbose_name='слаг')
+    pdf = models.FileField(upload_to='jobo/pdfs/')
+    photo = models.ImageField(upload_to='jobo/photos/', null=True, blank=True)
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = "Жобо"
+        verbose_name_plural = "Жобо"
+        ordering = ['-id']
+
+
 
 class Photo(models.Model):
     title = models.CharField(max_length=200, blank=True, null=True, verbose_name='Заголовок')

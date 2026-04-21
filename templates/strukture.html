@@ -83,12 +83,12 @@
         <button class="dept-btn" data-dept="1">Отдел комплектования и хранения книг</button>
         <button class="dept-btn" data-dept="2">Отдел электронных ресурсов и услуг</button>
         <button class="dept-btn" data-dept="3">Библиограф</button>
-        <button class="dept-btn" data-dept="3">Библиограф</button>
-        <button class="dept-btn" data-dept="3">Библиограф</button>
+        <button class="dept-btn" data-dept="4"><a style="color: #e6e7eb;" href="{% url 'profs' %}"> {% trans 'Профсоюз' %} </a></button>
+        <button class="dept-btn" data-dept="5">Scopus</button>
       </div>
 
       <h3 id="deptTitle" style="margin:10px 0">Выберите отдел…</h3>
-      <h4 style="text-align: center;"> О себе: Руководитель с опытом и видением будущего.</h4>
+      <h4 style="text-align: center;">ОшМУнун илимий китепканасынын китети комплектөө жана сактоо бөлүмү кабыл алынган адабияттар окуу программасынын негизине таянып, адистиктерге жараша комплектейт, электрондук каттайт жана кайрадан иштеп чыгат. Мезгилдүү басылмаларга жазылууну жүргүзөт. Китеп фондун эсепке алат, фонддун эсебинен чыгарат. Жалпы китеп фондун сакталышын көзөмөлдөйт</h4>
 
       <table class="table">
         <thead>
@@ -152,7 +152,9 @@
 const deptNames = {
   1: 'Отдел комплектования и хранения книг',
   2: 'Отдел электронных ресурсов и услуг',
-  3: 'Библиограф'
+  3: 'Библиограф',
+  4: 'Профсоюз',
+  5: 'Scopus',
 };
 
 function showDept(dept) {

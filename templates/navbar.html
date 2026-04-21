@@ -78,8 +78,9 @@ body {
 
     <a href="{% url 'home'  %}#anchor8" style="font-weight:300;margin-left:5px;color:#151414;">Контакты</a>
   
-     <!-- ❄️ кнопка снега -->
-    <i id="snowToggle" class="fas fa-snowflake" title="Снег"></i>
+     
+    <!-- ❄️ кнопка снега
+    <i id="snowToggle" class="fas fa-snowflake" title="Снег"></i> -->
   
   </div>
 
@@ -103,15 +104,12 @@ body {
         <div class="submenu-navbar">
           <a href="{% url 'news'  %}">{% trans 'Новости' %}</a>
           <a href="{% url 'home'  %}#anchor6">{% trans 'Книги' %}</a>
-          <a href="{% url 'jobo' %}">{% trans 'Жообо' %}</a>
+          <a href="{% url 'jobo' %}">{% trans 'Положение' %}</a>
         </div>
       </div>
 
       <div class="nav-item-navbar">
         <a href="{% url 'strukture'  %}" class="nav-link-navbar"><i class="fas fa-sitemap"></i> Структура</a>
-        <div class="submenu-navbar">
-          <a href="{% url 'profs' %}"> {% trans 'Профсоюз' %} </a>
-        </div>
       </div>
 
       <div class="nav-item-navbar">
@@ -140,7 +138,7 @@ body {
       </div>
 
       <div class="nav-item-navbar">
-        <a href="{% url 'catalog' %}" class="nav-link-navbar"><i class="fas fa-book"></i> Книжный фонд</a>
+        <a href="{% url 'catalog' %}" class="nav-link-navbar"><i class="fas fa-book"></i>{% trans 'Книжный фонд' %}</a>
         <div class="submenu-navbar">
           <a href="{% url 'kfond' %}">{% trans 'Каталог' %}  </a>
         </div>
@@ -156,7 +154,7 @@ body {
       </div>
 
       <div class="nav-item-navbar">
-        <a href="{% url 'readers' %}" class="nav-link-navbar"><i class="fas fa-users"></i>  Читатель</a>
+        <a href="{% url 'readers' %}" class="nav-link-navbar"><i class="fas fa-users"></i> {% trans 'Читатель' %}</a>
       </div>
 
     </div>
